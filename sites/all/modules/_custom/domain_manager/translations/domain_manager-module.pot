@@ -1,0 +1,148 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  domain_manager.features.field.inc: n/a
+#  domain_manager.views_default.inc: n/a
+#  domain_manager.features.inc: n/a
+#  domain_manager.features.menu_links.inc: n/a
+#  domain_manager.info: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2012-02-27 17:42-0300\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: domain_manager.features.field.inc:433 domain_manager.views_default.inc:454
+msgid "Administrator"
+msgstr ""
+
+#: domain_manager.features.field.inc:434 domain_manager.views_default.inc:445
+msgid "Domain"
+msgstr ""
+
+#: domain_manager.features.field.inc:435 domain_manager.views_default.inc:455
+msgid "E-mail contact form"
+msgstr ""
+
+#: domain_manager.features.field.inc:436 domain_manager.views_default.inc:453
+msgid "Site flag"
+msgstr ""
+
+#: domain_manager.features.field.inc:437
+msgid "Site logo"
+msgstr ""
+
+#: domain_manager.features.inc:69
+msgid "New site"
+msgstr ""
+
+#: domain_manager.features.inc:71
+msgid "Sets the domain, site name, email address and the administrator."
+msgstr ""
+
+#: domain_manager.features.inc:73 domain_manager.views_default.inc:444
+msgid "Site name"
+msgstr ""
+
+#: domain_manager.features.inc:74
+msgid "The steps to create a new site are:<br />\r\n1) Create the !user_account the local managed (with local-admin role).<br />\r\n2) Create the new !new_domain.<br />\r\n3) Create a new site (complete this form).<br />\r\n4) Configure cpanel to accept the new sub-domain.<br />"
+msgstr ""
+
+#: domain_manager.features.menu_links.inc:33
+msgid "Domains logos and site names."
+msgstr ""
+
+#: domain_manager.views_default.inc:47;441
+msgid "No sub-domain set. Create one at !add"
+msgstr ""
+
+#: domain_manager.views_default.inc:433
+msgid "Master"
+msgstr ""
+
+#: domain_manager.views_default.inc:434
+msgid "List of domains and administrators"
+msgstr ""
+
+#: domain_manager.views_default.inc:435
+msgid "more"
+msgstr ""
+
+#: domain_manager.views_default.inc:436
+msgid "Apply"
+msgstr ""
+
+#: domain_manager.views_default.inc:437
+msgid "Reset"
+msgstr ""
+
+#: domain_manager.views_default.inc:438
+msgid "Sort by"
+msgstr ""
+
+#: domain_manager.views_default.inc:439
+msgid "Asc"
+msgstr ""
+
+#: domain_manager.views_default.inc:440
+msgid "Desc"
+msgstr ""
+
+#: domain_manager.views_default.inc:443
+msgid "All"
+msgstr ""
+
+#: domain_manager.views_default.inc:446
+msgid "Block"
+msgstr ""
+
+#: domain_manager.views_default.inc:447
+msgid "Site name and logo"
+msgstr ""
+
+#: domain_manager.views_default.inc:448
+msgid "Page"
+msgstr ""
+
+#: domain_manager.views_default.inc:449
+msgid "Items per page"
+msgstr ""
+
+#: domain_manager.views_default.inc:450
+msgid "- All -"
+msgstr ""
+
+#: domain_manager.views_default.inc:451
+msgid "Offset"
+msgstr ""
+
+#: domain_manager.views_default.inc:452
+msgid "Site Logo"
+msgstr ""
+
+#: domain_manager.views_default.inc:456
+msgid "Edit"
+msgstr ""
+
+#: domain_manager.info:0
+msgid "Domain manager"
+msgstr ""
+
+#: domain_manager.info:0
+msgid "Create a sub-domain, set up site name, email address and local administrator."
+msgstr ""
+
+#: domain_manager.info:0
+msgid "Features"
+msgstr ""
+

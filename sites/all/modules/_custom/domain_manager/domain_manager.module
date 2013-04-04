@@ -1,0 +1,155 @@
+<?php
+/**
+ * @file
+ * Code for the Domain manager feature.
+ */
+
+include_once('domain_manager.features.inc');
+
+/**
+ * 
+ * hook_form_alter()
+ * 
+ */
+ 
+function domain_manager_form_alter(&$form, &$form_state, $form_id){  
+  if ($form_id == 'site_domain_node_form'){
+      $form['domain']['#collapsed'] = 1;
+      $form['domain']['#default_value'] = 1;
+      
+      //$form['field_domain_admin']['#element_validate'][] = 'domain_manager_domain_admin_validate';
+      
+      	//-- update domain options
+		$domain_options = array();
+		foreach (domain_domains() as $data) {
+      	  if ($data['valid']) {
+            $domain_options[$data['domain_id']] = $data['sitename'].' ('.$data['subdomain'].')';
+      	  }
+    	}
+      //$form['field_domain']['und'][0]['#type'] = 'select';
+    	//$form['field_domain']['und']['#options'] = $domain_options;
+      
+     /* $form['field_domain']['und']['#element_validate'] = array(0 => 'domain_manager_field_domain_widget_validate');
+      unset($form['field_domain']['und']['#value_key']);
+      unset($form['field_domain']['und']['#after_build']);
+      unset($form['field_domain']['und']['#properties']);*/
+      $form['field_domain']['und'][0]['value']['#type'] = 'select';
+      $form['field_domain']['und'][0]['value']['#size'] = 1;
+      $form['field_domain']['und'][0]['value']['#multiple'] = FALSE;
+      $form['field_domain']['und'][0]['value']['#options'] = $domain_options;
+
+	// --
+  }
+}
+/*
+function domain_manager_field_widget_form(&$form, &$form_state, $field, $instance, $langcode, $items, $delta, $element){
+    
+}*/
+
+/**
+ * check if domain select key is valid
+ */
+function domain_manager_field_domain_widget_validate($element, &$form_state, $form) {
+  
+  if (empty($element['#value'])) {
+     form_error($element, t('This field is required.'));
+     return;
+   }
+   
+  if (!is_numeric($element['#value'])) {
+     form_error($element, t('Field input are invalid.'));
+     return;
+   }
+   
+  $domain_options = array();
+  foreach (domain_domains() as $data) {
+        if ($data['valid']) {
+          $domain_options[$data['domain_id']] = $data['sitename'].' ('.$data['subdomain'].')';
+        }
+    }
+  if (!array_key_exists($element['#value'], $domain_options)) {
+     form_error($element, t('Field input are invalid.'));
+     return;
+   }
+}
+
+
+/**
+ * domain_manager_validate()
+ */
+ /*
+function domain_manager_domain_admin_validate($element, &$form_state, $form){
+  
+  // isset($form_state['node']->nid)?$nid = $form_state['node']->nid:$nid = null;
+  $lang = $form['language']['#value'];
+  $uid = $form['field_domain_admin']['und'][0]['uid']['#value'];
+  $uid = explode('[uid:', $uid); $uid = $uid[1]; $uid = intval(filter_xss(substr($uid,0, -1)));
+  
+  
+  $query = db_select('field_data_field_domain_admin', 'a');
+  $query->fields('a', array('entity_id'));
+  $query->condition('a.field_domain_admin_uid', $uid, '<>');
+  
+  $result = $query->execute()->rowCount();
+  
+  //print "<pre>$result</pre>";
+  
+  if ($result >= 1){
+    //form_error($element,'Este administrador ya administra otro dominio');
+  }
+}
+*/
+
+/**
+ *  hook_block_info()
+ */
+
+function domain_manager_block_info() {
+  $blocks['domain_manager_contact_form'] = array(
+    'info' => t('Domain contact form'), 
+    'cache' => DRUPAL_NO_CACHE,
+  );
+
+  return $blocks;
+}
+
+/**
+ * hook_block_view()
+ */
+ 
+function domain_manager_block_view($delta = '') {
+  global $user;
+  $block = array();
+
+  switch ($delta) {
+    case 'domain_manager_contact_form':
+      // $block['subject'] = t('Contact form');
+      $domain_site = domain_manager_current_site();
+      if ($domain_site){
+        $block['subject'] = t('Contact form');
+        $block['content'] = email_mail_page('node', $domain_site->nid, 'field_domain_email');
+      }else{
+        if (user_access('create site_domain content')){
+          $block['subject'] = t('Contact form');
+          $block['content'] = t('No sub-domain set. Create one at !add', array('!add'=>l(t('Add Content-> New Site'), 'node/add/site-domain')));
+        }
+      }
+      break;
+  }
+  
+  return $block;
+}
+
+/*
+ * return current node site-domain
+ */
+
+function domain_manager_current_site(){
+  
+  $current_domain = domain_get_domain();
+  
+  $result = db_query('SELECT df.entity_id AS entity_id FROM {field_data_field_domain} df INNER JOIN {node} n ON n.nid = df.entity_id WHERE (df.field_domain_value = :domain_id) AND (n.status > 0) LIMIT 1 OFFSET 0', array(':domain_id' => $current_domain['domain_id']))->fetchAssoc();
+  
+  return node_load($result['entity_id']);
+  
+}

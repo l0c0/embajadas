@@ -1,0 +1,316 @@
+<?php
+/* Info:
+ * Este módulo realiza tres acciones:
+ * 1) Altera el formulario de carga de noticias/videos/imagenes para que los campos peso sean select tipo combobox.
+ * 2) Agrega un label a cada campo peso indicando la embajada/consulado a la que corresponde.
+ * 3) Quita el drag&drop de los campos múltiples y maneja los deltas = dominios_id
+ */
+ 
+function domain_weight_form_alter(&$form, &$form_state, $form_id){
+	if (isset($form['field_domain_weight']) && isset($form['field_domain_delta'])){
+		
+		// Elimino los drag&drop
+		unset($form['field_domain_weight']['und']['#theme']);
+		unset($form['field_domain_delta']['und']['#theme']);
+		
+    	$copy_weight = $form['field_domain_weight']['und'][0];
+    	unset($copy_weight['_weight']);
+    	
+    	$copy_delta = $form['field_domain_delta']['und'][0];
+    	unset($copy_delta['_weight']);
+    	
+    	// Purge all weigth fields
+		$fields = $form['field_domain_weight']['und'];
+		foreach($fields as $k => $value){
+			if (is_numeric($k)){
+				unset($form['field_domain_weight']['und'][$k]);
+			}
+		}
+		
+		// Purge all delta fields
+		$fields = $form['field_domain_delta']['und'];
+		foreach($fields as $k => $value){
+			if (is_numeric($k)){
+				unset($form['field_domain_delta']['und'][$k]);
+			}
+		}
+		
+				
+		// Add a field to JS
+		$dw_options = _dw_weight_options();
+		drupal_add_js(drupal_get_path('module', 'domain_weight') .'/domain_weight.js', 'file');
+		$form['field_domain_weight_JS'] = array(
+			  '#type' => 'select',
+			  '#title' => t('Change all weight on the front page'),
+			  '#default_value' => 1,
+			  '#size' => 1,
+			  '#multiple' => FALSE,
+			  '#required' => FALSE,
+			  '#options' => $dw_options,
+			  '#weight' => 8.5,
+			);
+		
+		$k = 0;
+		
+		$values = array();
+		if (isset($form_state['build_info']['args'][0]->field_domain_weight['und'])){
+			$values = $form_state['build_info']['args'][0]->field_domain_weight['und'];
+		}
+		
+		
+		foreach (domain_domains() as $data) {
+			if ($data['valid']) {
+				$edit_access = domain_weight_access($data['domain_id']);
+				
+				$form['field_domain_weight']['und'][$k] = $copy_weight;
+				$form['field_domain_delta']['und'][$k] = $copy_delta;
+				
+				$form['field_domain_weight']['und'][$k]['value']['#title'] = t($data['sitename']); // Label
+				$form['field_domain_weight']['und'][$k]['value']['#required'] = True;
+				
+				$form['field_domain_weight']['und'][$k]['value']['#type'] = 'select';
+				$form['field_domain_delta']['und'][$k]['value']['#type'] = 'hidden';
+				
+				$form['field_domain_weight']['und'][$k]['value']['#options'] = $dw_options;
+				$form['field_domain_weight']['und'][$k]['value']['#size'] = 1;
+				$form['field_domain_weight']['und'][$k]['value']['#multiple'] = False;
+				
+				if (!$edit_access){
+					$form['field_domain_weight']['und'][$k]['value']['#disabled'] = True;
+				}
+				
+				$form['field_domain_weight']['und'][$k]['value']['#default_value'] = 1; //Default
+				$form['field_domain_delta']['und'][$k]['value']['#default_value'] = $data['domain_id']; //Referenced Domain ID
+				
+				if (isset($values[$k]['value'])){
+					// Default Edit Form
+					$form['field_domain_weight']['und'][$k]['value']['#default_value'] = $form_state['build_info']['args'][0]->field_domain_weight['und'][$k]['value'];
+					//$form['field_domain_delta']['und'][$k]['value']['#default_value'] = $form_state['build_info']['args'][0]->field_domain_delta['und'][$k]['value'];
+				}
+			}
+			$k++;
+		}
+	
+	// Remove add more button.
+	unset($form['field_domain_weight']['und']['add_more']);
+	unset($form['field_domain_delta']['und']['add_more']);
+	
+  
+		//$tform = print_r($form, true);
+		//print "<pre>$tform</pre>";
+	}
+}
+
+function _dw_weight_options(){
+	$weights = array();
+	for ($i = 1; $i <= 10; $i++) { 
+		//$key = sprintf("%05d",$i).sprintf("%05d", $domain_id);
+		$weights[$i] = $i;
+	}
+	return $weights;
+}
+
+
+/** Permisos **/
+function domain_weight_permission() {
+  return array(
+    'domain weight cascade update' => array(
+      'title' => t('Allow cascade update the weights.'), 
+      'description' => t('Warning: Give to trusted roles only;'),
+    ),
+    'domain weight edit all'  => array(
+      'title' => t('Allow upgrade any domain weight.'), 
+      'description' => t('Warning: Give to trusted roles only.'),
+    ),
+    'domain weight edit own'  => array(
+      'title' => t('Allow upgrade own domain weight.'), 
+    ),
+  );
+}
+
+function domain_weight_access($domain_id = ''){
+	global $user;
+	
+	// Es administrdor
+	$is_admin = in_array('administrator', $user->roles);
+	
+	// Tiene un permiso especial
+	$perm = user_access('domain weight edit all');
+	// Es el admin local del dominio en cuestión.
+	$is_local_admin = user_access('domain weight edit own') && (array_key_exists($domain_id, $user->domain_user));
+	
+	return ($is_admin || $perm || $is_local_admin);
+}
+
+
+/** Actualización en cascada **/
+ /*hooks 
+  * hook_node_update($node)
+  * hook_node_insert($node)
+  * */
+  
+/*
+ * hook_node_insert($node)
+ */
+function domain_weight_node_insert($node){
+	// drupal_set_message('insert');
+	// Tal vez, node_presave?
+	domain_weight_node_update($node);
+}
+
+/*
+ * hook_node_update($node)
+ */
+function domain_weight_node_update($node){
+	if ( user_access('domain weight cascade update') && $node->promote != 0 && isset($node->field_domain_weight) && isset($node->field_domain_delta)){
+		$clear = false;
+		foreach($node->field_domain_weight['und'] as $k => $field){
+			
+			$dom_id = $node->field_domain_delta['und'][$k]['value'];
+			$dom_id = ($dom_id == 0)?-1:$dom_id; // Primary domain -1 index.
+			
+			 // Está activo actualmente?
+			 //drupal_set_message('Ups '.var_export($_POST, true));	
+			 $active = isset($_POST['domain_site']) || in_array($dom_id, $node->domains); // Revisar... otra manera en vez de post?
+			 
+			 
+			 // Estaba pasivo pero ahora está activo?.
+			 $a_change = isset($node->original)?(!in_array($dom_id, $node->original->domains) && in_array($dom_id, $node->domains)):FALSE;
+			 // Cambio de lenguaje?
+			 $l_change = isset($node->original)?($node->original->language != $node->language):FALSE;
+			 // Cambio el peso?
+			 $w_change = isset($node->original)?($node->original->field_domain_weight['und'][$k]['value'] != $node->field_domain_weight['und'][$k]['value']):FALSE;
+			 // Ahora esta promocinado al home
+			 @$p_change = isset($node->original)?($node->original->promoted != 1 && $node->promoted > 0):TRUE; // Promocionado o Nuevo Nodo.
+			 
+			 // drupal_set_message("Act:".$active." AChange:".$a_change." WChange:".$w_change. " LChange:".$l_change. " PChange:".$p_change. " Domain id:".$node->field_domain_delta['und'][$k]['value']);
+			 
+			 if ( $active && ($a_change || $w_change || $l_change || $p_change)){
+				 $clear = true;
+				
+				$query_args = array('@1' => $node->nid, 
+								    '@2' => $node->language,
+								    '@3' => $node->field_domain_delta['und'][$k]['value'], 
+								    '@4' => $k, 
+								    '@5' => $node->field_domain_weight['und'][$k]['value'], 
+								    );
+								    
+				
+				// Hay un lugar disponible?
+				$need_upd = _dw_prepare_sql("SELECT count(node.nid) AS count FROM {node} node
+					LEFT JOIN {domain_access} domain_access 
+					  ON node.nid = domain_access.nid AND domain_access.realm = 'domain_id'
+					LEFT JOIN {field_data_field_domain_weight} field_data_field_domain_weight 
+					  ON node.nid = field_data_field_domain_weight.entity_id AND (field_data_field_domain_weight.entity_type = 'node' AND field_data_field_domain_weight.deleted = '0')
+					LEFT JOIN {field_data_field_domain_delta} field_data_field_domain_delta 
+					  ON node.nid = field_data_field_domain_delta.entity_id AND (field_data_field_domain_delta.entity_type = 'node' AND field_data_field_domain_delta.deleted = '0')
+					WHERE (( 
+					  (node.nid <> @1) AND (node.promote <> '0') AND (node.language IN  ('und', '@2')) AND (node.status = '1') AND(( (node.type IN  ('image_gallery', 'news', 'video')) )) AND 
+					  (((domain_access.realm = 'domain_id' AND domain_access.gid = @3) OR (domain_access.realm = 'domain_site' AND domain_access.gid = 0))) AND 
+					  (field_data_field_domain_weight.delta = '@4' ) AND (field_data_field_domain_weight.field_domain_weight_value = '@5' ) AND
+					  (field_data_field_domain_delta.field_domain_delta_value = '@3' )
+					))",$query_args)->fetchObject();
+				
+				if ($need_upd->count > 0){
+					// Actualizar los pesos.
+					
+                                        /* Con bucles
+					$res = _dw_prepare_sql("SELECT field_data_field_domain_weight.entity_type, field_data_field_domain_weight.bundle, field_data_field_domain_weight.deleted, field_data_field_domain_weight.entity_id, field_data_field_domain_weight.revision_id, field_data_field_domain_weight.language, field_data_field_domain_weight.delta, field_data_field_domain_weight.field_domain_weight_value  
+							FROM {field_data_field_domain_weight} field_data_field_domain_weight 
+							LEFT JOIN {node} node 
+							ON (field_data_field_domain_weight.entity_type = 'node' AND field_data_field_domain_weight.deleted = '0') AND field_data_field_domain_weight.entity_id = node.nid 
+							LEFT JOIN {domain_access domain_access} 
+							ON node.nid = domain_access.nid AND domain_access.realm = 'domain_id' 
+							LEFT JOIN {field_data_field_domain_delta} field_data_field_domain_delta 
+							ON node.nid = field_data_field_domain_delta.entity_id AND (field_data_field_domain_delta.entity_type = 'node' AND field_data_field_domain_delta.deleted = '0')  
+							WHERE (( 
+							(node.nid <> @1) AND (node.promote <> '0') AND (node.language IN ('und', '@2')) AND (node.status = '1') AND(( (node.type IN ('image_gallery', 'news', 'video')) )) AND 
+							(((domain_access.realm = 'domain_id' AND domain_access.gid = @3) OR (domain_access.realm = 'domain_site' AND domain_access.gid = 0))) AND (field_data_field_domain_weight.delta = '@4' ) AND 
+							(field_data_field_domain_weight.field_domain_weight_value >= @5 AND field_data_field_domain_weight.field_domain_weight_value <= 20) AND (field_data_field_domain_delta.field_domain_delta_value = '@3' ) ))
+							", $query_args);
+					
+					$count = 0;
+					*/
+					/*
+					 * Sería más rápido hacer un update por sql, pero no hay manera de detecta que nodos cambiaron y se tiene que borrar la cache.
+					 */
+					/*	 
+					foreach ($res as $rec) {
+						
+						$aff = db_update('field_data_field_domain_weight')
+						->expression('field_domain_weight_value', 'field_domain_weight_value + 1')
+						->condition('entity_type', $rec->entity_type)
+						->condition('bundle', $rec->bundle)
+						->condition('deleted', $rec->deleted)
+						->condition('entity_id', $rec->entity_id)
+						->condition('revision_id', $rec->revision_id)
+						->condition('language', $rec->language)
+						->condition('delta', $rec->delta)
+						->execute();
+						
+						$count = $count + $aff;
+						entity_get_controller('node')->resetCache(array($rec->entity_id));
+					}
+					
+                                        */
+                                        
+                                        
+                                        /* 
+                                         * Intento 2: SQL
+                                         */
+                                        
+                                        $res = _dw_prepare_sql("UPDATE {field_data_field_domain_weight} field_data_field_domain_weight 
+							LEFT JOIN {node} node 
+							ON (field_data_field_domain_weight.entity_type = 'node' AND field_data_field_domain_weight.deleted = '0') AND field_data_field_domain_weight.entity_id = node.nid 
+							LEFT JOIN {domain_access domain_access} 
+							ON node.nid = domain_access.nid AND domain_access.realm = 'domain_id' 
+							LEFT JOIN {field_data_field_domain_delta} field_data_field_domain_delta 
+							ON node.nid = field_data_field_domain_delta.entity_id AND (field_data_field_domain_delta.entity_type = 'node' AND field_data_field_domain_delta.deleted = '0')  
+                                                        SET field_domain_weight_value = field_domain_weight_value + 1 
+							WHERE (( 
+							(node.nid <> @1) AND (node.promote <> '0') AND (node.language IN ('und', '@2')) AND (node.status = '1') AND(( (node.type IN ('image_gallery', 'news', 'video')) )) AND 
+							(((domain_access.realm = 'domain_id' AND domain_access.gid = @3) OR (domain_access.realm = 'domain_site' AND domain_access.gid = 0))) AND (field_data_field_domain_weight.delta = '@4' ) AND 
+							(field_data_field_domain_weight.field_domain_weight_value >= @5 AND field_data_field_domain_weight.field_domain_weight_value <= 20) AND (field_data_field_domain_delta.field_domain_delta_value = '@3' ) ))
+							", $query_args);
+                                        
+                                        $count = $res->rowCount();
+                                        
+					if ($count > 0){
+					  drupal_set_message(t('Have been automatically updated the weights of the other publications (@1 nodes affected).', array('@1' => $count))); 
+					}
+				}
+			}
+		}
+		if ($clear){
+			drupal_flush_all_caches(); // BAD... bye bye performance.... 
+		}
+	}
+}
+
+
+function _dw_prepare_sql($sql, $query_args){
+	$query = $sql;
+	
+	foreach ($query_args as $k => $v){
+		$query = str_replace($k, $v, $query);
+	}
+	
+	$query = db_query($query);
+	
+	return $query;
+}
+
+/* DEBUG SQL
+function dw_debug_sql($sql, $query_args){
+	$query = $sql;
+	
+	$query = str_replace('{','D7_',$query);
+	$query = str_replace('}','',$query);
+	
+	foreach ($query_args as $k => $v){
+		$query = str_replace($k, $v, $query);
+	}
+	
+	return $query;
+}
+*/

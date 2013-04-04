@@ -1,0 +1,7 @@
+name = "Domain weight"
+description = "Manages multi site front page weights."
+core = "7.x"
+package = "Custom"
+php = "5.2.4"
+version = "7.x-1.0beta1"
+project = "domain_weight"
