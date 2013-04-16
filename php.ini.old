@@ -1,8 +1,0 @@
-memory_limit = 256M
-upload_max_filesize = 5M
-safe_mode = off
-session.cache_limiter = nocache
-open_basedir = none
-extension=pdo.so
-extension=pdo_mysql.so
-extension=uploadprogress.so
