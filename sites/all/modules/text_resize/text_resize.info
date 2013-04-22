@@ -1,14 +1,15 @@
-; $Id: text_resize.info,v 1.1.2.3.2.3 2010/12/26 04:47:46 attheshow Exp $
 name = Text Resize
 description = Creates a block that allows your users to resize text on the page.
 core = "7.x"
 version = VERSION
 
+configure = admin/config/user-interface/text_resize
+
 files[] = text_resize.install
 files[] = text_resize.module
-; Information added by drupal.org packaging script on 2011-01-05
-version = "7.x-1.7"
+; Information added by drupal.org packaging script on 2013-03-20
+version = "7.x-1.8"
 core = "7.x"
 project = "text_resize"
-datestamp = "1294189400"
+datestamp = "1363738108"
 

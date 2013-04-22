@@ -1,5 +1,4 @@
 <?php
-// $Id: text_resize.module,v 1.1.2.9.2.4 2010/12/26 04:47:46 attheshow Exp $
 
 /**
  * @file
@@ -31,7 +30,7 @@ function _text_resize_admin_settings() {
   $form['text_resize_scope'] = array(
     '#type' => 'textfield',
     '#title' => t('Text Resize Scope'),
-    '#default_value' => _get_text_resize_scope(),
+    '#default_value' => variable_get('text_resize_scope', 'main'),
     '#description' => t('Which portion of the body would you like to be resized by the Text Resize block? You may enter either the CSS class attribute, the CSS id attribute, or an HTML tag.<br />For example, if you want all text within &lt;div id="my-container"&gt; to be resized, enter the ID <strong>my-container</strong>.<br />If, on the other hand, you would like all text within the BODY tag to be resized, enter <strong>body</strong>.'),
     '#required' => TRUE,
   );
@@ -39,7 +38,7 @@ function _text_resize_admin_settings() {
     '#type' => 'textfield',
     '#title' => t('Default/Minimum Text Size'),
     '#maxlength' => 2,
-    '#default_value' => _get_text_resize_minimum(),
+    '#default_value' => variable_get('text_resize_minimum', '12'),
     '#description' => t('What is the smallest font size (in pixels) that your text can be resized to by users?'),
     '#required' => TRUE,
   );
@@ -47,82 +46,40 @@ function _text_resize_admin_settings() {
     '#type' => 'textfield',
     '#title' => t('Maximum Text Size'),
     '#maxlength' => 2,
-    '#default_value' => _get_text_resize_maximum(),
+    '#default_value' => variable_get('text_resize_maximum', '25'),
     '#description' => t('What is the largest font size (in pixels) that your text can be resized to by users?'),
     '#required' => TRUE,
   );
   $form['text_resize_reset_button'] = array(
     '#type' => 'checkbox',
     '#title' => t('Add Reset Button'),
-    '#default_value' => _get_text_resize_reset_button(),
+    '#default_value' => variable_get('text_resize_reset_button', FALSE),
     '#description' => t('Do you want to add an extra button to the block to allow the font size to be reset to the default/minimum size set above?'),
   );
   $form['text_resize_line_height_allow'] = array(
     '#type' => 'checkbox',
     '#title' => t('Allow Line-Height Adjustment'),
-    '#default_value' => _get_text_resize_line_height_allow(),
+    '#default_value' => variable_get('text_resize_line_height_allow', FALSE),
     '#description' => t('Do you want to allow Text Resize to change the spacing between the lines of text?'),
   );
   $form['text_resize_line_height_min'] = array(
     '#type' => 'textfield',
     '#title' => t('Minimum Line-Height'),
     '#maxlength' => 2,
-    '#default_value' => _get_text_resize_line_height_min(),
+    '#default_value' => variable_get('text_resize_line_height_min', 16),
     '#description' => t('What is the smallest line-height (in pixels) that your text can be resized to by users?'),
   );
   $form['text_resize_line_height_max'] = array(
     '#type' => 'textfield',
     '#title' => t('Maximum Line-Height'),
     '#maxlength' => 2,
-    '#default_value' => _get_text_resize_line_height_max(),
+    '#default_value' => variable_get('text_resize_line_height_max', 36),
     '#description' => t('What is the largest line-height (in pixels) that your text can be resized to by users?'),
   );
   $form = system_settings_form($form);
   // Rebuild the menu after updating the settings.
   $form['#submit'][] = 'menu_rebuild';
   return $form;
-}
-
-// Get the scope specified by the admin
-function _get_text_resize_scope() {
-  $text_resize_scope = variable_get('text_resize_scope', 'main');
-  return $text_resize_scope;
-}
-
-// Get the minimum size specified by the admin
-function _get_text_resize_minimum() {
-  $text_resize_minimum = variable_get('text_resize_minimum', '12');
-  return $text_resize_minimum;
-}
-
-// Get the maximum size specified by the admin
-function _get_text_resize_maximum() {
-  $text_resize_maximum = variable_get('text_resize_maximum', '25');
-  return $text_resize_maximum;
-}
-
-// Get the reset button preference specified by the admin
-function _get_text_resize_reset_button() {
-  $text_resize_reset_button = variable_get('text_resize_reset_button', FALSE);
-  return $text_resize_reset_button;
-}
-
-// Get the line height preference specified by the admin
-function _get_text_resize_line_height_allow() {
-  $text_resize_line_height_allow = variable_get('text_resize_line_height_allow', FALSE);
-  return $text_resize_line_height_allow;
-}
-
-// Get the minimum line height preference specified by the admin
-function _get_text_resize_line_height_min() {
-  $text_resize_line_height_min = variable_get('text_resize_line_height_min', 16);
-  return $text_resize_line_height_min;
-}
-
-// Get the maximum line height preference specified by the admin
-function _get_text_resize_line_height_max() {
-  $text_resize_line_height_max = variable_get('text_resize_line_height_max', 36);
-  return $text_resize_line_height_max;
 }
 
 /**
@@ -145,21 +102,6 @@ function text_resize_block_view() {
 }
 
 /**
- * Implements hook_init().
- */
-function text_resize_init() {
-  drupal_add_css(drupal_get_path('module', 'text_resize') . '/text_resize.css');
-  drupal_add_js(drupal_get_path('module', 'text_resize') . '/jquery.cookie.js', 'file');
-  drupal_add_js("var text_resize_scope = " . drupal_json_encode(_get_text_resize_scope()) . ";
-    var text_resize_minimum = " . drupal_json_encode(_get_text_resize_minimum()) . ";
-    var text_resize_maximum = " . drupal_json_encode(_get_text_resize_maximum()) . ";
-    var text_resize_line_height_allow = " . drupal_json_encode(_get_text_resize_line_height_allow()) . ";
-    var text_resize_line_height_min = " . drupal_json_encode(_get_text_resize_line_height_min()) . ";
-    var text_resize_line_height_max = " . drupal_json_encode(_get_text_resize_line_height_max()) . ";", 'inline');
-  drupal_add_js(drupal_get_path('module', 'text_resize') . '/text_resize.js', 'file');
-}
-
-/**
  * Implements hook_theme().
  */
 function text_resize_theme() {
@@ -170,7 +112,16 @@ function text_resize_theme() {
 
 // Create a theme function that can be overridden by other theme developers.
 function theme_text_resize_block() {
-  if (_get_text_resize_reset_button() == TRUE) {
+  drupal_add_css(drupal_get_path('module', 'text_resize') . '/text_resize.css');
+  drupal_add_library('system', 'jquery.cookie');
+  drupal_add_js("var text_resize_scope = " . drupal_json_encode(variable_get('text_resize_scope', 'main')) . ";
+    var text_resize_minimum = " . drupal_json_encode(variable_get('text_resize_minimum', '12')) . ";
+    var text_resize_maximum = " . drupal_json_encode(variable_get('text_resize_maximum', '25')) . ";
+    var text_resize_line_height_allow = " . drupal_json_encode(variable_get('text_resize_line_height_allow', FALSE)) . ";
+    var text_resize_line_height_min = " . drupal_json_encode(variable_get('text_resize_line_height_min', 16)) . ";
+    var text_resize_line_height_max = " . drupal_json_encode(variable_get('text_resize_line_height_max', 36)) . ";", 'inline');
+  drupal_add_js(drupal_get_path('module', 'text_resize') . '/text_resize.js', 'file');
+  if (variable_get('text_resize_reset_button', FALSE) == TRUE) {
     $output = t('<a href="javascript:;" class="changer" id="text_resize_decrease"><sup>-</sup>A</a> <a href="javascript:;" class="changer" id="text_resize_reset">A</a> <a href="javascript:;" class="changer" id="text_resize_increase"><sup>+</sup>A</a><div id="text_resize_clear"></div>');
   }
   else {
