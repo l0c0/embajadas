@@ -72,13 +72,12 @@ function media_youtube_media_parse($embed_code) {
 }
 
 /**
- * Implements hook_media_format_form_prepare_alter().
+ * Implements hook_file_mimetype_mapping_alter().
+ *
+ * Regster the video/youtube mimetype.
  */
-function media_youtube_media_format_form_prepare_alter(&$form, &$form_state, $media) {
-  if ($form['#media']->filemime == 'video/youtube') {
-    $settings = array('autosubmit' => TRUE);
-    drupal_add_js(array('media_format_form' => $settings), 'setting');
-  }
+function media_youtube_file_mimetype_mapping_alter(&$mapping) {
+  $mapping['mimetypes'][] = 'video/youtube';
 }
 
 /**
@@ -96,7 +95,7 @@ function media_youtube_ctools_plugin_api($owner, $api) {
 }
 
 /**
- * YouTube Tab.
+ * YouTube search tab for the Media browser.
  */
 
 /**
@@ -105,8 +104,6 @@ function media_youtube_ctools_plugin_api($owner, $api) {
  * Commented out for release versions, active in dev versions. To enable the
  * YouTube media browser tab, uncomment this function.
  */
-
-/*
 function media_youtube_media_browser_plugin_info() {
   $info['youtube'] = array(
     'title' => t('YouTube'),
@@ -115,7 +112,6 @@ function media_youtube_media_browser_plugin_info() {
 
   return $info;
 }
-*/
 
 /**
  * Provides a form for adding media items from YouTube search.
@@ -321,7 +317,9 @@ function media_youtube_add_submit($form, &$form_state) {
   }
 
   // Redirect to the file edit page after submission.
-  if (media_access('edit')) {
+  // @TODO: media_access() is a wrapper for file_entity_access(). Switch to the
+  // new function when Media 1.x is deprecated.
+  if (media_access('update', $file)) {
     $destination = array('destination' => 'admin/content/file');
     if (isset($_GET['destination'])) {
       $destination = drupal_get_destination();
