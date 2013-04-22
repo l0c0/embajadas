@@ -1,12 +1,11 @@
-name = Location Fax
-package = Location
-description = Allows you to add a fax number to a location.
-dependencies[] = location
+name = Location Entity
+description = Provide information about Location field to Entity module.
 core = 7.x
-files[] = location_fax.module
-files[] = location_fax.install
-files[] = location_fax.views.inc
+package = Location
 
+dependencies[] = location
+
+files[] = location_entity.module
 
 ; Information added by drupal.org packaging script on 2013-03-27
 version = "7.x-3.0-alpha8"
