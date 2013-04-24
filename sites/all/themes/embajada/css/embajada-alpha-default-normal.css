@@ -129,7 +129,7 @@
 				font-family: DINWeb-Ita;
 				src: url("DINWeb-Ita.woff") format("woff");
 			}*/
-			
+
 
 #page{
 background:url("../images/pattern-header.jpg") repeat-x;
@@ -253,7 +253,7 @@ float:right;
 font-family: DINWeb-Medium,sans-serif;
 font-size: 11px;
 color:#E5E5E5;
-padding: 47px 0 0;    
+padding: 47px 0 0;
 width: 230px;
 }
 
@@ -302,7 +302,7 @@ margin-right:0;
 float:left;
 
 padding-left: 0px;
-width:560px;
+width:540px;
 position:relative;
 }
 
@@ -504,8 +504,7 @@ font-weight:normal;
 	margin-top: 27px;
 }
 .front #region-content .panel-panel.grid-4.first{
-	margin-left:10px;
-	*margin-left:0px;
+	margin-left:0px;
 	margin-top:28px;
 }
 
@@ -562,8 +561,8 @@ background:url("../images/home-links.png") no-repeat right top;
 	text-align: center;
 	width: 110px;
 	}
-	
-	 .last-menu .pane-title 
+
+	 .last-menu .pane-title
 	 {
 	color: white;
 	float: left;
@@ -578,9 +577,9 @@ background:url("../images/home-links.png") no-repeat right top;
 	padding-top: 18px;
 	text-align: center;
 	width: 143px;
-		 
+
 		 }
-    
+
 .first-menu .pane-content,
 .middle-menu .pane-content,
 .last-menu .pane-content {
@@ -588,7 +587,7 @@ width:100%;
 clear:both;
 margin-top:5px;
 float:left;
-}  
+}
 
 .first-menu .pane-content,
 .middle-menu .pane-content{
@@ -711,7 +710,7 @@ width:175px;
 	background:white;
 	margin-left:5px;
 	width:170px;
-	/*background:url(../images/menu-right-icon.jpg) 2px 5px white no-repeat; commented by new icos in the menu 
+	/*background:url(../images/menu-right-icon.jpg) 2px 5px white no-repeat; commented by new icos in the menu
 max-height:40px;*/
 	float:left;
 	list-style-image: none;
@@ -724,7 +723,7 @@ max-height:40px;*/
 	color:#7F7F7F;
 	margin:2px 0px 0px 7px;
 	text-decoration:underline;
-	
+
 	padding:0px 0px 8px 28px;
 	float:left;
 }
@@ -1057,7 +1056,7 @@ background: none repeat scroll 0 0 #6C96C0;
     background: none repeat scroll 0 0 #6C96C0;
     width:500px;
 }
-    
+
 .overlay-inner-text{
 padding:5px 15px;
 position:absolute;
@@ -1170,7 +1169,7 @@ background: url("../images/close.png") no-repeat 0px 2px transparent;
 background-color:transparent !important;
 width:30px;
 height:30px;
-} 
+}
 #bottomNavClose:hover{
 background: url("../images/close.png") no-repeat 0px 2px transparent;
 }
@@ -1830,13 +1829,13 @@ text-align: justify;}
 	text-align: center;
 	text-transform: uppercase;
 	}
-	
+
 	.pane-acerca-de-la-embajada-embajador h2.node-title a,	.pane-acerca-de-la-embajada-embajador h2.node-title a:hover{
 		color: #27568C;
 		text-decoration:none;
 	}
-	
-	
+
+
 .pane-acerca-de-la-embajada-embajador .pane-content .field-main-image.alt
 {
 	width: 232px;
@@ -1860,17 +1859,17 @@ text-align: justify;}
 	text-align: center;
 	text-transform: uppercase;
 	}
-	
-	
+
+
 	.view-id-embajada_ubicaci_n .view-content h2.node-title a,	.view-id-embajada_ubicaci_n .view-content h2.node-title a:hover{
 			color: #27568C;
 			text-decoration:none;
 	}
-	
+
 	.gmap-map{
 	border: 1 solid #333 !important;
 	}
-	
+
 	.field-name-field-ubicaci-n .field-items{border: 1px solid #333333;}
 	h1 {
   font-size: 18px;
