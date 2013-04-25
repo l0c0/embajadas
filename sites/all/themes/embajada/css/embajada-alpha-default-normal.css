@@ -293,8 +293,8 @@ width:560px !important;
 padding-bottom:4px;
 margin-bottom:20px;
 height:185px;
-margin-left: 20px;
-*margin-left:0px !important;
+/*margin-left: 20px;*/
+margin-left: 0px !important;
 }
 
 .pane-slideshow{
@@ -302,7 +302,7 @@ margin-right:0;
 float:left;
 
 padding-left: 0px;
-width:540px;
+width:560px;
 position:relative;
 }
 
