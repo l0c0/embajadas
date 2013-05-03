@@ -118,6 +118,8 @@ function media_youtube_update_7200() {
  * Clean up file display formatters and migrate settings.
  */
 function media_youtube_update_7201() {
+  // Required to run file_displays_load() in update.php.
+  module_load_include('inc', 'file_entity', 'file_entity.file_api');
 
   // Get view modes.
   $video_view_modes = field_view_mode_settings('file', "video");
@@ -156,4 +158,11 @@ function media_youtube_update_7201() {
     }
   }
   return array();
+}
+
+/**
+ * Empty update function.
+ */
+function media_youtube_update_7202() {
+  // Code removed in response to http://drupal.org/node/1911970.
 }

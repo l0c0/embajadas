@@ -86,7 +86,7 @@ function css_injector_requirements($phase) {
       'title' => t('CSS Injector directory writable'),
       'description' => $status == REQUIREMENT_OK ? t('CSS Injector Directory %dir is writable', array('%dir' => $dir)) : t('Directory %dir is not writable', array('%dir' => $dir)),
       'severity' => $status,
-      'value' => t('Not writable'),
+      'value' => $status == REQUIREMENT_OK ? t('Writable') : t('Not writable'),
     ),
   );
   return $requirements;
