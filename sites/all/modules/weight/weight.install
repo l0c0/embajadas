@@ -6,19 +6,6 @@
 function weight_schema() {
   $schema['weight_settings'] = array(
     'description' => 'Table for storing Weight configuration',
-    'export' => array(
-      'key' => 'type',
-      'key name' => 'Type',
-      'primary key' => 'type',
-      'identifier' => 'settings',
-      'export type string' => 'export_type',
-      'api' => array(
-        'owner' => 'weight',
-        'api' => 'weight',
-        'minimum_version' => 1,
-        'current_version' => 1,
-      ),
-    ),
     'fields' => array(
       'id' => array(
         'description' => 'The primary identifier for a content type configuration',
@@ -54,6 +41,13 @@ function weight_schema() {
         'default' => 0,
       ),
       'weight_default' => array(
+        'type' => 'int',
+        'size' => 'tiny',
+        'unsigned' => FALSE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'sync_translations' => array(
         'type' => 'int',
         'size' => 'tiny',
         'unsigned' => FALSE,
@@ -319,6 +313,70 @@ function weight_update_7207() {
 function weight_update_7208() {
   db_drop_field('weight_settings', 'id');
   db_add_primary_key('weight_settings', array('type'));
+}
+
+/**
+ * Add sync_translations column to weight_settings.
+ */
+function weight_update_7209() {
+  $spec = array(
+    'type' => 'int',
+    'size' => 'tiny',
+    'unsigned' => FALSE,
+    'not null' => TRUE,
+    'default' => 0,
+  );
+  db_add_field('weight_settings', 'sync_translations', $spec);
+}
+
+/**
+ * Ensure all nodes of enabled types have a weight.
+ */
+function weight_update_7210(&$sandbox) {
+  $types = array();
+  $defaults = array();
+  $result = db_query('SELECT type, weight_default FROM {weight_settings} WHERE weight_enabled=1');
+  foreach ($result as $row) {
+    $types[] = $row->type;
+    $defaults[$row->type] = $row->weight_default;
+  }
+
+  if (!empty($types)) {
+    if (!isset($sandbox['progress'])) {
+      $sandbox['progress'] = 0;
+      $sandbox['last'] = 0;
+      $sandbox['max'] = db_query("SELECT COUNT(n.nid) FROM {node} n
+        LEFT OUTER JOIN {weight_weights} w ON w.entity_id = n.nid
+        WHERE type IN (:types) AND w.entity_id IS NULL",
+        array(':types' => $types))->fetchField();
+    }
+
+    $query = db_select('node', 'n');
+    $query->leftJoin('weight_weights', 'w', 'w.entity_id = n.nid');
+    $query
+      ->fields('n', array('nid', 'type'))
+      ->condition('n.type', $types, 'IN')
+      ->condition('n.nid', $sandbox['last'], '>')
+      ->isNull('w.entity_id')
+      ->orderBy('n.nid')
+      ->range(0, 200);
+    $nodes = $query->execute();
+
+    foreach ($nodes as $node) {
+      db_insert('weight_weights')
+        ->fields(array(
+          'entity_id' => $node->nid,
+          'entity_type' => 'node',
+          'weight' => $defaults[$node->type],
+        ))
+        ->execute();
+
+      $sandbox['progress']++;
+      $sandbox['last'] = $node->nid;
+    }
+
+    $sandbox['#finished'] = empty($sandbox['max']) ? 1 : ($sandbox['progress'] / $sandbox['max']);
+  }
 }
 
 /**

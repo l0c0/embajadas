@@ -1,6 +1,12 @@
 <?php
 
 class weight_handler_field_weight extends views_handler_field {
+
+  function init(&$view, &$options) {
+    parent::init($view, $options);
+    $this->additional_fields['nid'] = array('table' => 'node', 'field' => 'nid');
+  }
+
   function render($values) {
     return '<!--form-item-' . $this->options['id'] . '--' . $this->view->row_index . '-->';
   }
