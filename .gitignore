@@ -4,6 +4,7 @@
 *.gzip
 *.bzip2
 *.zip
+*.DS_Store
 error_log
 sites/*/settings*.php
 
