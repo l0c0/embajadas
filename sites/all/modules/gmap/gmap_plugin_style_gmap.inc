@@ -50,10 +50,10 @@ class gmap_plugin_style_gmap extends views_plugin_style {
 
     $options['tooltipenabled'] = array('default' => 0);
     $options['tooltipfield'] = array('default' => '');
-    
+
     $options['bubbletextenabled'] = array('default' => 0);
     $options['bubbletextfield'] = array('default' => '');
-    
+
     return $options;
   }
 
@@ -102,27 +102,13 @@ class gmap_plugin_style_gmap extends views_plugin_style {
       $lon_field = 'gmap_lon';
     }
     else if ($this->options['datasource'] == 'geofield') {
-      $lat_field = 'lat';
-      $lon_field = 'lon';
+      $lat_field = 'field_' . $this->options['geofield']; // "[0]['raw']['lat']";
+      $lon_field = 'field_' . $this->options['geofield']; // "[0]['raw']['lon']";
     }
     // Determine fieldname for latitude and longitude fields.
     else if ($this->options['datasource'] == 'fields') {
-      $lat_field_obj = $this->view->display_handler->get_handler('field', $this->options['latfield']);
-      $lon_field_obj = $this->view->display_handler->get_handler('field', $this->options['lonfield']);
-      $lat_field = $this->options['latfield'];
-      $lon_field = $this->options['lonfield'];
-    }
-
-    $tooltip_field = '';
-    if ($this->options['tooltipenabled']) {
-      $tooltip_field_obj = $this->view->display_handler->get_handler('field', $this->options['tooltipfield']);
-      $tooltip_field = $tooltip_field_obj->field_alias;
-    }
-    
-    $bubbletext_field_alias = '';
-    if ($this->options['bubbletextenabled']) {
-      $bubbletext_field_obj = $this->view->display_handler->get_handler('field', $this->options['bubbletextfield']);
-      $bubbletext_field_alias = $bubbletext_field_obj->field_alias;
+      $lat_field = 'field_' . $this->options['latfield']; // "[0]['raw']['value']";
+      $lon_field = 'field_' . $this->options['lonfield']; // "[0]['raw']['value']";
     }
 
     // Determine fieldname for marker field.
@@ -130,14 +116,12 @@ class gmap_plugin_style_gmap extends views_plugin_style {
       $marker_field_obj = $this->view->display_handler->get_handler('field', $this->options['markerfield']);
       $marker_field = 'field_' . $marker_field_obj->field;
     }
-    
+
     // Determine rmt field.
     if ($this->options['enablermt']) {
       $rmt_field_obj = $this->view->display_handler->get_handler('field', $this->options['rmtfield']);
       $rmt_field = $rmt_field_obj->field_alias;
     }
-
-    $markername = isset($this->options['markertype']) ? $this->options['markertype'] : 'drupal';
 
     $markertypes = variable_get('gmap_node_markers', array());
     if ($this->options['markers'] == 'nodetype') {
@@ -149,14 +133,15 @@ class gmap_plugin_style_gmap extends views_plugin_style {
 
     // Group the rows according to the grouping field, if specified.
     $sets = $this->render_grouping($this->view->result, $this->options['grouping']);
-    
-    // Let's make sure the individual fields are rendered 
+
+    // Let's make sure the individual fields are rendered
     $this->render_fields($this->view->result);
-    
+
     // Render each group separately and concatenate.  Plugins may override this
     // method if they wish some other way of handling grouping.
     $output = '';
     foreach ($sets as $title => $records) {
+      $markername = isset($this->options['markertype']) ? $this->options['markertype'] : 'drupal';
       $markers = array();
       $offsets = array();
       $center_lat = NULL;
@@ -191,23 +176,13 @@ class gmap_plugin_style_gmap extends views_plugin_style {
           $lat = (float)$row->{$lat_field};
           $lon = (float)$row->{$lon_field};
         }
-        else if ($this->options['datasource'] == 'geofield') {
-          $geofield_name = 'field_' . $this->options['geofield'];
-          $geofield = isset($row->{$geofield_name}[0]['raw']) ? $row->{$geofield_name}[0]['raw'] : NULL;
-          if ($geofield) {
-            $lat = (float)$geofield[$lat_field];
-            $lon = (float)$geofield[$lon_field];
-          }
+        elseif ($this->options['datasource'] == 'geofield') {
+          $lat = isset($row->{$lat_field}[0]['raw']['lat']) ? (float) $row->{$lat_field}[0]['raw']['lat'] : NULL;
+          $lon = isset($row->{$lon_field}[0]['raw']['lon']) ? (float) $row->{$lon_field}[0]['raw']['lon'] : NULL;
         }
-        else if ($this->options['datasource'] == 'fields') {
-          $custom_field_latname = 'field_' . $lat_field;
-          $custom_field_lonname = 'field_' . $lon_field;
-          $custom_field_lat = isset($row->{$custom_field_latname}[0]['raw']) ? $row->{$custom_field_latname}[0]['raw'] : NULL;
-          $custom_field_lon = isset($row->{$custom_field_lonname}[0]['raw']) ? $row->{$custom_field_lonname}[0]['raw'] : NULL;
-          if ($custom_field_lat && $custom_field_lon) {
-            $lat = (float)$custom_field_lat['value'];
-            $lon = (float)$custom_field_lon['value'];
-          }
+        elseif ($this->options['datasource'] == 'fields') {
+          $lat = isset($row->{$lat_field}[0]['raw']['value']) ? (float) $row->{$lat_field}[0]['raw']['value'] : NULL;
+          $lon = isset($row->{$lon_field}[0]['raw']['value']) ? (float) $row->{$lon_field}[0]['raw']['value'] : NULL;
         }
 
         // $row->nid is present in node views, views without node as the base table must include the nid field,
@@ -222,7 +197,9 @@ class gmap_plugin_style_gmap extends views_plugin_style {
           $center_lat = $lat;
         }
 
-        if (!empty($lat) && !empty($lon)) {
+        if ((!empty($lat) && !empty($lon))
+         && ($lat != 0 && $lon != 0)
+         && ($lat != 180 && $lon != 360)) {
           if ($this->options['markers'] == 'nodetype') {
             if (isset($markertypes[$row->gmap_node_type])) {
               $markername = $markertypes[$row->gmap_node_type];
@@ -251,13 +228,16 @@ class gmap_plugin_style_gmap extends views_plugin_style {
             $offsets[$markername] = 0;
           }
 
-          $tooltip = "";
-          if ($this->options['tooltipenabled'] && !empty($tooltip_field) && !empty($row->{$tooltip_field})) {
-            $tooltip = $row->{$tooltip_field};
+          $tooltip = '';
+          if ($this->options['tooltipenabled'] && !empty($this->rendered_fields[$row_index][$this->options['tooltipfield']])) {
+            $tooltip = $this->rendered_fields[$row_index][$this->options['tooltipfield']];
           }
-          
+
           $bubbletext = NULL;
-          if ($this->options['bubbletextenabled'] && !empty($bubbletext_field_alias) && !empty($row->{$bubbletext_field_alias})) {
+          if ($this->options['bubbletextenabled'] && !empty($this->options['bubbletextfield']) && !empty($this->rendered_fields[$row_index][$this->options['bubbletextfield']])) {
+            $bubbletext = $this->rendered_fields[$row_index][$this->options['bubbletextfield']];
+          }
+          elseif ($this->options['bubbletextenabled'] && $bubbletext_field_obj->real_field == 'nothing'){
             $bubbletext = $this->rendered_fields[$row_index][$this->options['bubbletextfield']];
           }
 
@@ -279,7 +259,7 @@ class gmap_plugin_style_gmap extends views_plugin_style {
           if ($this->options['enablermt']) {
             $marker['rmt'] = $row->{$rmt_field};
           }
-          else {
+          elseif (!empty($defaults['markermode'])) {
             // Marker mode: popup.
             if ($defaults['markermode'] == 1) {
               $marker['text'] = $this->row_plugin->render($row);
@@ -342,6 +322,8 @@ class gmap_plugin_style_gmap extends views_plugin_style {
       '#title' => t('Macro'),
       '#rows' => 3,
       '#default_value' => $this->options['macro'],
+      '#description' => t( 'Enter a macro. If left unchanged, it takes the default settings from <a href="!link">/admin/config/services/gmap</a>',
+                           array('!link' => '/admin/config/services/gmap') ),
     );
 
     $form['datasource'] = array(
@@ -382,7 +364,7 @@ class gmap_plugin_style_gmap extends views_plugin_style {
       '#description' => t('Select the Geofield source field.'),
       '#type' => 'select',
       '#options' => $field_options,
-      '#default_value' => $this->options['geofield'],
+      '#default_value' => isset($this->options['geofield']) ? $this->options['geofield'] : NULL,
       '#process' => array('ctools_dependent_process'),
       '#dependency' => array('edit-style-options-datasource' => array('geofield')),
     );
@@ -542,7 +524,7 @@ class gmap_plugin_style_gmap extends views_plugin_style {
       '#process' => array('ctools_dependent_process'),
       '#dependency' => array('edit-style-options-bubbletextenabled' => array(TRUE)),
     );
-    
+
   }
 
   /**

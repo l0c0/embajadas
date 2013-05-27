@@ -8,8 +8,8 @@
 /*global Drupal, GMarker, MarkerClusterer */
 
 // Replace to override marker creation
-Drupal.gmap.factory.marker = function (loc, opts) {
-  return new GMarker(loc, opts);
+Drupal.gmap.factory.marker = function (opts) {
+  return new google.maps.Marker(opts);
 };
 
 Drupal.gmap.addHandler('gmap', function (elem) {
@@ -24,7 +24,10 @@ Drupal.gmap.addHandler('gmap', function (elem) {
     if (Drupal.settings.gmap_markermanager.maxZoom){
       Drupal.settings.gmap_markermanager.maxZoom = parseInt(Drupal.settings.gmap_markermanager.maxZoom);
     }
-    obj.mc = new MarkerClusterer(obj.map, [], Drupal.settings.gmap_markermanager);
+	obj.mc = new MarkerClusterer(obj.map, [], {
+	  maxZoom: parseInt(Drupal.settings.gmap_markermanager["maxZoom"]),
+	  gridSize: parseInt(Drupal.settings.gmap_markermanager["gridSize"])
+	});
   });
   obj.bind('addmarker', function (marker) {
     // @@@ Would be really nice to have bulk adding support in gmap.
