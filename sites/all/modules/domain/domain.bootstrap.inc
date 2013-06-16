@@ -127,7 +127,7 @@ function _domain_bootstrap($phase) {
       // Get the domain_id of the request.
       $_domain = domain_resolve_host();
       // If we don't have a valid domain id now, we can't really go on, bootstrap fails.
-      if (empty($_domain) || !is_numeric($_domain['domain_id'])) {
+      if (empty($_domain['domain_id']) || !is_numeric($_domain['domain_id'])) {
         return FALSE;
       }
       break;
@@ -288,7 +288,7 @@ function domain_get_primary_table($table) {
  */
 function domain_settings_initialize() {
   global $base_url, $base_path, $base_root, $cookie_domain;
-  
+
   $is_https = isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) == 'on';
 
   if (isset($base_url)) {

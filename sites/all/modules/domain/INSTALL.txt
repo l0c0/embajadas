@@ -48,8 +48,8 @@ WARNINGS:
    be able to see all content on your site(s). To verify that Domain Access
    is working correctly, you will need to turn on its debug mode or view the
    site as a user without this permission. You may also enable the 'Enforce
-   rules on adminstrators' setting, which will apply Domain Access
-   restrcitions to all users. (See section 4.3.3 of README.txt for more
+   rules on administrators' setting, which will apply Domain Access
+   restrictions to all users. (See section 4.3.3 of README.txt for more
    details on this feature.)
 
 ----
@@ -137,7 +137,7 @@ ServerAlias *.ken.test foo.test
 
 In this case any subdomain (*.ken.test) and another domain foo.test resolve to
 the same location. When configuring DNS for Domain Access, the document root is
-the same for all the VirtualHosts. The documentRoot directive sets the directory
+the same for all the VirtualHosts. The DocumentRoot directive sets the directory
 from which httpd will serve files. For DA, there is one Drupal installation and
 it is this installation built on a single database that is serving the files.
 
@@ -238,8 +238,8 @@ other Drupal module.
 ----
 3.1   Using Drush
 
-When installing from drush, it is proper to pass the URI value for your
-site. Include the full path to the installation, as below:
+When installing from drush, you must pass the URI value for your site. Include
+the full path to the installation, as below:
 
   drush pm-enable domain --uri=http://example.com/optional_subdirectory
 
@@ -256,7 +256,7 @@ command:
 
   drush cache-clear
 
-When prompted, select either option [1] or option [5] to rebuild node access.
+When prompted, select either option [1] or option [9] to rebuild node access.
 
 ----
 3.2   After Installation

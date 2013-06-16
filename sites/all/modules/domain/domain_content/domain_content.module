@@ -3,8 +3,8 @@
 /**
  * @defgroup domain_content Domain Content : administer nodes for affiliate sites
  *
- * Allows for the batch editing of select node settings.  Refactors the default content
- * editng screen to show content only from selected domains.
+ * Allows for the batch editing of select node settings.  Re-factors the default content
+ * editing screen to show content only from selected domains.
  */
 
 /**
@@ -86,8 +86,13 @@ function domain_content_menu() {
  */
 function domain_content_permission() {
   $permissions = array(
+    'access the domain content page' => array(
+      'title' => t('Access lists of affiliated content'),
+      'description' => t('Allows users to see an overview of content visibile on their assigned domains.'),
+    ),
     'review content for all domains' => array(
       'title' => t('Review content for all domains'),
+      'description' => t('Allows users to see an overview of all content, listed by domain.'),
       'restrict access' => TRUE,
     ),
   );
@@ -101,10 +106,7 @@ function domain_content_permission() {
  *   The access check value passed from hook_menu().
  */
 function domain_content_menu_check() {
-  if (user_access('administer nodes')) {
-    return TRUE;
-  }
-  if (user_access('edit domain content') || user_access('review content for all domains')) {
+  if (user_access('access the domain content page') || user_access('review content for all domains')) {
     return TRUE;
   }
   return FALSE;
@@ -125,29 +127,17 @@ function domain_content_check($domain_id) {
   if (user_access('bypass node access') || user_access('review content for all domains')) {
     return TRUE;
   }
-  // Otherwise, the user must be able to edit domain nodes.
-  $rule = user_access('edit domain content');
+  // Otherwise, the user must be able to edit domain content.
+  $rule = user_access('access the domain content page');
   if (!$rule) {
     return FALSE;
   }
   $domains = domain_get_user_domains($user);
-  $key = ($domain_id == 0) ? -1 : $domain_id;
   // Can this user see the requested site?
-  if (!empty($domains[$key])) {
+  if (!empty($domains[$domain_id])) {
     return TRUE;
   }
   return FALSE;
-}
-
-/**
- * Implements hook_domainlinks()
- */
-function domain_content_domainlinks($domain) {
-  $links[] = array(
-    'title' => t('content'),
-    'path' => 'admin/domain/content/'. $domain['domain_id']
-  );
-  return $links;
 }
 
 /**
@@ -165,6 +155,7 @@ function domain_content_node_operations() {
     );
     return $operations;
   }
+  return array();
 }
 
 /**
@@ -177,21 +168,11 @@ function domain_content_node_operations_process($nodes) {
 }
 
 /**
- * The multiple delete form issues a redirect in its submit function.
- * So we must supply the proper path as a form element.
- *
- * @link http://drupal.org/node/336218
- */
-function domain_content_form_node_multiple_delete_confirm_alter(&$form, &$form_state) {
-  $form['#redirect'] = $_GET['q'];
-}
-
-/**
  * Allow domain assignment to be made from the default content form.
  */
 function domain_content_form_node_admin_content_alter(&$form, &$form_state) {
   // Privileged users can make global changes to Domain Access permissions.
-  if (!user_access('set domain access')) {
+  if (!user_access('set domain access') || isset($form['operation']['#value'])) {
     return;
   }
 
@@ -218,12 +199,10 @@ function domain_content_add_form_widget(&$form) {
   $options = array();
   $format = domain_select_format();
   foreach (domain_domains() as $data) {
-    // Cannot pass zero in checkboxes.
-    $key = $data['domain_id'] == 0 ? -1 : $data['domain_id'];
     // The domain must be valid.
     if ($data['valid'] || user_access('access inactive domains')) {
       // Filter checkboxes but not select lists.
-      $options[$key] = empty($format) ? check_plain($data['sitename']) : $data['sitename'];
+      $options[$data['domain_id']] = empty($format) ? check_plain($data['sitename']) : $data['sitename'];
     }
   }
   $form['domain'] = array(
@@ -247,7 +226,7 @@ function domain_content_add_form_widget(&$form) {
     '#title' => t('Send to all affiliates'),
     '#required' => FALSE,
     '#description' => t('Select if this content can be shown to all affiliates.  This setting will override the options below.'),
-    '#default_value' => variable_get('domain_behavior', DOMAIN_INSTALL_RULE),
+    '#default_value' => DOMAIN_INSTALL_RULE,
   );
   $form['domain']['domains'] = array(
     '#type' => empty($format) ? 'checkboxes' : 'select',
@@ -255,7 +234,7 @@ function domain_content_add_form_widget(&$form) {
     '#options' => $options,
     '#required' => FALSE,
     '#description' => t('Select which affiliates can access this content.'),
-    '#default_value' => array(($_domain['domain_id'] == 0) ? -1 : $_domain['domain_id']), // Can't use 0 as a checkbox value.
+    '#default_value' => array($_domain['domain_id']),
   );
   if ($format) {
     $form['domain']['domains']['#multiple'] = TRUE;

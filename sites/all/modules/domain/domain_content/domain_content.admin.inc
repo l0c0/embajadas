@@ -7,6 +7,9 @@
  * @ingroup domain_content
  */
 
+// Ensure that the node admin page functions are loaded.
+module_load_include('inc', 'node', 'node.admin');
+
 /**
  * The domain content page of menu callbacks.
  *
@@ -39,6 +42,7 @@ function domain_content_page() {
  */
 function domain_content_list() {
   global $user;
+  $build = array();
   $show_all = user_access('bypass node access') || user_access('review content for all domains');
 
   if (!$show_all) {
@@ -46,11 +50,6 @@ function domain_content_list() {
       return drupal_access_denied();
     }
     $user_domains = array_filter($user->domain_user);
-    // We don't bother to unset the -1 here, since it won't matter to the query.
-    // Cast the -1 as domain 0 for the query.
-    if (!empty($user->domain_user[-1])) {
-      $user_domains[] = 0;
-    }
   }
   // Table information
   $header = array(
@@ -62,7 +61,7 @@ function domain_content_list() {
   );
   // Set up the base query.
   $query = db_select('domain', 'd')
-    ->fields('d', array('domain_id', 'sitename', 'subdomain', 'scheme', 'valid'));
+    ->fields('d', array('is_default', 'domain_id', 'sitename', 'subdomain', 'scheme', 'valid'));
   // Filter by user access to assigned domains.
   if (!$show_all) {
     $query->condition('domain_id', $user_domains, 'IN');
@@ -70,6 +69,7 @@ function domain_content_list() {
   // Add the tablesort.
   $query = $query
     ->extend('TableSort')
+    ->orderBy('is_default', 'DESC')
     ->orderByHeader($header);
   $query = $query->extend('PagerDefault')->limit(variable_get('domain_list_size', DOMAIN_LIST_SIZE));
   // Get the domains.
@@ -77,21 +77,19 @@ function domain_content_list() {
   foreach ($result as $data) {
     $domains[] = (array) $data;
   }
-
   // Create the table.
   $rows = array();
   foreach ($domains as $domain) {
     $path = trim(domain_get_path($domain), '/');
     $rows[] = array(
-      $domain['domain_id'],
-      l(t('@sitename content', array('@sitename' => $domain['sitename'])), 'admin/domain/content/'. $domain['domain_id']),
+      $domain['domain_id'] . (($domain['is_default']) ? ' * ' : ''),
+      l(t('@sitename content', array('@sitename' => $domain['sitename'])), 'admin/domain/content/' . $domain['domain_id']),
       number_format((int) db_query("SELECT COUNT(nid) FROM {domain_access} WHERE gid = :gid AND realm = :realm", array(':gid' => $domain['domain_id'], ':realm' => 'domain_id'))->fetchField()),
       number_format((int) db_query("SELECT COUNT(n.nid) FROM {node} n INNER JOIN {domain_access} da ON n.nid = da.nid WHERE da.gid = :gid AND da.realm = :realm AND n.status = 0", array(':gid' => $domain['domain_id'], ':realm' => 'domain_id'))->fetchField()),
-      l(t('view site'), $path),
+      l(t('View @domain', array('@domain' => $domain['subdomain'])), $path),
     );
   }
 
-  // Add entry for 'all affiliates'
   $all = array(
     '-',
     l(t('Content assigned to all affiliates'), 'admin/domain/content/all'),
@@ -100,9 +98,6 @@ function domain_content_list() {
     '',
   );
   array_unshift($rows, $all);
-
-  // Build result table for UI
-  $build = array();
   if (!empty($rows)) {
     $output = '<p>' . t('The table below shows all the affiliates sites whose content you may edit. Click on the site name link to see all content assigned to that affiliate. Note that not all users may view unpublished content.') . '</p>';
     $build['header'] = array(
@@ -126,14 +121,16 @@ function domain_content_list() {
 
 /**
  * Content administration for a specific domain.
+ *
  * This callback puts the user on the current domain and then
- * fetches the appropirate content for batch editing.
+ * fetches the appropriate content for batch editing.
  *
  * @param $domain_id
  *   The unique identifier for the currently active domain.
  * @param $all_affiliates
  *   A boolean flag that indicates whether to grant the domain_site node access
  *   realm for this content view.
+ *
  * @return
  *   A link group for each domain the user can access.
  */
@@ -176,14 +173,15 @@ function domain_content_view($domain_id = NULL, $all_affiliates = FALSE) {
  * @return
  *   A themed HTML batch content editing form.
  */
-function domain_content_admin() {
-  // Load the form basics for administering nodes.
-  include_once drupal_get_path('module', 'node') .'/node.admin.inc';
-  $form = array();
+function domain_content_admin($form, &$form_state) {
   $form['#attached']['css'] = array(drupal_get_path('module', 'domain_content') . '/domain_content.css');
 
   if (isset($form_state['values']['operation']) && $form_state['values']['operation'] == 'delete') {
-    return node_multiple_delete_confirm($form, $form_state, array_filter($form_state['values']['nodes']));
+    $form = node_multiple_delete_confirm($form, $form_state, array_filter($form_state['values']['nodes']));
+    // Set the proper path for form actions.
+    $form['actions']['cancel']['#href'] = $form['actions']['cancel']['#options']['path'] = request_path();
+    $form['#submit'][] = 'domain_content_delete_multiple_submit';
+    return $form;
   }
   $form['filter'] = node_filter_form();
   $form['#submit'][] = 'node_filter_form_submit';
@@ -202,13 +200,19 @@ function domain_content_admin() {
 }
 
 /**
+ * On delete confirmation, redirect properly.
+ */
+function domain_content_delete_multiple_submit($form, &$form_state) {
+  $form_state['redirect'] = $form['actions']['cancel']['#href'];
+}
+
+/**
  * Rewrites node_admin_nodes() to use db_rewrite_sql().
  *
  * @return
  *   A form array according to the FormsAPI.
  */
 function domain_content_form() {
-  module_load_include('inc', 'node', 'node.admin');
   $_domain = domain_get_domain();
   $admin_access = user_access('administer nodes');
 
@@ -217,11 +221,24 @@ function domain_content_form() {
     '#type' => 'fieldset',
     '#title' => t('Update options'),
     '#attributes' => array('class' => array('container-inline')),
-    '#access' => $admin_access,
   );
   $options = array();
-  foreach (module_invoke_all('node_operations') as $operation => $array) {
-    $options[$operation] = $array['label'];
+  // Get the actions the user may perform.
+  if ($admin_access) {
+    foreach (module_invoke_all('node_operations') as $operation => $array) {
+      $options[$operation] = $array['label'];
+    }
+  }
+  // Otherwise, only allow domain content module operations.
+  else {
+    $list = domain_content_node_operations();
+    foreach ($list as $key => $value) {
+      $options[$key] = $value['label'];
+    }
+  }
+  // No options? No form access.
+  if (empty($options)) {
+    $form['options']['#access'] = FALSE;
   }
   $form['options']['operation'] = array(
     '#type' => 'select',
@@ -293,7 +310,7 @@ function domain_content_form() {
   }
 
   $nids = $query
-    ->fields('n',array('nid'))
+    ->fields('n', array('nid'))
     ->limit(50)
     ->orderByHeader($header)
     ->execute()
@@ -397,10 +414,8 @@ function domain_content_view_domains($node) {
     $node_domains = array();
     if (!empty($node->domains)) {
       foreach ($node->domains as $domain) {
-        // The root domain is stored as -1, but cast as zero in the global variable.
-        $key = ($domain == -1) ? 0 : $domain;
         // Convert the domain ids to data so we can print them.
-        $node_domains[] = domain_lookup($key);
+        $node_domains[] = domain_lookup($domain);
       }
     }
     // If we have multiple domains, print them.
@@ -428,27 +443,18 @@ function domain_content_view_domains($node) {
  *
  * @param &$operations
  *   The complete list of operations, passed by reference.
+ *
  * @return
  *   No return value. Modify by reference.
  */
 function domain_content_filter_operations(&$operations) {
-  $settings = variable_get('domain_form_elements', array('options', 'delete', 'comment_settings', 'path'));
   // Administer nodes can do anything.
   if (user_access('administer nodes')) {
     return;
   }
-  // You must be able to edit to view this page, so check for the new delete perm.
+  // Check for the delete perm.
   if (!user_access('delete domain content')) {
     unset($operations['delete']);
-  }
-  // The publish, promote and sticky operations all depend on having $settings['options'].
-  if (!in_array('options', array_filter($settings))) {
-    unset($operations['publish']);
-    unset($operations['unpublish']);
-    unset($operations['promote']);
-    unset($operations['demote']);
-    unset($operations['sticky']);
-    unset($operations['unsticky']);
   }
 }
 
@@ -482,6 +488,12 @@ function domain_content_alter_node_query(QueryAlterableInterface $query, $all_af
           ->condition("{$access_alias}.gid", $domain_id)
           ->condition("{$access_alias}.realm", 'domain_id')
         );
+        if (user_access('view unpublished domain content')) {
+          $or->condition(db_and()
+            ->condition("{$access_alias}.gid", $domain_id)
+            ->condition("{$access_alias}.realm", 'domain_unpublished')
+          );
+        }
       }
       $query->condition($or);
       // Node module will not have run, so add the distinct.
