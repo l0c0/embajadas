@@ -1,0 +1,122 @@
+/* Created by Artisteer v4.0.0.58475 */
+
+.clearfix {
+   zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).className="cleared");
+}
+
+.Cancilleria_textblock > div {
+   display: block;
+   line-height: normal;
+   zoom: 1;
+}
+
+.Cancilleria_header
+{
+   z-index: 1;
+}
+
+.Cancilleria_hmenu>li, .Cancilleria_hmenu>li>a
+{
+   display: inline !important;
+   zoom: 1;
+   float: none !important;
+   vertical-align: top;
+}
+ul.Cancilleria_hmenu, ul.Cancilleria_hmenu ul {
+   zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).className="cleared");
+}
+ul.Cancilleria_hmenu>li:first-child {
+   padding-right:1px;
+}
+ul.Cancilleria_hmenu>li{
+   zoom:expression(runtimeStyle.zoom=1,insertBefore(document.createElement('span'),firstChild).className='Cancilleria_hmenu-separator');
+}
+ul.Cancilleria_hmenu>li>span.Cancilleria_hmenu-separator
+{
+   position:absolute;
+   display: block;
+   top:0;
+   left:  -1px;
+   width: 1px;
+   height: 27px;
+   background: url('images/menuseparator.png') center center no-repeat;
+}
+ul.Cancilleria_hmenu>li:first-child>span.Cancilleria_hmenu-separator
+{
+   display:none;
+}
+
+ul.Cancilleria_hmenu ul, .desktop-nav ul.Cancilleria_hmenu>li.ext:hover>a{
+   background-color: #2B1399 !important;
+}
+
+.Cancilleria_content-layout, .Cancilleria_content-layout-row, .Cancilleria_layout-cell 
+{
+   display: block;
+   zoom: 1;
+}
+.Cancilleria_layout-cell
+{
+   position:relative;
+   float: left;
+   clear: right;
+}
+
+ul.Cancilleria_vmenu, ul.Cancilleria_vmenu ul, ul.Cancilleria_vmenu li{
+   zoom: 1;
+}
+
+ul.Cancilleria_vmenu ul 
+{
+}
+
+input[type="text"]
+{
+   margin:0 0 0 -3px;
+   zoom:expression(runtimeStyle.zoom = 1, parentNode.insertBefore(document.createElement('div'), this).appendChild(this));
+}
+
+* html input[type="text"]
+{
+   margin :0;
+}
+
+form.Cancilleria_search>input[type="text"]
+{
+   margin:0 0 0 -3px;
+   zoom:expression(runtimeStyle.zoom = 1, parentNode.insertBefore(document.createElement('div'), this).appendChild(this));
+}
+
+form.Cancilleria_search div>input[type="text"]
+{
+   width: 100%;
+}
+
+* html form.Cancilleria_search>input[type="text"] 
+{
+   margin :0;
+}
+
+.Cancilleria_postheadericons span{
+   zoom: 1;
+}
+.Cancilleria_postcontent {
+   height: 1%;
+}
+
+.Cancilleria_postfootericons span{
+   zoom: 1;
+}
+.close-alt, .arrow-right-alt, .arrow-left-alt {
+   display: block !important;
+}
+.cw, .ccw {
+   display: none !important;
+}
+
+.Cancilleria_content 
+{
+   width: auto;
+   float:none;
+}
+

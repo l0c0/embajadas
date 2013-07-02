@@ -1,0 +1,4208 @@
+/* Created by Artisteer v4.0.0.58475 */
+
+#Cancilleria_main
+{
+   background: #FFFFFF;
+   margin:0 auto;
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: normal;
+   font-style: normal;
+   text-transform: none;
+   font-variant: normal;
+   position: relative;
+   width: 100%;
+   min-height: 100%;
+   left: 0;
+   top: 0;
+   cursor:default;
+   overflow:hidden;
+}
+table, ul.Cancilleria_hmenu
+{
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: normal;
+   font-style: normal;
+   text-transform: none;
+   font-variant: normal;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, ul, ol, li
+{
+   margin: 0;
+   padding: 0;
+}
+
+/* Reset buttons border. It's important for input and button tags.
+ * border-collapse should be separate for shadow in IE.
+ */
+.Cancilleria_button
+{
+   border-collapse: separate;
+   -webkit-background-origin: border !important;
+   -moz-background-origin: border !important;
+   background-origin: border-box !important;
+   background: #3F3F40;
+   background: rgba(63, 63, 64, 0.8);
+   -webkit-border-radius:3px;
+   -moz-border-radius:3px;
+   border-radius:3px;
+   border:1px solid rgba(71, 71, 72, 0.8);
+   padding:0 20px;
+   margin:0 auto;
+   height:25px;
+}
+
+.Cancilleria_postcontent,
+.Cancilleria_postheadericons,
+.Cancilleria_postfootericons,
+.Cancilleria_blockcontent,
+ul.Cancilleria_vmenu a
+{
+   text-align: left;
+}
+
+.Cancilleria_postcontent,
+.Cancilleria_postcontent li,
+.Cancilleria_postcontent table,
+.Cancilleria_postcontent a,
+.Cancilleria_postcontent a:link,
+.Cancilleria_postcontent a:visited,
+.Cancilleria_postcontent a.visited,
+.Cancilleria_postcontent a:hover,
+.Cancilleria_postcontent a.hovered
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   line-height: 125%;
+}
+
+.Cancilleria_postcontent p
+{
+   margin: 10px 0 0;
+   text-align: left;
+}
+
+.Cancilleria_postcontent h1, .Cancilleria_postcontent h1 a, .Cancilleria_postcontent h1 a:link, .Cancilleria_postcontent h1 a:visited, .Cancilleria_postcontent h1 a:hover,
+.Cancilleria_postcontent h2, .Cancilleria_postcontent h2 a, .Cancilleria_postcontent h2 a:link, .Cancilleria_postcontent h2 a:visited, .Cancilleria_postcontent h2 a:hover,
+.Cancilleria_postcontent h3, .Cancilleria_postcontent h3 a, .Cancilleria_postcontent h3 a:link, .Cancilleria_postcontent h3 a:visited, .Cancilleria_postcontent h3 a:hover,
+.Cancilleria_postcontent h4, .Cancilleria_postcontent h4 a, .Cancilleria_postcontent h4 a:link, .Cancilleria_postcontent h4 a:visited, .Cancilleria_postcontent h4 a:hover,
+.Cancilleria_postcontent h5, .Cancilleria_postcontent h5 a, .Cancilleria_postcontent h5 a:link, .Cancilleria_postcontent h5 a:visited, .Cancilleria_postcontent h5 a:hover,
+.Cancilleria_postcontent h6, .Cancilleria_postcontent h6 a, .Cancilleria_postcontent h6 a:link, .Cancilleria_postcontent h6 a:visited, .Cancilleria_postcontent h6 a:hover,
+.Cancilleria_blockheader .t, .Cancilleria_blockheader .t a, .Cancilleria_blockheader .t a:link, .Cancilleria_blockheader .t a:visited, .Cancilleria_blockheader .t a:hover,
+.Cancilleria_vmenublockheader .t, .Cancilleria_vmenublockheader .t a, .Cancilleria_vmenublockheader .t a:link, .Cancilleria_vmenublockheader .t a:visited, .Cancilleria_vmenublockheader .t a:hover,
+.Cancilleria_headline, .Cancilleria_headline a, .Cancilleria_headline a:link, .Cancilleria_headline a:visited, .Cancilleria_headline a:hover,
+.Cancilleria_slogan, .Cancilleria_slogan a, .Cancilleria_slogan a:link, .Cancilleria_slogan a:visited, .Cancilleria_slogan a:hover,
+.Cancilleria_postheader, .Cancilleria_postheader a, .Cancilleria_postheader a:link, .Cancilleria_postheader a:visited, .Cancilleria_postheader a:hover
+{
+   font-size: 18px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+.Cancilleria_postcontent a, .Cancilleria_postcontent a:link
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   color: #000000;
+}
+
+.Cancilleria_postcontent a, .Cancilleria_postcontent a:link h3
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   color: #000000;
+}
+.Cancilleria_postcontent a, .Cancilleria_postcontent a:hover h3
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   color: #FFFFFF;
+}
+
+.Cancilleria_postcontent a:visited, .Cancilleria_postcontent a.visited
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   color: #000000;
+}
+
+.Cancilleria_postcontent  a:hover, .Cancilleria_postcontent a.hover
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: underline;
+   text-transform: none;
+   font-variant: normal;
+   color: #2C139A;
+}
+
+.Cancilleria_postcontent h1
+{
+   color: #000000;
+   margin:0;
+   font-size: 18px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+.Cancilleria_blockcontent h1
+{
+   margin:0;
+   font-size: 18px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+.Cancilleria_postcontent h1 a, .Cancilleria_postcontent h1 a:link, .Cancilleria_postcontent h1 a:hover, .Cancilleria_postcontent h1 a:visited, .Cancilleria_blockcontent h1 a, .Cancilleria_blockcontent h1 a:link, .Cancilleria_blockcontent h1 a:hover, .Cancilleria_blockcontent h1 a:visited
+{
+   font-size: 18px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+.Cancilleria_postcontent h2
+{
+   color: #000000;
+   margin:0;
+   font-size: 16px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+.Cancilleria_blockcontent h2
+{
+   margin:0;
+   font-size: 16px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+.Cancilleria_postcontent h2 a, .Cancilleria_postcontent h2 a:link, .Cancilleria_postcontent h2 a:hover, .Cancilleria_postcontent h2 a:visited, .Cancilleria_blockcontent h2 a, .Cancilleria_blockcontent h2 a:link, .Cancilleria_blockcontent h2 a:hover, .Cancilleria_blockcontent h2 a:visited
+{
+   font-size: 16px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+.Cancilleria_postcontent h3
+{
+   color: #000000;
+   margin:0;
+   font-size: 14px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+.Cancilleria_blockcontent h3
+{
+   margin:0;
+   font-size: 14px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+.Cancilleria_postcontent h3 a, .Cancilleria_postcontent h3 a:link, .Cancilleria_postcontent h3 a:hover, .Cancilleria_postcontent h3 a:visited, .Cancilleria_blockcontent h3 a, .Cancilleria_blockcontent h3 a:link, .Cancilleria_blockcontent h3 a:hover, .Cancilleria_blockcontent h3 a:visited
+{
+   font-size: 14px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+.Cancilleria_postcontent h4
+{
+   color: #000000;
+   margin:0;
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+.Cancilleria_blockcontent h4
+{
+   margin:0;
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+.Cancilleria_postcontent h4 a, .Cancilleria_postcontent h4 a:link, .Cancilleria_postcontent h4 a:hover, .Cancilleria_postcontent h4 a:visited, .Cancilleria_blockcontent h4 a, .Cancilleria_blockcontent h4 a:link, .Cancilleria_blockcontent h4 a:hover, .Cancilleria_blockcontent h4 a:visited
+{
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+.Cancilleria_postcontent h5
+{
+   color: #000000;
+   margin:0;
+   font-size: 11px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+.Cancilleria_blockcontent h5
+{
+   margin:0;
+   font-size: 11px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+.Cancilleria_postcontent h5 a, .Cancilleria_postcontent h5 a:link, .Cancilleria_postcontent h5 a:hover, .Cancilleria_postcontent h5 a:visited, .Cancilleria_blockcontent h5 a, .Cancilleria_blockcontent h5 a:link, .Cancilleria_blockcontent h5 a:hover, .Cancilleria_blockcontent h5 a:visited
+{
+   font-size: 11px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+.Cancilleria_postcontent h6
+{
+   color: #000000;
+   margin:0;
+   font-size: 10px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+.Cancilleria_blockcontent h6
+{
+   margin:0;
+   font-size: 10px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+.Cancilleria_postcontent h6 a, .Cancilleria_postcontent h6 a:link, .Cancilleria_postcontent h6 a:hover, .Cancilleria_postcontent h6 a:visited, .Cancilleria_blockcontent h6 a, .Cancilleria_blockcontent h6 a:link, .Cancilleria_blockcontent h6 a:hover, .Cancilleria_blockcontent h6 a:visited
+{
+   font-size: 10px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+header, footer, article, nav, #Cancilleria_hmenu-bg, .Cancilleria_sheet, .Cancilleria_hmenu a, .Cancilleria_vmenu a, .Cancilleria_slidenavigator > a, .Cancilleria_checkbox:before, .Cancilleria_radiobutton:before
+{
+   -webkit-background-origin: border !important;
+   -moz-background-origin: border !important;
+   background-origin: border-box !important;
+}
+
+header, footer, article, nav, #Cancilleria_hmenu-bg, .Cancilleria_sheet, .Cancilleria_slidenavigator > a, .Cancilleria_checkbox:before, .Cancilleria_radiobutton:before
+{
+   display: block;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+ul
+{
+   list-style-type: disc;
+}
+
+ol
+{
+   list-style-position: inside;
+}
+
+html, body
+{
+   height: 100%;
+}
+
+body
+{
+   padding: 0;
+   margin:0;
+   min-width: 960px;
+   color: #000000;
+}
+
+.clearfix:before, .clearfix:after {
+   content: "";
+   display: table;
+}
+
+.clearfix:after {
+   clear: both;
+}
+
+.cleared {
+   font: 0/0 serif;
+   clear: both;
+}
+
+form
+{
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+table.position
+{
+   position: relative;
+   width: 100%;
+   table-layout: fixed;
+}
+
+li h1, .Cancilleria_postcontent li h1, .Cancilleria_blockcontent li h1
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   margin:1px;
+}
+li h2, .Cancilleria_postcontent li h2, .Cancilleria_blockcontent li h2
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   margin:1px;
+}
+li h3, .Cancilleria_postcontent li h3, .Cancilleria_blockcontent li h3
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   margin:1px;
+}
+li h4, .Cancilleria_postcontent li h4, .Cancilleria_blockcontent li h4
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   margin:1px;
+}
+li h5, .Cancilleria_postcontent li h5, .Cancilleria_blockcontent li h5
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   margin:1px;
+}
+li h6, .Cancilleria_postcontent li h6, .Cancilleria_blockcontent li h6
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   margin:1px;
+}
+li p, .Cancilleria_postcontent li p, .Cancilleria_blockcontent li p
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   margin:1px;
+}
+
+
+.Cancilleria_shapes
+{
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   overflow: hidden;
+   z-index: 0;
+}
+
+.Cancilleria_slider-inner {
+   position: relative;
+   overflow: hidden;
+   width: 100%;
+   height: 100%;
+}
+
+.Cancilleria_slidenavigator > a {
+   display: inline-block;
+   vertical-align: middle;
+   outline-style: none;
+   font-size: 1px;
+}
+
+.Cancilleria_slidenavigator > a:last-child {
+   margin-right: 0 !important;
+}
+
+
+
+
+
+.Cancilleria_footer .layout-item-old-0 { margin-top: 1px;margin-right: 10px;margin-bottom: 1px;margin-left: 10px;  }
+.Cancilleria_footer .layout-item-old-1 { border-top-style:solid;border-right-style:solid;border-bottom-style:solid;border-left-style:solid;border-width:0px;border-top-color:#94ABE6;border-right-color:#94ABE6;border-bottom-color:#94ABE6;border-left-color:#94ABE6;  border-collapse: separate; border-radius: 0px;  }
+.Cancilleria_footer .layout-item-old-2 { padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px; border-radius: 0px;  }
+.ie7 .post .layout-cell {border:none !important; padding:0 !important; }
+.ie6 .post .layout-cell {border:none !important; padding:0 !important; }
+
+.Cancilleria_sheet
+{
+   background: #F5F5F5;
+   margin:0 auto;
+   position:relative;
+   cursor:auto;
+   width: 960px;
+   z-index: auto !important;
+}
+
+.Cancilleria_header
+{
+   margin:0 auto;
+   height: 180px;
+   background-image: url('images/object1448112927.png'), url('images/header.jpg');
+   background-position: 772px 15px, 0 0;
+   background-repeat: no-repeat;
+   position: relative;
+   z-index: auto !important;
+}
+
+.responsive .Cancilleria_header
+{
+   background-image: url('images/header.jpg');
+   background-position: center center;
+}
+
+.Cancilleria_header > .region, .Cancilleria_header > .block
+{
+   position:absolute;
+   z-index:101;
+}
+
+.Cancilleria_nav
+{
+   background: #2C139A;
+   z-index: 100;
+   font-size: 12px;
+   position: absolute;
+   margin: 0;
+   bottom:   0;
+   width: 100%;
+   text-align: justify;
+}
+
+ul.Cancilleria_hmenu a, ul.Cancilleria_hmenu a:link, ul.Cancilleria_hmenu a:visited, ul.Cancilleria_hmenu a:hover
+{
+   outline: none;
+   position: relative;
+   z-index: 11;
+}
+
+ul.Cancilleria_hmenu, ul.Cancilleria_hmenu ul
+{
+   display: block;
+   margin: 0;
+   padding: 0;
+   border: 0;
+   list-style-type: none;
+}
+
+ul.Cancilleria_hmenu li
+{
+   position: relative;
+   z-index: 5;
+   background: none;
+   margin: 0;
+   padding: 0;
+   border: 0;
+}
+
+ul.Cancilleria_hmenu li:hover
+{
+   z-index: 10000;
+   white-space: normal;
+}
+
+ul.Cancilleria_hmenu ul:after
+{
+   content: ".";
+   height: 0;
+   display: block;
+   visibility: hidden;
+   overflow: hidden;
+   clear: both;
+}
+
+ul.Cancilleria_hmenu, ul.Cancilleria_hmenu ul
+{
+   min-height: 0;
+}
+
+ul.Cancilleria_hmenu
+{
+   display: inline-block;
+   vertical-align: bottom;
+   width: 100%;
+   text-align: justify;
+   line-height: 0;
+   font-size: 1px;
+}
+
+.Cancilleria_nav:before
+{
+   content:' ';
+}
+
+ul.Cancilleria_hmenu .justify-helper
+{
+   width: 100%;
+   height: 0;
+   visibility: hidden;
+   display: inline-block;
+}
+ul.Cancilleria_hmenu>li
+{
+   display: inline-block;
+   position: relative;
+   text-align: center;
+   vertical-align: top;
+   margin-left: 1px;
+}
+
+.Cancilleria_menuitemcontainer
+{
+   margin:0 auto;
+}
+
+ul.Cancilleria_hmenu>li:first-child {
+   margin-left: 0;
+}
+ul.Cancilleria_hmenu>li:last-child, ul.Cancilleria_hmenu>li.last-child {
+   margin-right: 0;
+}
+
+ul.Cancilleria_hmenu>li>a
+{
+   padding:0 12px;
+   margin:0 auto;
+   position: relative;
+   display: block;
+   height: 27px;
+   cursor: pointer;
+   text-decoration: none;
+   color: #FFFFFF;
+   line-height: 27px;
+   text-align: center;
+}
+
+.Cancilleria_hmenu a,
+.Cancilleria_hmenu a:link,
+.Cancilleria_hmenu a:visited,
+.Cancilleria_hmenu a.active,
+.Cancilleria_hmenu a:hover
+{
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   text-align: left;
+}
+
+ul.Cancilleria_hmenu>li>a.active
+{
+   padding:0 12px;
+   margin:0 auto;
+   color: #FFFFFF;
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+}
+
+ul.Cancilleria_hmenu>li>a:visited,
+ul.Cancilleria_hmenu>li>a:hover,
+ul.Cancilleria_hmenu>li:hover>a {
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+}
+
+ul.Cancilleria_hmenu>li>a:hover, .desktop ul.Cancilleria_hmenu>li:hover>a
+{
+   background: #2B1399;
+   padding:0 12px;
+   margin:0 auto;
+}
+ul.Cancilleria_hmenu>li>a:hover,
+.desktop-nav ul.Cancilleria_hmenu>li:hover>a {
+   color: #FFFFFF;
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: underline;
+}
+
+ul.Cancilleria_hmenu>li.justify-separator
+{
+   width: 1px;
+   height: 27px;
+   background: url('images/menuseparator.png') center center no-repeat;
+}
+
+ul.Cancilleria_hmenu li li a
+{
+   background: #2B1399;
+   padding:0 22px;
+   margin:0 auto;
+}
+ul.Cancilleria_hmenu li li
+{
+   float: none;
+   width: auto;
+   margin-top: 0;
+   margin-bottom: 0;
+}
+
+.desktop-nav ul.Cancilleria_hmenu li li ul>li:first-child
+{
+   margin-top: 0;
+}
+
+ul.Cancilleria_hmenu li li ul>li:last-child
+{
+   margin-bottom: 0;
+}
+
+.Cancilleria_hmenu ul a
+{
+   display: block;
+   white-space: nowrap;
+   height: 27px;
+   min-width: 7em;
+   border: 0 solid transparent;
+   text-align: left;
+   line-height: 27px;
+   color: #FFFFFF;
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   margin:0;
+}
+
+.Cancilleria_hmenu ul a:link,
+.Cancilleria_hmenu ul a:visited,
+.Cancilleria_hmenu ul a.active,
+.Cancilleria_hmenu ul a:hover
+{
+   text-align: left;
+   line-height: 27px;
+   color: #FFFFFF;
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   margin:0;
+}
+
+ul.Cancilleria_hmenu ul li a:hover, .desktop ul.Cancilleria_hmenu ul li:hover>a
+{
+   background: #23109E;
+   margin:0 auto;
+}
+.Cancilleria_hmenu ul a:hover
+{
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: underline;
+}
+
+.Cancilleria_hmenu ul li a:hover
+{
+   color: #FFFFFF;
+}
+
+.desktop-nav .Cancilleria_hmenu ul li:hover>a
+{
+   color: #FFFFFF;
+}
+
+ul.Cancilleria_hmenu ul:before
+{
+   background: #2B1399;
+   margin:0 auto;
+   display: block;
+   position: absolute;
+   content: ' ';
+   z-index: 1;
+}
+.desktop-nav ul.Cancilleria_hmenu li:hover>ul {
+   visibility: visible;
+   top: 100%;
+}
+.desktop-nav ul.Cancilleria_hmenu li li:hover>ul {
+   top: 0;
+   left: 100%;
+}
+
+ul.Cancilleria_hmenu ul
+{
+   visibility: hidden;
+   position: absolute;
+   z-index: 10;
+   left: 0;
+   top: 0;
+   background-image: url('images/spacer.gif');
+}
+
+.desktop-nav ul.Cancilleria_hmenu>li>ul
+{
+   padding: 10px 30px 30px 30px;
+   margin: -10px 0 0 -30px;
+}
+
+.desktop-nav ul.Cancilleria_hmenu ul ul
+{
+   padding: 30px 30px 30px 10px;
+   margin: -30px 0 0 -10px;
+}
+
+.desktop-nav ul.Cancilleria_hmenu ul.Cancilleria_hmenu-left-to-right
+{
+   right: auto;
+   left: 0;
+   margin: -10px 0 0 -30px;
+}
+
+.desktop-nav ul.Cancilleria_hmenu ul.Cancilleria_hmenu-right-to-left
+{
+   left: auto;
+   right: 0;
+   margin: -10px -30px 0 0;
+}
+
+.desktop-nav ul.Cancilleria_hmenu li li:hover>ul.Cancilleria_hmenu-left-to-right {
+   right: auto;
+   left: 100%;
+}
+.desktop-nav ul.Cancilleria_hmenu li li:hover>ul.Cancilleria_hmenu-right-to-left {
+   left: auto;
+   right: 100%;
+}
+
+.desktop-nav ul.Cancilleria_hmenu ul ul.Cancilleria_hmenu-left-to-right
+{
+   right: auto;
+   left: 0;
+   padding: 30px 30px 30px 10px;
+   margin: -30px 0 0 -10px;
+}
+
+.desktop-nav ul.Cancilleria_hmenu ul ul.Cancilleria_hmenu-right-to-left
+{
+   left: auto;
+   right: 0;
+   padding: 30px 10px 30px 30px;
+   margin: -30px -10px 0 0;
+}
+
+.desktop-nav ul.Cancilleria_hmenu li ul>li:first-child {
+   margin-top: 0;
+}
+.desktop-nav ul.Cancilleria_hmenu li ul>li:last-child {
+   margin-bottom: 0;
+}
+
+.desktop-nav ul.Cancilleria_hmenu ul ul:before
+{
+   border-radius: 0;
+   top: 30px;
+   bottom: 30px;
+   right: 30px;
+   left: 10px;
+}
+
+.desktop-nav ul.Cancilleria_hmenu>li>ul:before
+{
+   top: 10px;
+   right: 30px;
+   bottom: 30px;
+   left: 30px;
+}
+
+.desktop-nav ul.Cancilleria_hmenu>li>ul.Cancilleria_hmenu-left-to-right:before {
+   right: 30px;
+   left: 30px;
+}
+.desktop-nav ul.Cancilleria_hmenu>li>ul.Cancilleria_hmenu-right-to-left:before {
+   right: 30px;
+   left: 30px;
+}
+.desktop-nav ul.Cancilleria_hmenu ul ul.Cancilleria_hmenu-left-to-right:before {
+   right: 30px;
+   left: 10px;
+}
+.desktop-nav ul.Cancilleria_hmenu ul ul.Cancilleria_hmenu-right-to-left:before {
+   right: 10px;
+   left: 30px;
+}
+
+.desktop-nav ul.Cancilleria_hmenu>li.ext>a
+{
+   white-space: nowrap;
+}
+
+.desktop-nav ul.Cancilleria_hmenu>li.ext>a:hover,
+.desktop-nav ul.Cancilleria_hmenu>li.ext:hover>a,
+.desktop-nav ul.Cancilleria_hmenu>li.ext:hover>a.active
+{
+   background: none;
+   /* default padding + border size */
+  padding: 0 12px 0 12px;
+   /* margin for shadow */
+  margin: -0 -0 0 -0;
+   overflow: hidden;
+   position: relative;
+   border: none;
+   border-radius: 0;
+   box-shadow: none;
+   color: #E2E8F8;
+}
+
+.desktop-nav ul.Cancilleria_hmenu>li.ext>a:hover:before,
+.desktop-nav ul.Cancilleria_hmenu>li.ext:hover>a:before,
+.desktop-nav ul.Cancilleria_hmenu>li.ext:hover>a.active:before
+{
+   position: absolute;
+   content: ' ';
+   /* top, right, left - for shadow */
+  top: 0;
+   right: 0;
+   left: 0;
+   /* border + shadow */
+  bottom: -0;
+   background-color: #2B1399;
+   border: 0 solid transparent;
+   border-top-left-radius: 0;
+   border-top-right-radius: 0;
+   box-shadow: 0 0 0 rgba(0, 0, 0, 0.8);
+   z-index: -1;
+}
+
+.desktop-nav ul.Cancilleria_hmenu>li.ext:hover>ul
+{
+   padding-top: 0;
+   /* menu bar padding */
+  margin-top: 0;
+}
+
+.desktop-nav ul.Cancilleria_hmenu>li.ext:hover>ul:before
+{
+   /* border + shadow */
+  top: -0;
+   clip: rect(0, auto, auto, auto);
+   border-top-left-radius: 0;
+   border-top-right-radius: 0;
+   box-shadow: 0 0 0 rgba(0, 0, 0, 0.8);
+}
+
+ul.Cancilleria_hmenu>li.ext>.ext-r,
+ul.Cancilleria_hmenu>li.ext>.ext-l,
+ul.Cancilleria_hmenu>li.ext>.ext-m,
+ul.Cancilleria_hmenu>li.ext>.ext-off
+{
+   display: none;
+   z-index: 12;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+.desktop-nav ul.Cancilleria_hmenu>li.ext>ul
+{
+   z-index: 13;
+}
+
+.desktop-nav ul.Cancilleria_hmenu>li.ext.ext-r:hover>.ext-r,
+.desktop-nav ul.Cancilleria_hmenu>li.ext.ext-l:hover>.ext-l
+{
+   position: absolute;
+   display: block;
+   overflow: hidden;
+   /* size of radius
+   * if size if 0 we should now generate script
+   * that adds ext-r and ext-m divs
+   */
+  height: 0;
+   top: 100%;
+   padding-top: 0;
+   margin-top: -0;
+/* border width + shadow */}
+
+.desktop-nav ul.Cancilleria_hmenu>li.ext:hover>.ext-r:before,
+.desktop-nav ul.Cancilleria_hmenu>li.ext:hover>.ext-l:before
+{
+   position: absolute;
+   content: ' ';
+   top: 0;
+   /* border + shadow */
+  bottom: -0;
+   background-color: #2B1399;
+   border: 0 solid transparent;
+   box-shadow: 0 0 0 rgba(0, 0, 0, 0.8);
+}
+
+.desktop-nav ul.Cancilleria_hmenu>li.ext.ext-r:hover>.ext-r
+{
+   left: 100%;
+   right: auto;
+   padding-left: 0;
+   margin-left: 0;
+   padding-right: 0;
+   margin-right: -0;
+/* only shadow */}
+
+.desktop-nav ul.Cancilleria_hmenu>li.ext.ext-r:hover>.ext-r:before
+{
+   right: 0;
+   left: -0;
+   border-top-left-radius: 0;
+   border-top-right-radius: 0;
+}
+
+.desktop-nav ul.Cancilleria_hmenu>li.ext.ext-l:hover>.ext-l
+{
+   right: 100%;
+   left: auto;
+   padding-right: 0;
+   margin-right: 0;
+   padding-left: 0;
+   margin-left: -0;
+/* only shadow */}
+
+.desktop-nav ul.Cancilleria_hmenu>li.ext.ext-l:hover>.ext-l:before
+{
+   right: -0;
+   left: 0;
+   border-top-right-radius: 0;
+   border-top-left-radius: 0;
+}
+
+.desktop-nav ul.Cancilleria_hmenu>li.ext:hover>.ext-m,
+.desktop-nav ul.Cancilleria_hmenu>li.ext:hover>.ext-off
+{
+   position: absolute;
+   display: block;
+   overflow: hidden;
+   height: 0;
+   top: 100%;
+}
+
+.desktop-nav ul.Cancilleria_hmenu>li.ext.ext-r:hover>.ext-m
+{
+   /* shadow offset */
+  left: -0;
+   right: 0;
+   /* shadow offset */
+  padding-right: 0;
+   padding-left: 0;
+}
+
+.desktop-nav ul.Cancilleria_hmenu>li.ext:hover>.ext-off
+{
+   /* shadow offset */
+  left: -0;
+   right: -0;
+   /* shadow offset */
+  padding-left: 0;
+   padding-right: 0;
+}
+
+.desktop-nav ul.Cancilleria_hmenu>li.ext.ext-l:hover>.ext-m
+{
+   /* shadow offset */
+  right: -0;
+   left: 0;
+   /* shadow offset */
+  padding-left: 0;
+   padding-right: 0;
+}
+
+.desktop-nav ul.Cancilleria_hmenu>li.ext.ext-l.ext-r:hover>.ext-m
+{
+   /* shadow offset */
+  right: -0;
+   left: -0;
+   /* shadow offset */
+  padding-left: 0;
+   padding-right: 0;
+}
+
+.desktop-nav ul.Cancilleria_hmenu>li.ext:hover>.ext-m:before,
+.desktop-nav ul.Cancilleria_hmenu>li.ext:hover>.ext-off:before
+{
+   position: absolute;
+   content: ' ';
+   top: -0;
+   bottom: -0;
+   /* shadow offset */
+  background-color: #2B1399;
+   border: 0 solid transparent;
+   box-shadow: 0 0 0 rgba(0, 0, 0, 0.8);
+}
+
+.desktop-nav ul.Cancilleria_hmenu>li.ext.ext-r:hover>.ext-m:before
+{
+   right: -0;
+   left: 0;
+}
+
+.desktop-nav ul.Cancilleria_hmenu>li.ext.ext-l:hover>.ext-m:before
+{
+   left: -0;
+   right: 0;
+}
+
+.desktop-nav ul.Cancilleria_hmenu>li.ext.ext-l.ext-r:hover>.ext-m:before
+{
+   left: -0;
+   right: -0
+;
+}
+
+.Cancilleria_layout-wrapper
+{
+   position: relative;
+   margin: 0 auto 0 auto;
+   z-index: auto !important;
+}
+
+.Cancilleria_content-layout
+{
+   display: table;
+   width: 100%;
+   table-layout: fixed;
+   border-collapse: collapse;
+}
+
+.Cancilleria_content-layout-row
+{
+   display: table-row;
+}
+
+.Cancilleria_layout-cell
+{
+   display: table-cell;
+   vertical-align: top;
+}
+
+.Cancilleria_vmenublock
+{
+   padding:5px;
+   margin:5px;
+}
+div.Cancilleria_vmenublock img
+{
+   margin: 0;
+}
+
+.Cancilleria_vmenublockcontent
+{
+   margin:0 auto;
+}
+
+ul.Cancilleria_vmenu, ul.Cancilleria_vmenu ul
+{
+   list-style: none;
+   display: block;
+}
+
+ul.Cancilleria_vmenu, ul.Cancilleria_vmenu li
+{
+   display: block;
+   margin: 0;
+   padding: 0;
+   width: auto;
+   line-height: 0;
+}
+
+ul.Cancilleria_vmenu
+{
+   margin-top: 0;
+   margin-bottom: 0;
+}
+
+ul.Cancilleria_vmenu ul
+{
+   display: none;
+   margin: 0;
+   padding: 0;
+   position: relative;
+}
+
+ul.Cancilleria_vmenu ul.active
+{
+   display: block;
+}
+
+ul.Cancilleria_vmenu>li>a
+{
+   padding:0 5px;
+   margin:0 auto;
+   color: #333333;
+   min-height: 28px;
+   line-height: 28px;
+}
+ul.Cancilleria_vmenu a
+{
+   display: block;
+   cursor: pointer;
+   z-index: 1;
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   position:relative;
+}
+
+ul.Cancilleria_vmenu li{
+   position:relative;
+}
+
+ul.Cancilleria_vmenu>li
+{
+   margin-top: 3px;
+}
+ul.Cancilleria_vmenu>li>ul
+{
+   padding: 0;
+   margin-top: 2px;
+   margin-bottom: 2px;
+}
+ul.Cancilleria_vmenu>li:first-child
+{
+   margin-top:0;
+}
+
+ul.Cancilleria_vmenu>li>a:hover, ul.Cancilleria_vmenu>li>a.active:hover
+{
+   background: #FFFFFF;
+   padding:0 5px;
+   margin:0 auto;
+}
+ul.Cancilleria_vmenu>li>a:hover, ul.Cancilleria_vmenu>li>a.active:hover
+{
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: underline;
+}
+
+ul.Cancilleria_vmenu a:hover, ul.Cancilleria_vmenu a.active:hover
+{
+   color: #15295B;
+}
+
+ul.Cancilleria_vmenu>li>a.active:hover>span.border-top, ul.Cancilleria_vmenu>li>a.active:hover>span.border-bottom
+{
+   background-color: transparent;
+}
+
+ul.Cancilleria_vmenu>li>a.active
+{
+   padding:0 5px;
+   margin:0 auto;
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   color: #15295B;
+}
+
+ul.Cancilleria_vmenu>li:after, ul.Cancilleria_vmenu>li>ul:after{
+   display: block;
+   position: absolute;
+   content: ' ';
+   left: 0;
+   right: 0;
+   top: -3px;
+}
+
+ul.Cancilleria_vmenu>li:after, ul.Cancilleria_vmenu>li>ul:after{
+   z-index: 1;
+   height: 1px;
+   border-bottom: 1px dotted #D1D1D2;
+}
+
+ul.Cancilleria_vmenu>li:first-child:before, ul.Cancilleria_vmenu>li:first-child:after
+{
+   display:none;
+}
+
+ul.Cancilleria_vmenu>li>ul:before
+{
+   margin:0 auto;
+   display: block;
+   position: absolute;
+   content: ' ';
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+}
+
+ul.Cancilleria_vmenu li li a
+{
+line-height: 1.7;
+margin: 0 auto;
+position: relative;
+
+}
+ul.Cancilleria_vmenu ul li
+{
+   margin: 0;
+   padding: 0;
+}
+ul.Cancilleria_vmenu li li{
+   position: relative;
+   margin-top: 1px;
+}
+
+ul.Cancilleria_vmenu ul a
+{
+   display: block;
+   position: relative;
+   min-height: 24px;
+   overflow: visible;
+   padding: 0;
+   padding-left: 23px;
+   padding-right: 23px;
+   z-index: 0;
+   line-height: 24px;
+   color: #333333;
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   margin-left: 0;
+   margin-right: 0;
+}
+
+ul.Cancilleria_vmenu ul a:visited, ul.Cancilleria_vmenu ul a.active:hover, ul.Cancilleria_vmenu ul a:hover, ul.Cancilleria_vmenu ul a.active
+{
+   line-height: 24px;
+   color: #333333;
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   margin-left: 0;
+   margin-right: 0;
+}
+
+ul.Cancilleria_vmenu ul ul a
+{
+   padding-left: 46px;
+}
+ul.Cancilleria_vmenu ul ul ul a
+{
+   padding-left: 69px;
+}
+ul.Cancilleria_vmenu ul ul ul ul a
+{
+   padding-left: 92px;
+}
+ul.Cancilleria_vmenu ul ul ul ul ul a
+{
+   padding-left: 115px;
+}
+
+ul.Cancilleria_vmenu ul>li>a:hover, ul.Cancilleria_vmenu ul>li>a.active:hover
+{
+   background: #FFFFFF;
+   margin:0 auto;
+}
+ul.Cancilleria_vmenu ul li a:hover, ul.Cancilleria_vmenu ul li a.active:hover
+{
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: underline;
+   text-transform: none;
+   font-variant: normal;
+   color: #15295B;
+}
+
+ul.Cancilleria_vmenu ul a:hover:after
+{
+   background-position: center ;
+}
+ul.Cancilleria_vmenu ul a.active:hover:after
+{
+   background-position: center ;
+}
+ul.Cancilleria_vmenu ul a.active:after
+{
+   background-position: bottom ;
+}
+
+ul.Cancilleria_vmenu ul>li>a.active
+{
+   margin:0 auto;
+}
+ul.Cancilleria_vmenu ul a.active, ul.Cancilleria_vmenu ul a:hover, ul.Cancilleria_vmenu ul a.active:hover
+{
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   color: #79797C;
+}
+
+ul.Cancilleria_vmenu li li:after
+{
+   display: block;
+   position: absolute;
+   content: ' ';
+   height: 0;
+   top: -1px;
+   left: 0;
+   right: 0;
+   z-index: 1;
+   border-bottom: 1px dotted #D1D1D2;
+}
+
+ul.Cancilleria_vmenu li li:before
+{
+   display: block;
+   position: absolute;
+   content: ' ';
+   left: 0;
+   right: 0;
+   top: -1px;
+   z-index: 0;
+   height: 1px;
+}
+ul.Cancilleria_vmenu>li>ul>li:first-child:before, ul.Cancilleria_vmenu>li>ul>li:first-child:after
+{
+   display: none;
+}
+
+.Cancilleria_block
+{
+   margin:10px;
+}
+div.Cancilleria_block img
+{
+   border: none;
+   margin: 0;
+}
+
+.Cancilleria_blockheader
+{
+   background: #2B1399;
+   border:1px solid #19306B;
+   padding:8px 2px;
+   margin:0 auto;
+}
+.Cancilleria_blockheader .t,
+.Cancilleria_blockheader .t a,
+.Cancilleria_blockheader .t a:link,
+.Cancilleria_blockheader .t a:visited,
+.Cancilleria_blockheader .t a:hover
+{
+   color: #FFFFFF;
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   text-align: left;
+   margin: 0 10px;
+}
+
+.Cancilleria_blockcontent
+{
+   padding:2px;
+   margin:0 auto;
+   color: #000000;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   text-align: left;
+}
+.Cancilleria_blockcontent table,
+.Cancilleria_blockcontent li,
+.Cancilleria_blockcontent a,
+.Cancilleria_blockcontent a:link,
+.Cancilleria_blockcontent a:visited,
+.Cancilleria_blockcontent a:hover
+{
+   color: #000000;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   text-align: left;
+}
+
+.Cancilleria_blockcontent p
+{
+   margin: 0 10px;
+}
+
+.Cancilleria_blockcontent a, .Cancilleria_blockcontent a:link
+{
+   color: #000000;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+.Cancilleria_blockcontent a:visited, .Cancilleria_blockcontent a.visited
+{
+   color: #000000;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+.Cancilleria_blockcontent a:hover, .Cancilleria_blockcontent a.hover
+{
+   color: #2B1399;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: underline;
+   text-transform: none;
+   font-variant: normal;
+}
+.Cancilleria_block li
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   line-height: 125%;
+   color: #000000;
+   margin: 5px 0 0 10px;
+}
+
+.Cancilleria_breadcrumbs
+{
+   margin:0 auto;
+}
+
+a.Cancilleria_button,
+a.Cancilleria_button:link,
+a:link.Cancilleria_button:link,
+body a.Cancilleria_button:link,
+a.Cancilleria_button:visited,
+body a.Cancilleria_button:visited,
+input.Cancilleria_button,
+button.Cancilleria_button
+{
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: normal;
+   font-style: normal;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   position:relative;
+   display: inline-block;
+   vertical-align: middle;
+   white-space: nowrap;
+   text-align: center;
+   color: #C9D5F2;
+   margin: 0 !important;
+   overflow: visible;
+   cursor: pointer;
+   text-indent: 0;
+   line-height: 25px;
+   -webkit-box-sizing: content-box;
+   -moz-box-sizing: content-box;
+   box-sizing: content-box;
+}
+
+.Cancilleria_button img
+{
+   margin: 0;
+   vertical-align: middle;
+}
+
+.firefox2 .Cancilleria_button
+{
+   display: block;
+   float: left;
+}
+
+input, select, textarea
+{
+   vertical-align: middle;
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: normal;
+   font-style: normal;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+.Cancilleria_block select
+{
+   width:96%;
+}
+
+input.Cancilleria_button
+{
+   float: none !important;
+}
+
+.Cancilleria_button.active, .Cancilleria_button.active:hover
+{
+   background: #3D67D1;
+   background: rgba(61, 103, 209, 0.8);
+   -webkit-border-radius:3px;
+   -moz-border-radius:3px;
+   border-radius:3px;
+   border:1px solid rgba(43, 82, 182, 0.8);
+   padding:0 20px;
+   margin:0 auto;
+}
+.Cancilleria_button.active, .Cancilleria_button.active:hover {
+   color: #0B152D !important;
+}
+
+.Cancilleria_button.hover, .Cancilleria_button:hover
+{
+   background: #19306B;
+   background: rgba(25, 48, 107, 0.8);
+   -webkit-border-radius:3px;
+   -moz-border-radius:3px;
+   border-radius:3px;
+   border:1px solid rgba(25, 48, 107, 0.8);
+   padding:0 20px;
+   margin:0 auto;
+}
+.Cancilleria_button.hover, .Cancilleria_button:hover {
+   color: #000000 !important;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="url"], textarea
+{
+   background: #FBFCFE;
+   -webkit-border-radius:5px;
+   -moz-border-radius:5px;
+   border-radius:5px;
+   border:1px solid #B2B2B3;
+   margin:0 auto;
+}
+input[type="text"], input[type="password"], input[type="email"], input[type="url"], textarea
+{
+   width: auto;
+   padding: 5px 0;
+   color: #141415 !important;
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: normal;
+   font-style: normal;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+input.Cancilleria_error, textarea.Cancilleria_error
+{
+   background: #FBFCFE;
+   border:1px solid #E2341D;
+   margin:0 auto;
+}
+input.Cancilleria_error, textarea.Cancilleria_error {
+   color: #141415 !important;
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: normal;
+   font-style: normal;
+}
+form.Cancilleria_search input[type="text"]
+{
+   background: #FBFCFE;
+   -webkit-border-radius:4px;
+   -moz-border-radius:4px;
+   border-radius:4px;
+   -webkit-box-shadow:0 0 2px 1px rgba(0, 0, 0, 0.35);
+   -moz-box-shadow:0 0 2px 1px rgba(0, 0, 0, 0.35);
+   box-shadow:0 0 2px 1px rgba(0, 0, 0, 0.35);
+   border:1px solid #B2B2B3;
+   margin:0 auto;
+   width: 100%;
+   padding: 8px 0;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+   color: #141415 !important;
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: normal;
+   font-style: normal;
+}
+form.Cancilleria_search
+{
+   background-image: none;
+   border: 0;
+   display:block;
+   position:relative;
+   top:0;
+   padding:0;
+   margin:5px;
+   left:0;
+   line-height: 0;
+}
+
+form.Cancilleria_search input
+{
+   top:0;
+   right:0;
+}
+
+form.Cancilleria_search>input {
+   bottom:0;
+   left:0;
+   vertical-align: middle;
+}
+
+form.Cancilleria_search input[type="submit"]
+{
+   margin:0 auto;
+   color: #BDCBEF !important;
+   position:absolute;
+   display:block;
+   left: auto;
+   border:none;
+   background:url('images/searchicon.png') center center no-repeat;
+   width:24px;
+   height: 100%;
+   padding:0;
+}
+
+label.Cancilleria_checkbox:before
+{
+   background: #FBFCFE;
+   -webkit-border-radius:1px;
+   -moz-border-radius:1px;
+   border-radius:1px;
+   margin:0 auto;
+   width:16px;
+   height:16px;
+}
+label.Cancilleria_checkbox
+{
+   cursor: pointer;
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: normal;
+   font-style: normal;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   line-height: 16px;
+   display: inline-block;
+}
+
+.Cancilleria_checkbox>input[type="checkbox"]
+{
+   margin: 0 5px 0 0;
+}
+
+label.Cancilleria_checkbox.active:before
+{
+   background: #B2B2B3;
+   -webkit-border-radius:1px;
+   -moz-border-radius:1px;
+   border-radius:1px;
+   margin:0 auto;
+   width:16px;
+   height:16px;
+   display: inline-block;
+}
+
+label.Cancilleria_checkbox.hovered:before
+{
+   background: #98AEE7;
+   -webkit-border-radius:1px;
+   -moz-border-radius:1px;
+   border-radius:1px;
+   margin:0 auto;
+   width:16px;
+   height:16px;
+   display: inline-block;
+}
+
+label.Cancilleria_radiobutton:before
+{
+   background: #FBFCFE;
+   background: linear-gradient(top, #FFFFFF 0, #5E81D9 100%) no-repeat;
+   background: -webkit-linear-gradient(top, #FFFFFF 0, #5E81D9 100%) no-repeat;
+   background: -moz-linear-gradient(top, #FFFFFF 0, #5E81D9 100%) no-repeat;
+   background: -o-linear-gradient(top, #FFFFFF 0, #5E81D9 100%) no-repeat;
+   background: -ms-linear-gradient(top, #FFFFFF 0, #5E81D9 100%) no-repeat;
+   background: linear-gradient(top, #FFFFFF 0, #5E81D9 100%) no-repeat;
+   -svg-background: linear-gradient(top, #FFFFFF 0, #5E81D9 100%) no-repeat;
+   -webkit-border-radius:8px;
+   -moz-border-radius:8px;
+   border-radius:8px;
+   -webkit-box-shadow:0 0 2px 1px rgba(0, 0, 0, 0.3);
+   -moz-box-shadow:0 0 2px 1px rgba(0, 0, 0, 0.3);
+   box-shadow:0 0 2px 1px rgba(0, 0, 0, 0.3);
+   border:1px solid #98989A;
+   margin:0 auto;
+   width:16px;
+   height:16px;
+}
+label.Cancilleria_radiobutton
+{
+   cursor: pointer;
+   font-size: 12px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: normal;
+   font-style: normal;
+   line-height: 16px;
+   display: inline-block;
+}
+
+.Cancilleria_radiobutton>input[type="radio"]
+{
+   vertical-align: baseline;
+   margin: 0 5px 0 0;
+}
+
+label.Cancilleria_radiobutton.active:before
+{
+   background: #B2B2B3;
+   background: linear-gradient(top, #D8D8D9 0, #7E7E81 92%, #777779 100%) no-repeat;
+   background: -webkit-linear-gradient(top, #D8D8D9 0, #7E7E81 92%, #777779 100%) no-repeat;
+   background: -moz-linear-gradient(top, #D8D8D9 0, #7E7E81 92%, #777779 100%) no-repeat;
+   background: -o-linear-gradient(top, #D8D8D9 0, #7E7E81 92%, #777779 100%) no-repeat;
+   background: -ms-linear-gradient(top, #D8D8D9 0, #7E7E81 92%, #777779 100%) no-repeat;
+   background: linear-gradient(top, #D8D8D9 0, #7E7E81 92%, #777779 100%) no-repeat;
+   -svg-background: linear-gradient(top, #D8D8D9 0, #7E7E81 92%, #777779 100%) no-repeat;
+   -webkit-border-radius:8px;
+   -moz-border-radius:8px;
+   border-radius:8px;
+   -webkit-box-shadow:0 0 2px 1px rgba(0, 0, 0, 0.3);
+   -moz-box-shadow:0 0 2px 1px rgba(0, 0, 0, 0.3);
+   box-shadow:0 0 2px 1px rgba(0, 0, 0, 0.3);
+   border:1px solid #7C7C7E;
+   margin:0 auto;
+   width:16px;
+   height:16px;
+   display: inline-block;
+}
+
+label.Cancilleria_radiobutton.hovered:before
+{
+   background: #98AEE7;
+   background: linear-gradient(top, #CDD8F3 0, #305DCF 100%) no-repeat;
+   background: -webkit-linear-gradient(top, #CDD8F3 0, #305DCF 100%) no-repeat;
+   background: -moz-linear-gradient(top, #CDD8F3 0, #305DCF 100%) no-repeat;
+   background: -o-linear-gradient(top, #CDD8F3 0, #305DCF 100%) no-repeat;
+   background: -ms-linear-gradient(top, #CDD8F3 0, #305DCF 100%) no-repeat;
+   background: linear-gradient(top, #CDD8F3 0, #305DCF 100%) no-repeat;
+   -svg-background: linear-gradient(top, #CDD8F3 0, #305DCF 100%) no-repeat;
+   -webkit-border-radius:8px;
+   -moz-border-radius:8px;
+   border-radius:8px;
+   -webkit-box-shadow:0 0 2px 1px rgba(0, 0, 0, 0.3);
+   -moz-box-shadow:0 0 2px 1px rgba(0, 0, 0, 0.3);
+   box-shadow:0 0 2px 1px rgba(0, 0, 0, 0.3);
+   border:1px solid #7C7C7E;
+   margin:0 auto;
+   width:16px;
+   height:16px;
+   display: inline-block;
+}
+
+a img
+{
+   border: 0;
+}
+
+.Cancilleria_article img, img.Cancilleria_article, .Cancilleria_block img, .Cancilleria_footer img
+{
+   margin: 0 0 0 0;
+}
+
+.Cancilleria_metadata-icons img
+{
+   border: none;
+   vertical-align: middle;
+   margin: 2px;
+}
+
+.Cancilleria_article table, table.Cancilleria_article
+{
+   border-collapse: collapse;
+   margin: 1px;
+}
+
+.Cancilleria_post .Cancilleria_content-layout-br
+{
+   height: 0;
+}
+
+.Cancilleria_article th
+{
+   text-align: center;
+   vertical-align: middle;
+   padding: 7px;
+}
+
+pre
+{
+   overflow: auto;
+   padding: 0.1em;
+}
+
+.preview-cms-logo
+{
+   border: 0;
+   margin: 1em 1em 0 0;
+   float: left;
+}
+
+.image-caption-wrapper
+{
+   padding: 0 0 0 0;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+.image-caption-wrapper img
+{
+   margin: 0 !important;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+.image-caption-wrapper div.Cancilleria_collage
+{
+   margin: 0 !important;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+.image-caption-wrapper p
+{
+   font-size: 80%;
+   text-align: right;
+   margin: 0;
+}
+
+.Cancilleria_postheader
+{
+   color: #162B5F;
+   margin:0;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+.Cancilleria_postheader a,
+.Cancilleria_postheader a:link,
+.Cancilleria_postheader a:visited,
+.Cancilleria_postheader a.visited,
+.Cancilleria_postheader a:hover,
+.Cancilleria_postheader a.hovered
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+.Cancilleria_postheader a, .Cancilleria_postheader a:link
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   text-align: left;
+   color: #000000;
+}
+
+.Cancilleria_postheader a:visited, .Cancilleria_postheader a.visited
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   text-align: left;
+   color: #000000;
+}
+
+.Cancilleria_postheader a:hover,  .Cancilleria_postheader a.hovered
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: underline;
+   text-transform: none;
+   font-variant: normal;
+   text-align: left;
+   color: #000000;
+}
+
+.Cancilleria_postheadericons,
+.Cancilleria_postheadericons a,
+.Cancilleria_postheadericons a:link,
+.Cancilleria_postheadericons a:visited,
+.Cancilleria_postheadericons a:hover
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   color: #626264;
+}
+
+.Cancilleria_postheadericons
+{
+   display:inline-block;
+   padding: 1px;
+}
+
+.Cancilleria_postheadericons a, .Cancilleria_postheadericons a:link
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   color: #000000;
+}
+
+.Cancilleria_postheadericons a:visited, .Cancilleria_postheadericons a.visited
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   color: #000000;
+}
+
+.Cancilleria_postheadericons a:hover, .Cancilleria_postheadericons a.hover
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: underline;
+   text-transform: none;
+   font-variant: normal;
+   color: #000000;
+}
+
+.Cancilleria_postdateicon:before
+{
+   content:url('images/postdateicon.png');
+   margin-right:6px;
+   position:relative;
+   display:inline-block;
+   vertical-align:middle;
+   font-size:0;
+   line-height:0;
+   bottom: auto;
+}
+.opera .Cancilleria_postdateicon:before
+{
+   /* Vertical-align:middle in Opera doesn't need additional offset */
+    bottom: 0;
+}
+
+.Cancilleria_postauthoricon:before
+{
+   content:url('images/postauthoricon.png');
+   margin-right:6px;
+   position:relative;
+   display:inline-block;
+   vertical-align:middle;
+   font-size:0;
+   line-height:0;
+   bottom: auto;
+}
+.opera .Cancilleria_postauthoricon:before
+{
+   /* Vertical-align:middle in Opera doesn't need additional offset */
+    bottom: 0;
+}
+
+.Cancilleria_postpdficon:before
+{
+   content:url('images/postpdficon.png');
+   margin-right:6px;
+   position:relative;
+   display:inline-block;
+   vertical-align:middle;
+   font-size:0;
+   line-height:0;
+   bottom: auto;
+}
+.opera .Cancilleria_postpdficon:before
+{
+   /* Vertical-align:middle in Opera doesn't need additional offset */
+    bottom: 0;
+}
+
+.Cancilleria_postprinticon:before
+{
+   content:url('images/postprinticon.png');
+   margin-right:6px;
+   position:relative;
+   display:inline-block;
+   vertical-align:middle;
+   font-size:0;
+   line-height:0;
+   bottom: auto;
+}
+.opera .Cancilleria_postprinticon:before
+{
+   /* Vertical-align:middle in Opera doesn't need additional offset */
+    bottom: 0;
+}
+
+.Cancilleria_postemailicon:before
+{
+   content:url('images/postemailicon.png');
+   margin-right:6px;
+   bottom: 2px;
+   position:relative;
+   display:inline-block;
+   vertical-align:middle;
+   font-size:0;
+   line-height:0;
+}
+.opera .Cancilleria_postemailicon:before
+{
+   /* Vertical-align:middle in Opera doesn't need additional offset */
+    bottom: 0;
+}
+
+.Cancilleria_postediticon:before
+{
+   content:url('images/postediticon.png');
+   margin-right:6px;
+   position:relative;
+   display:inline-block;
+   vertical-align:middle;
+   font-size:0;
+   line-height:0;
+   bottom: auto;
+}
+.opera .Cancilleria_postediticon:before
+{
+   /* Vertical-align:middle in Opera doesn't need additional offset */
+    bottom: 0;
+}
+
+.Cancilleria_postcontent ul>li:before,  .Cancilleria_post ul>li:before,  .Cancilleria_textblock ul>li:before
+{
+   content:url('images/postbullets.png');
+   margin-right:5px;
+   bottom: 2px;
+   position:relative;
+   display:inline-block;
+   vertical-align:middle;
+   font-size:0;
+   line-height:0;
+}
+.opera .Cancilleria_postcontent ul>li:before, .opera   .Cancilleria_post ul>li:before, .opera   .Cancilleria_textblock ul>li:before
+{
+   /* Vertical-align:middle in Opera doesn't need additional offset */
+    bottom: 0;
+}
+
+.Cancilleria_postcontent li, .Cancilleria_post li, .Cancilleria_textblock li
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   color: #070D1D;
+   margin: 0 0 0 10px;
+}
+
+.Cancilleria_postcontent ul>li, .Cancilleria_post ul>li, .Cancilleria_textblock ul>li, .Cancilleria_postcontent ol, .Cancilleria_post ol, .Cancilleria_textblock ol
+{
+   padding: 0;
+}
+
+.Cancilleria_postcontent ul>li, .Cancilleria_post ul>li, .Cancilleria_textblock ul>li
+{
+   padding-left: 9px;
+}
+
+.Cancilleria_postcontent ul>li:before,  .Cancilleria_post ul>li:before,  .Cancilleria_textblock ul>li:before
+{
+   margin-left: -9px;
+}
+
+.Cancilleria_postcontent ol, .Cancilleria_post ol, .Cancilleria_textblock ol, .Cancilleria_postcontent ul, .Cancilleria_post ul, .Cancilleria_textblock ul
+{
+  margin: 5px;
+}
+
+.Cancilleria_postcontent li ol, .Cancilleria_post li ol, .Cancilleria_textblock li ol, .Cancilleria_postcontent li ul, .Cancilleria_post li ul, .Cancilleria_textblock li ul
+{
+   margin: 0.5em 0 0.5em 10px;
+}
+
+.Cancilleria_postcontent li, .Cancilleria_post li, .Cancilleria_textblock li
+{
+   margin: 0 0 0 0;
+}
+
+.Cancilleria_postcontent ol>li, .Cancilleria_post ol>li, .Cancilleria_textblock ol>li
+{
+   /* overrides overflow for "ul li" and sets the default value */
+  overflow: visible;
+}
+
+.Cancilleria_postcontent ul>li, .Cancilleria_post ul>li, .Cancilleria_textblock ul>li
+{
+   /* makes "ul li" not to align behind the image if they are in the same line */
+  overflow-x: visible;
+   overflow-y: hidden;
+}
+
+blockquote
+{
+   background: #D6D6D7 url('images/postquote.png') no-repeat scroll;
+   border:1px dashed #B2B2B3;
+   padding:0 0 0 24px;
+   color: #000000;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   /* makes block not to align behind the image if they are in the same line */
+  overflow: auto;
+   clear:both;
+}
+blockquote a, .Cancilleria_postcontent blockquote a, .Cancilleria_blockcontent blockquote a, .Cancilleria_footer blockquote a,
+blockquote a:link, .Cancilleria_postcontent blockquote a:link, .Cancilleria_blockcontent blockquote a:link, .Cancilleria_footer blockquote a:link,
+blockquote a:visited, .Cancilleria_postcontent blockquote a:visited, .Cancilleria_blockcontent blockquote a:visited, .Cancilleria_footer blockquote a:visited,
+blockquote a:hover, .Cancilleria_postcontent blockquote a:hover, .Cancilleria_blockcontent blockquote a:hover, .Cancilleria_footer blockquote a:hover
+{
+   color: #000000;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+/* Override native 'p' margins*/
+blockquote p,
+.Cancilleria_postcontent blockquote p,
+.Cancilleria_blockcontent blockquote p,
+.Cancilleria_footer blockquote p
+{
+   margin: 0;
+}
+
+.Cancilleria_postfootericons,
+.Cancilleria_postfootericons a,
+.Cancilleria_postfootericons a:link,
+.Cancilleria_postfootericons a:visited,
+.Cancilleria_postfootericons a:hover
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   color: #626264;
+}
+
+.Cancilleria_postfootericons
+{
+   display:inline-block;
+   padding: 1px;
+}
+
+.Cancilleria_postfootericons a, .Cancilleria_postfootericons a:link
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   color: #000000;
+}
+
+.Cancilleria_postfootericons a:visited, .Cancilleria_postfootericons a.visited
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+   color: #000000;
+}
+
+.Cancilleria_postfootericons a:hover, .Cancilleria_postfootericons a.hover
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: underline;
+   text-transform: none;
+   font-variant: normal;
+   color: #2B1399;
+}
+
+.Cancilleria_postcategoryicon:before
+{
+   content:url('images/postcategoryicon.png');
+   margin-right:6px;
+   position:relative;
+   display:inline-block;
+   vertical-align:middle;
+   font-size:0;
+   line-height:0;
+   bottom: auto;
+}
+.opera .Cancilleria_postcategoryicon:before
+{
+   /* Vertical-align:middle in Opera doesn't need additional offset */
+    bottom: 0;
+}
+
+.Cancilleria_posttagicon:before
+{
+   content:url('images/posttagicon.png');
+   margin-right:6px;
+   position:relative;
+   display:inline-block;
+   vertical-align:middle;
+   font-size:0;
+   line-height:0;
+   bottom: auto;
+}
+.opera .Cancilleria_posttagicon:before
+{
+   /* Vertical-align:middle in Opera doesn't need additional offset */
+    bottom: 0;
+}
+
+.Cancilleria_postcommentsicon:before
+{
+   content:url('images/postcommentsicon.png');
+   margin-right:6px;
+   position:relative;
+   display:inline-block;
+   vertical-align:middle;
+   font-size:0;
+   line-height:0;
+   bottom: auto;
+}
+.opera .Cancilleria_postcommentsicon:before
+{
+   /* Vertical-align:middle in Opera doesn't need additional offset */
+    bottom: 0;
+}
+
+.Cancilleria_footer
+{
+   background: #2B1399;
+   margin:0 auto;
+   position: relative;
+   color: #FFFFFF;
+   font-size: 11px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-align: center;
+}
+
+.Cancilleria_footer a,
+.Cancilleria_footer a:link,
+.Cancilleria_footer a:visited,
+.Cancilleria_footer a:hover,
+.Cancilleria_footer td,
+.Cancilleria_footer th,
+.Cancilleria_footer caption
+{
+   color: #FFFFFF;
+   font-size: 11px;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+}
+
+.Cancilleria_footer p
+{
+   padding:0;
+   text-align: center;
+}
+
+.Cancilleria_footer a,
+.Cancilleria_footer a:link
+{
+   color: #FFFFFF;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+.Cancilleria_footer a:visited
+{
+   color: #FFFFFF;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   text-transform: none;
+   font-variant: normal;
+}
+
+.Cancilleria_footer a:hover
+{
+   color: #FFFFFF;
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: underline;
+   text-transform: none;
+   font-variant: bold;
+}
+
+.Cancilleria_footer img
+{
+   border: none;
+   margin: 0;
+}
+
+.Cancilleria_rss-tag-icon
+{
+   background:  url('images/footerrssicon.png') no-repeat scroll;
+   margin:0 auto;
+   min-height:17px;
+   min-width:17px;
+   display: inline-block;
+   text-indent: 20px;
+   background-position: left center;
+}
+
+.Cancilleria_rss-tag-icon:empty
+{
+   vertical-align: middle;
+}
+
+.Cancilleria_footer ul>li:before
+{
+   content:url('images/footerbullets.png');
+   margin-right:0;
+   bottom: 1px;
+   position:relative;
+   display:inline-block;
+   vertical-align:middle;
+   font-size:0;
+   line-height:0;
+   margin-left: -6px;
+}
+.opera .Cancilleria_footer ul>li:before
+{
+   /* Vertical-align:middle in Opera doesn't need additional offset */
+    bottom: 0;
+}
+
+.Cancilleria_footer li
+{
+   font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   line-height: 125%;
+   color: #F5F5F5;
+}
+
+.Cancilleria_footer ul>li, .Cancilleria_footer ol
+{
+   padding: 0;
+}
+
+.Cancilleria_footer ul>li
+{
+   padding-left: 6px;
+}
+
+.Cancilleria_page-footer,
+.Cancilleria_page-footer a,
+.Cancilleria_page-footer a:link,
+.Cancilleria_page-footer a:visited,
+.Cancilleria_page-footer a:hover
+{
+   font-family: Arial;
+   font-size: 10px;
+   letter-spacing: normal;
+   word-spacing: normal;
+   font-style: normal;
+   font-weight: normal;
+   text-decoration: underline;
+   color: #D2DBF4;
+}
+
+.Cancilleria_page-footer
+{
+   position: relative;
+   z-index: auto !important;
+   padding: 1em;
+   text-align: center !important;
+   text-decoration: none;
+   color: #D3D3D4;
+}
+
+img.Cancilleria_lightbox
+{
+   cursor: pointer;
+}
+
+#Cancilleria_lightbox-bg *
+{
+   padding: 0;
+   margin: 0;
+}
+
+div#Cancilleria_lightbox-bg
+{
+   top: 0;
+   left: 0;
+   width: 100%;
+   position: absolute;
+   height: 100%;
+   background-color: #000;
+   opacity: 0.8;
+   filter: alpha(opacity=80);
+   z-index: 9999;
+}
+
+img.Cancilleria_lightbox-image
+{
+   -webkit-transition: opacity 350ms ease-in-out;
+   -moz-transition: opacity 350ms ease-in-out;
+   -o-transition: opacity 350ms ease-in-out;
+   -ms-transition: opacity 350ms ease-in-out;
+   transition: opacity 350ms ease-in-out;
+   cursor: pointer;
+   z-index: 10000;
+   position: fixed;
+   border: 6px solid #fff;
+   border-radius: 3px;
+   opacity: 0;
+   filter: alpha(opacity=0);
+}
+
+img.Cancilleria_lightbox-image.active
+{
+   opacity: 1;
+   filter: alpha(opacity=100);
+}
+
+.lightbox-error
+{
+   position: fixed;
+   background: #fff;
+   z-index: 100;
+   opacity: 0.95;
+   padding: 20px;
+   border: 1px solid #b4b4b4;
+   border-radius: 10px;
+   box-shadow: 0 2px 5px #333;
+   width: 300px;
+   height: 80px;
+}
+
+.loading
+{
+   position: fixed;
+   background: #fff url('images/preloader-01.gif') center center no-repeat;
+   width: 32px;
+   height: 32px;
+   z-index: 10100;
+   opacity: 0.5;
+   padding: 10px;
+   border: 1px solid #b4b4b4;
+   border-radius: 10px;
+   box-shadow: 0 2px 5px #333;
+}
+
+.arrow
+{
+   height: 100px;
+   width: 82px;
+   z-index: 10003;
+   position: fixed;
+   cursor: pointer;
+   opacity: 0.5;
+   filter: alpha(opacity=50);
+}
+
+.arrow.left
+{
+   left: 9px;
+}
+.arrow.right
+{
+   right: 9px;
+}
+
+.arrow:hover
+{
+   opacity: 1;
+   filter: alpha(opacity=100);
+}
+.arrow.disabled
+{
+   display: none;
+}
+
+.arrow-t, .arrow-b
+{
+   height: 6px;
+   width: 30px;
+   left: 26px;
+   background-color: #fff;
+   position: relative;
+   border-radius: 3px;
+}
+
+.arrow-t
+{
+   top: 38px;
+}
+
+.arrow-b
+{
+   top: 50px;
+}
+
+.close
+{
+   width: 22px;
+   height: 22px;
+   position: fixed;
+   top: 30px;
+   right: 39px;
+   cursor: pointer;
+   opacity: 0.5;
+   filter: alpha(opacity=50);
+}
+
+.close:hover
+{
+   opacity: 1;
+   filter: alpha(opacity=100);
+}
+
+.close .cw, .close .ccw
+{
+   position: absolute;
+   top: 8px;
+   left: -4px;
+   width: 30px;
+   height: 6px;
+   background-color: #fff;
+   border-radius: 3px;
+}
+
+.cw
+{
+   transform: rotate(45deg);
+   -ms-transform: rotate(45deg);
+   /* IE 9 */
+    -webkit-transform: rotate(45deg);
+   /* Safari and Chrome */
+    -o-transform: rotate(45deg);
+   /* Opera */
+    -moz-transform: rotate(45deg);
+/* Firefox */}
+
+.ccw
+{
+   transform: rotate(-45deg);
+   -ms-transform: rotate(-45deg);
+   /* IE 9 */
+    -webkit-transform: rotate(-45deg);
+   /* Safari and Chrome */
+    -o-transform: rotate(-45deg);
+   /* Opera */
+    -moz-transform: rotate(-45deg);
+/* Firefox */}
+
+.close-alt, .arrow-right-alt, .arrow-left-alt
+{
+   display: none;
+   color: #fff;
+   font-size: 2.5em;
+}
+
+.ie8 .close-alt, .ie8 .arrow-right-alt, .ie8 .arrow-left-alt {
+   display: block;
+}
+.ie8 .cw, .ie8 .ccw {
+   display: none;
+}
+
+.Cancilleria_content-layout .Cancilleria_sidebar1
+{
+   background: #102046;
+   background: transparent;
+   margin:0 auto;
+   width: 200px;
+}
+
+.Cancilleria_content-layout .Cancilleria_content
+{
+   margin:0 auto;
+}
+
+/* Begin Additional CSS Styles */
+/* Corazon de gobierno */
+#Corazon_Gobierno .Cancilleria_postcontent ul > li:before,#Corazon_Gobierno .Cancilleria_post ul > li:before,#Corazon_Gobierno .Cancilleria_textblock ul > li:before {
+content:none!important
+}
+
+/* Enlaces del pie de pagina */
+#Enlaces_Footer {
+border-top:1px solid #999;
+clear:both;
+font-size:100%;
+font-style:inherit;
+font-weight:inherit;
+height:20px;
+margin:10px 20px 0;
+outline:0 none;
+padding:10px 20px;
+text-align:center;
+vertical-align:baseline
+}
+
+#Enlaces_Footer li {
+border-right:1px solid #888;
+color:#333;
+display:inline;
+margin:0;
+padding:0
+}
+
+#Enlaces_Footer li a {
+font-size:11px;
+padding:5px;
+text-decoration:none
+}
+
+#Enlaces_Footer li a:hover {
+color:#2B1399!important;
+text-decoration:underline
+}
+
+#Enlaces_Footer li a:link,#Enlaces_Footer li a:visited,#Enlaces_Footer li a:active {
+color:#333
+}
+
+#Enlaces_Footer li.last {
+border-right:0 solid #CCC;
+font-size:11px;
+padding:5px
+}
+
+#Enlaces_Footer ul {
+font-size:11px;
+list-style-type:none;
+margin:0;
+padding:0
+}
+
+#Enlaces_Footer ul,#Enlaces_Footer li,#Enlaces_Footer li a,#Enlaces_Footer li a:active,#Enlaces_Footer li a:link,#Enlaces_Footer li a:hover,#Enlaces_Footer li:visited {
+font-family:Arial, Helvetica, sans-serif;
+font-style:normal;
+font-weight:400
+}
+
+#layout-1-links-above {
+border:0 none;
+color:#FFF;
+float:right;
+font-size:100%;
+font-style:inherit;
+font-weight:inherit;
+margin-top:45px;
+outline:0 none;
+padding:0;
+vertical-align:baseline
+}
+
+#layout-1-links-above li {
+display:inline
+}
+
+#layout-1-links-above li.last a {
+margin-right:0
+}
+
+#layout-1-links-above ul {
+color:#FFF;
+float:right;
+font-size:.8em;
+list-style-type:none;
+overflow:auto
+}
+
+#layout-1-links-above-map > a {
+vertical-align:5px
+}
+
+#layout-1-links-above-map a:link,#layout-1-links-above-map a:visited,#layout-1-links-above-map a:active {
+color:#000;
+font-size:1em;
+font-weight:400
+}
+
+#layout-4a-fastlinks-content {
+background:#FFF;
+clear:both;
+float:left;
+margin:5px 10px 5px 20px;
+padding:0;
+width:920px
+}
+
+#layout-4a-fastlinks-content .list-fastlinks select {
+background:#CF0
+}
+
+#layout-4a-fastlinks-content .list-fastlinks,#layout-4a-fastlinks-content .list-fastlinks-button {
+background:#EEE;
+color:#333;
+font-size:.6em;
+font-style:normal;
+font-weight:300;
+margin-bottom:0
+}
+
+#layout-4a-fastlinks-content .list-fastlinks-button {
+background:#F5F5F5;
+border:1px solid #666;
+cursor:pointer;
+padding:1px 3px
+}
+
+#layout-4a-fastlinks-content .list-fastlinks-button:hover {
+background:#C61720;
+border:1px solid #FFF;
+color:#FFF
+}
+
+#layout-4a-fastlinks-content h3 {
+  color: #333333;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  margin-bottom: 0;
+  margin-left: 25px;
+  margin-top: 15px;
+  padding: 0;
+}
+
+#layout-4a-fastlinks-content li a:active,#layout-4a-fastlinks-content li a:link {
+color:#444
+}
+
+#layout-4a-fastlinks-content li a:hover {
+text-decoration:underline
+}
+
+#layout-4a-fastlinks-content li a:visited {
+color:#777
+}
+
+#layout-4a-fastlinks-content select.list-fastlinks option:active {
+background:#990 !important
+}
+
+#layout-4a-fastlinks-content ul {
+color:#444;
+font-size:.6em;
+margin-left:15px;
+padding-left:2px
+}
+
+#layout-4a-fastlinks-content ul,#layout-4a-fastlinks-content li,#layout-4a-fastlinks-content li a,#layout-4a-fastlinks-content li a:active,#layout-4a-fastlinks-content li a:link,#layout-4a-fastlinks-content li a:hover,#layout-4a-fastlinks-content li a:visited {
+font-size:9px;
+font-style:normal;
+font-weight:400;
+line-height:100%
+}
+
+#layout-4a-fastlinks-content-ciudadano {
+  padding-left: 10px;
+  padding-right: 0;
+  width: 130px;
+}
+
+#layout-4a-fastlinks-content-gobierno {
+background:url(images/logo-gobierno-01.png) no-repeat left center #FFF;
+overflow:auto;
+padding:22px 0 18px 180px;
+width:300px
+}
+
+#layout-4a-fastlinks-content-gobierno div {
+float:left;
+padding-right:5px;
+width:95px
+}
+
+#layout-4a-fastlinks-content-gobierno div li {
+margin-bottom:5px;
+position:relative
+}
+
+#layout-4a-fastlinks-content-gobierno div li div {
+height:6px;
+margin-bottom:0;
+margin-right:2px;
+margin-top:2px;
+vertical-align:bottom;
+width:1px
+}
+
+#layout-4a-fastlinks-content-gobierno div ul {
+font-size:.55em;
+list-style-type:none;
+margin:0;
+padding:0
+}
+
+#layout-4a-fastlinks-content-gobierno div ul li p {
+font-size:9px;
+margin:0;
+padding:0
+}
+
+#layout-4a-fastlinks-content-gobierno,#layout-4a-fastlinks-content-ciudadano,#layout-4a-fastlinks-content-listas {
+float:left
+}
+
+#layout-4a-fastlinks-content-listas {
+width:250px
+}
+
+#layout-4a-fastlinks-content-listas .form-fastlinks {
+background:#EEE;
+border:1px solid #CCC;
+margin:5px 0 15px;
+padding:3px 3px 5px 5px
+}
+
+#layout-4a-fastlinks-promo {
+clear:both;
+float:left;
+margin-bottom:10px
+}
+
+#layout-4a-fastlinks-wrapper {
+clear:both;
+margin:0;
+padding:0 20px
+}
+
+#layout-4a-flinkscg-colciencias div {
+background:#622073
+}
+
+#layout-4a-flinkscg-coldeportes div {
+background:#00995B
+}
+
+#layout-4a-flinkscg-dafp div {
+background:#632B00
+}
+
+#layout-4a-flinkscg-dane div {
+background:#9F002D
+}
+
+#layout-4a-flinkscg-dni div {
+background:#734C1D
+}
+
+#layout-4a-flinkscg-dnp div {
+background:#634800
+}
+
+#layout-4a-flinkscg-dps div {
+background:#0A5E99
+}
+
+#layout-4a-flinkscg-gobierno div {
+background:#3D404C
+}
+
+#layout-4a-flinkscg-minagricultura div {
+background:#5B8300
+}
+
+#layout-4a-flinkscg-minambiente div {
+background:#3C9900
+}
+
+#layout-4a-flinkscg-mincomercio div {
+background:#3D6300
+}
+
+#layout-4a-flinkscg-mincultura div {
+background:#63004B
+}
+
+#layout-4a-flinkscg-mindefensa div {
+background:#0F3E99
+}
+
+#layout-4a-flinkscg-mineducacion div {
+background:#38170D
+}
+
+#layout-4a-flinkscg-minhacienda div {
+background:#531400
+}
+
+#layout-4a-flinkscg-mininterior div {
+background:#00630C
+}
+
+#layout-4a-flinkscg-minjusticia div {
+background:#151F99
+}
+
+#layout-4a-flinkscg-minminas div {
+background:#73611D
+}
+
+#layout-4a-flinkscg-minrelaciones div {
+background:#410E99
+}
+
+#layout-4a-flinkscg-minsalud div {
+background:#1D7373
+}
+
+#layout-4a-flinkscg-mintic div {
+background:#590A99
+}
+
+#layout-4a-flinkscg-mintrabajo div {
+background:#2B1399
+}
+
+#layout-4a-flinkscg-mintransporte div {
+background:#992900
+}
+
+#layout-4a-flinkscg-minvivienda div {
+background:#996200
+}
+
+#layout-4a-flinkscg-presidencia div,#layout-4a-flinkscg-vicepresidencia div {
+background:#C61720
+}
+
+/* Pagina inicial noticias diapositivas*/
+#Pagina_Inicial .Noticias_Diapositivas {
+margin:10px 20px;
+position:relative
+}
+
+#Pagina_Inicial .Noticias_Diapositivas .views-field-title {
+background:url(/sites/all/themes/cancilleria/images/BgBlack60.png) center top;
+bottom:4px;
+color:#FFF;
+height:55px;
+left:0;
+overflow:hidden;
+padding:0 10px;
+position:absolute;
+width:900px;
+z-index:9;
+display: block;
+}
+
+#Pagina_Inicial .Noticias_Diapositivas h3 {
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 0px;
+  line-height: 100%;
+}
+
+#Pagina_Inicial .Noticias_Diapositivas h6 {
+color:#FFF;
+font-size:10px;
+font-weight:700;
+margin:5px 0 0
+}
+
+/* Pagina inicial noticias principales*/
+#Pagina_Inicial .Noticias_Principales .Noticias-Principales-Linea {
+border-bottom:1px dotted;
+padding-bottom:10px
+}
+
+#Pagina_Inicial .Noticias_Principales .Noticias-Principales-Linea h2 {
+margin:10px 0
+}
+
+#Pagina_Inicial .Noticias_Principales .Noticias-Principales-Linea h2 a:hover {
+text-decoration:underline
+}
+
+#Pagina_Inicial .Agenda_Ministerial .pane-title {
+  margin-top: 20px;
+}
+
+#Pagina_Inicial .Home_Noticias_Multimedia .Cancilleria_postcontent ul > li:before,.Cancilleria_post ul > li:before,.Cancilleria_textblock ul > li:before {
+bottom:2px;
+content:none;
+display:inline-block;
+font-size:0;
+line-height:0;
+margin-right:6px;
+position:relative;
+vertical-align:middle;
+}
+
+#Pagina_Inicial .inside.panels-flexible-row-inside.panels-flexible-row-714-1-inside.panels-flexible-row-inside-last.clearfix {
+margin: 0 20px;
+padding: 0;
+}
+
+#Pagina_Inicio .panels-flexible-row {
+height:0!important;
+padding:0 0 .5em 16px;
+}
+
+#Tab_Multimedia {
+left:0;
+}
+
+#block-block-2 {
+padding:15px 15px 9px;
+}
+
+/*
+#block-block-2 a div.Logo, #block-block-25 a div {
+background:url(images/logo_cancilleria_3.png) no-repeat scroll 0 0 transparent;
+height:85px;
+outline:0 none!important;
+width:550px;
+}
+*/
+#block-block-2 a div {
+background:url(images/logo_cancilleria_3.png) no-repeat scroll 0 0 transparent;
+height:82px;
+outline:0 none!important;
+width:550px;
+}
+#block-block-25 {
+left:550px;
+position:absolute;
+top:40px;
+}
+
+#block-block-26 {
+  height: 65px;
+  left: 772px;
+  position: absolute;
+  top: 15px;
+  width: 170px;
+}
+
+
+#block-lang-dropdown-language {
+left:860px;
+position:absolute;
+top:72px;
+}
+
+#the_minister .views-slideshow-cycle-main-frame.views_slideshow_cycle_teaser_section,#politica_exterior .views-slideshow-cycle-main-frame.views_slideshow_cycle_teaser_section {
+left:0px;
+}
+
+.Cancilleria_block {
+margin:15px 15px 0 0 !important;
+}
+
+.Cancilleria_footer {
+height:60px !import;
+}
+
+.Cancilleria_header > .region,.Cancilleria_header > .block {
+height:110px;
+left:0;
+top:0;
+width:960px;
+}
+
+.Cancilleria_postcontent a:hover {
+color:#2B1399;
+}
+
+.Cancilleria_postcontent ul > li {
+content:no-close-quote!important;
+}
+
+.Cancilleria_postcontent ul > li,.Cancilleria_post ul > li,.Cancilleria_textblock ul > li {
+margin:0!important;
+overflow-x:visible;
+overflow-y:visible;
+padding:5px 0 5px 5px;
+}
+
+.Cancilleria_postcontent ul > li:before,.Cancilleria_post ul > li:before,.Cancilleria_textblock ul > li:before {
+margin-left:0;
+}
+
+.breadcrumb a,.breadcrumb a.visited {
+color:#555;
+font-size:11px!important;
+font-weight:400!important;
+}
+
+.dd .ddTitle span.arrow {
+background:url height: 0!important;
+width:0!important;
+}
+
+.ddTitle {
+border:0 solid #C3C3C3!important;
+}
+
+.field-item.even {
+padding:5px
+}
+
+.pane-title {
+background:#2B1399;
+border:1px solid #19306B;
+color:#FFF!important;
+font-size:14px!important;
+padding:2px!important;
+}
+
+#Pagina_Inicial .panels-flexible-column-714-2 {
+  background-color: transparent;
+  float: left;
+  margin-left: 0;
+  position: relative;
+  width: 335px;
+}
+
+#Pagina_Inicial .panels-flexible-column-714-4 {
+  background-color: transparent;
+  float: left;
+  margin-left: 10px;
+  position: relative;
+  width: 300px;
+}
+
+#Pagina_Inicial .panels-flexible-column-714-7 {
+  background-color: transparent;
+  float: left;
+  margin-left: 10px;
+  position: relative;
+  width: 260px;
+}
+
+.panel-2col .panel-col-first,.panel-2col .panel-col-last {
+width:auto!important;
+}
+
+.panels-flexible-region-714-noticias_videos-inside .pane-home-news-video .view-id-home_news_video {
+margin-top:16px;
+}
+
+.panels-flexible-row-714-12-inside .pane-views pane-calendar-upcoming .view-id-calendar_upcoming {
+margin-top:10px;
+}
+
+.twtr-doc {
+margin-left:12px;
+}
+
+.view-id-calendar_upcoming .view-content a {
+display:block;
+font-size:14px!important;
+font-style:normal;
+font-weight:700;
+line-height:100%;
+margin-top:11px;
+}
+
+.view-id-home_news_last h5 a,.view-id-home_news_last h5 a:visited {
+color:#000!important;
+display:block;
+font-size:1.2em!important;
+font-style:normal;
+font-weight:700;
+line-height:115%;
+}
+
+.view-id-home_news_last h5 a:hover {
+color:#2B1399!important;
+}
+
+.view-id-video_gallery .view-content a,.view-id-audio_gallery .view-content a,.view-id-images_gallery .view-content a {
+display:block;
+font-size:14px;
+font-weight:700;
+padding-bottom:10px;
+}
+
+.views-slideshow-controls-bottom {
+margin-top:0;
+position:relative;
+padding-left:0px;
+}
+
+.views-slideshow-controls-bottom .views-slideshow-controls-text {
+margin-left:0px;
+width:920px;
+}
+
+.views-slideshow-controls-bottom .views-slideshow-controls-text-next {
+float:right;
+}
+
+.views-slideshow-controls-bottom .views-slideshow-slide-counter {
+left:50%;
+top:0;
+position:absolute;
+}
+
+.views_slideshow_controls_text_pause {
+display:none;
+}
+
+.node .news .field-item.even {
+  text-align: center;
+}
+
+.Listado-Noticias .field-item.even {
+  padding: 0px 10px;
+}
+
+.field.field-name-field-imagen-news-thumb.field-type-image.field-label-hidden {
+  text-align: center;
+}
+.field.field-name-field-images-thumb.field-type-image.field-label-hidden {
+  text-align: center;
+}
+.field.field-name-field-video-youtube.field-type-file.field-label-hidden {
+  text-align: center;
+}
+.field.field-name-field-image-audio-thumb.field-type-image.field-label-hidden {
+  text-align: center;
+}
+input[type="text"], input[type="password"], input[type="email"], input[type="url"], textarea
+{
+   width: auto!important;
+}
+.panel-panel.unit.panel-col-thirty.firstUnit {
+  text-align: center;
+}
+.views-exposed-form {
+  margin-left: 30px;
+}
+.media-youtube-video.media-youtube-1 iframe {
+  height: 200px;
+  width: 290px;
+}
+
+.pie_de_foto_secciones {
+  font-size: 11px;
+  font-style: italic;
+  margin-right: 50px;
+  text-align: right;
+}
+
+.views-field-field-secciones-imagen {
+  text-align: center;
+}
+
+#layout-4a-fastlinks-content-gobierno ul li {
+  list-style-type: none!important;
+}
+
+.field-content {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.field-content.Imagen_Slide_Sow {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.panel-pane.pane-views.pane-secciones-ministerio img {
+  margin-left: 0px;
+}
+#Pagina_Inicial .Noticias_Diapositivas .views-field-title .field-content > a {
+  color: #FFFFFF;
+}
+
+.Primera_Pagina .Cancilleria_postcontent { width:960px;}
+.Primera_Pagina .Cancilleria_blockcontent { width:960px;}
+.Primera_Pagina .layout-4a-fastlinks-content{width:960px !important;}
+
+.responsive .Primera_Pagina .Cancilleria_postcontent { width:auto;}
+.responsive .Primera_Pagina .Cancilleria_blockcontent { width:auto;}
+.responsive .Primera_Pagina .layout-4a-fastlinks-content{width:auto !important;}
+
+
+
+.field.field-name-field-image-full-description.field-type-text-long.field-label-hidden {
+  background: url("/sites/all/themes/cancilleria/images/BgBlack60.png") repeat scroll center top transparent;
+  bottom: 4px;
+  color: #FFFFFF;
+  font-family: Arial,'Arial Unicode MS',Helvetica,Sans-Serif;
+  font-size: 11px;
+  font-style: italic;
+  font-variant: normal;
+  margin-left: 180px;
+  margin-top: -8px;
+  overflow: hidden;
+  padding: 0 10px;
+  position: inherit;
+  text-align: justify;
+  width: 580px;
+  z-index: 9;
+}
+
+.twitter-timeline.twitter-timeline-rendered {
+  margin-left: 10px;
+}
+
+.ImagenPiedeFoto {
+display: table;
+margin: 5px auto;
+}
+
+.ImagenPiedeFoto img {
+margin:0;
+padding:0
+}
+
+.ImagenPiedeFoto p + p {
+background: none repeat scroll 0 0 #626262;
+caption-side: bottom;
+color: #FFFFFF;
+display: table-caption;
+font-family: arial;
+font-size: 11px;
+font-style: italic;
+font-weight: normal;
+line-height: normal;
+margin: 0;
+padding: 0 10px;
+}
+
+.page-alianzadelpacifico .Cancilleria_layout-cell.Cancilleria_sidebar1.clearfix {
+  visibility: hidden !important;
+  width: 0 !important;
+}
+
+/* Centra la presentación */
+.field-content.Lista-Galeria-Imagenes {
+  margin-left: 12%;
+}
+.view.view-images-gallery-last.view-id-images_gallery_last.view-display-id-block_5 {
+  margin-left: 10%;
+  margin-top: 10px;
+}
+/* Centra la lista galeria de imagenes*/
+.field-content.lista-galeria-imagen {
+  text-align: center;
+}
+.pane-images-gallery-last .view-display-id-block_5 .skin-default {
+  width: 745px;
+}
+.pane-images-gallery-last .view-display-id-block_2 .skin-default {
+  width: 920px;
+}
+.pane-images-gallery-last .views-slideshow-controls-top {
+  margin-left: 50%;
+}
+
+
+.responsive #Pagina_Inicial .Noticias_Diapositivas .views-field-title {
+  width: auto;
+}
+.responsive .views-slideshow-controls-bottom .views-slideshow-controls-text {
+  margin-left: 0;
+  width: auto;
+}
+.responsive .views-slideshow-controls-bottom .views-slideshow-slide-counter {
+  left: 50%;
+  position: absolute;
+}
+
+.responsive .region.region-art-header {
+  visibility: hidden;
+}
+.responsive .Cancilleria_block.clearfix {
+  display: none;
+}
+.responsive .jcarousel-skin-advertising_footer .jcarousel-container-horizontal {
+  background: none repeat scroll 0 0 #FFFFFF;
+  height: 138px;
+  margin: 15px 20px 0;
+  padding: 0;
+  width: auto;
+}
+
+.responsive .inside.panels-flexible-column-inside.panels-flexible-column-714-7-inside.panels-flexible-column-inside-last {
+  display: none;
+}
+.responsive .Logo_Adaptativo {
+  background: url("/sites/all/themes/cancilleria/images/LogoAdaptativo.png") no-repeat scroll center top;
+  height: 100px;
+  width: auto;
+  background-color: #ededed;
+}
+.responsive .Logo_Adaptativo {
+  background: url("/sites/all/themes/cancilleria/images/LogoAdaptativo02.png") no-repeat scroll center top #EDEDED;
+  height: 100px;
+  width: auto;
+}
+
+/*
+Plantilla de Consulados
+ */
+.region-art-header .field-content {
+  padding-left: 0;
+  padding-right: 0;
+}
+.region-art-header .views-field.views-field-sitename {
+float: left;
+font-size: 25px;
+font-weight: bold;
+height: 75px;
+margin-left: 335px;
+margin-top: 35px;
+padding-left: 0;
+width: 330px;
+
+}
+.region-art-header .views-field.views-field-sitename a {
+  color: #2B1399;
+  text-decoration: none;
+}
+.region-art-header .views-field.views-field-sitename a:hover {
+  color: #2B1399;
+  text-decoration: underline;
+}
+.region-art-header .views-field.views-field-field-domain-site-flag {
+display: block;
+float: left;
+margin-left: 10px;
+margin-top: 45px;
+}
+
+.views-field.views-field-field-domain-telephone-support {
+color: white;
+font-size: 10px;
+
+}
+
+#block-block-15 {
+  height: 65px;
+  left: 772px;
+  position: absolute;
+  top: 20px;
+  width: 170px;
+}
+.panel-pane.pane-block.pane-block-9 {
+  margin-left: 15px;
+}
+.panel-pane.pane-block.pane-menu-menu-links-of-interest.enlaces_interes {
+  margin-left: 15px;
+}
+#Pagina_Inicial .panel_consulado {
+  background-color: white;
+  height: 200px;
+}
+#Pagina_Inicial .panel_consulado ul.menu li.leaf {
+  list-style: disc;
+  list-style-position: inside;
+}
+#Pagina_Inicial .panel_servicios_consulares {
+  background-color: white;
+  height: 200px;
+}
+#Pagina_Inicial .panel_servicios_consulares ul.menu li.leaf {
+  list-style: disc;
+  list-style-position: inside;
+}
+#Pagina_Inicial .panel_otros_servicios {
+  background-color: white;
+  height: 200px;
+}
+#Pagina_Inicial .panel_otros_servicios ul.menu li.leaf {
+  list-style: disc;
+  list-style-position: inside;
+}
+#Pagina_Inicial .panel_enlaces_interes {
+  background-color: white;
+  height: 200px;
+}
+#Pagina_Inicial .panel_enlaces_interes ul.menu li.leaf {
+  list-style: none none none;
+  margin-left: 0;
+  padding-left: 10px;
+  height: 15px;
+}
+#Pagina_Inicial .panel_enlaces_oficiales {
+  background-color: white;
+  height: 200px;
+}
+#Pagina_Inicial .panel_enlaces_oficiales ul.menu li.leaf {
+  list-style: none none none;
+  margin-left: 0;
+  padding-left: 10px;
+  height: 15px;
+}
+#Pagina_Inicial .Noticias_Principales {
+  margin-left: 15px;
+}
+
+#Pagina_Inicial .Cancilleria_postcontent p {
+  margin: 5px 0 0 !important;
+
+}
+
+/*added  icos for the right menu Jojuela*/
+ul.menu li a.ministerio_relaciones_exteriores {
+   background:url("images/iconos/cancilleria-logo1.png") no-repeat;
+   background-size: contain;
+   padding-left: 20px;
+}
+ul.menu li a.presidencia_consulado {
+   background:url("images/iconos/presidencia-logo1.png") no-repeat;
+   background-size: contain;
+      padding-left: 20px;
+}
+ul.menu li a.proexport {
+   background:url("images/iconos/proexport-logo1.png") no-repeat;
+   background-size: contain;
+      padding-left: 20px;
+}
+ul.menu li a.redes_colombia {
+   background:url("images/iconos/redescolombia1.png") no-repeat;
+   background-size: contain;
+      padding-left: 20px;
+}
+ul.menu li a.urna_cristal {
+   background:url("images/iconos/logo_urna1.png") no-repeat;
+   background-size: contain;
+      padding-left: 20px;
+}
+ul.menu li a.registraduria_estado_civil {
+   background:url("images/iconos/registraduria-logo1.jpg") no-repeat;
+   background-size: contain;
+      padding-left: 20px;
+}
+ul.menu li a.documentos_estrategicos {
+   background:url("images/iconos/docs-estrategicos.png") no-repeat;
+   background-size: contain;
+      padding-left: 20px;
+}
+ul.menu li a.temas_especificos {
+   background:url("images/iconos/temas-espec.png") no-repeat;
+   background-size: contain;
+      padding-left: 20px;
+}
+ul.menu li a.other-consulates {
+   background:url("images/iconos/otros-consulados.png") no-repeat;
+   background-size: contain;
+      padding-left: 20px;
+}
+ul.menu li a.cancilleria_ninos {
+   background:url("images/iconos/cancilleria_ninos.png") no-repeat;
+   background-size: contain;
+      padding-left: 20px;
+}
+ul.menu li a.certification-of-judicial-record {
+   background:url("images/iconos/certificado.png") no-repeat;
+   background-size: contain;
+      padding-left: 20px;
+}
+
+.Cancilleria_shapes {
+  background-image: url("images/cabezote03.jpg") !important;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+/* End Additional CSS Styles */
+
+/* BEGIN FCKEditor, CKEditor, TinyMCE modules support*/
+/*body.Cancilleria_body-nostyle, body.cke_show_borders, #tinymce body, #tinymce body.mceContentBody, body.mceContentBody, #edit-body
+{
+	background-image: none;
+	background-color: {bgColor} !important;
+	{editorFont}
+}*/
+/*
+use editor.css
+*/
+/* END FCKEditor, CKEditor modules support*/
+
+table
+{
+	width: 100%;
+}
+
+ul li, .item-list ul li, .menu ul li,
+ul li.expanded, ul li.leaf, ul li.collapsed,
+li.expanded, li.leaf, li.collapsed
+{
+	text-align: left;
+	list-style-type: none;
+	list-style-image: none;
+}
+ul li
+{
+	list-style-type: disc;
+}
+ul.arttabs_primary, ul.arttabs_secondary, .links, img.service-links
+{
+	padding-left: 0;
+	margin-left: 0;
+}
+
+ul.arttabs_primary li, ul.arttabs_secondary li
+{
+	display: inline;
+}
+
+ul.arttabs_primary li:before, ul.arttabs_secondary li:before
+{
+    content: ' ';
+	margin-left: 6px;
+}
+
+ul.links
+{
+	overflow: hidden;
+}
+
+ul.links li, .block ul
+{
+	background-image: none;
+	padding: 0;
+}
+
+ul.menu li a.active
+{
+	font-weight: bold;
+}
+
+#tinymce body ul, #tinymce body.mceContentBody ul, body.mceContentBody ul
+{
+  margin: 1em 0 1em 2em;
+}
+
+li.messages
+{
+	margin: 5px 0;
+}
+
+#user-login-form
+{
+	text-align: left;
+}
+
+#user-login-form ul li
+{
+	background-image: none;
+	padding-left: 0;
+}
+
+/* Fix fieldset for IE8 and FFox */
+fieldset, fieldset legend
+{
+	display: block;
+}
+
+.breadcrumb
+{
+	display: block;
+	padding-bottom: .7em;
+}
+
+#preview-args
+{
+	width: auto;
+}
+
+.tags
+{
+	float: left;
+}
+
+.messages
+{
+	padding: 5px;
+	margin: 5px 0;
+}
+
+.status
+{
+	border: 1px solid #090;
+	background: #C9FBC8;
+	margin: 5px 0;
+}
+
+tr.even, tr.odd
+{
+	background-color: transparent;
+}
+
+#forum .links li
+{
+	float: none;
+	clear: both;
+}
+
+#forum table
+{
+	width: auto;
+	margin-top: 15px;
+}
+
+#forum td.container
+{
+	padding-top: 15px;
+	border-left: none;
+	border-right: none;
+}
+
+#forum td.active
+{
+	background-color: transparent;
+}
+
+#forum td.forum, #forum td.topics, #forum td.posts, #forum td.last-reply
+{
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+#forum td.container
+{
+	font-weight: bold;
+}
+
+#forum td.active
+{
+	background-color: transparent;
+}
+
+.forum-topic-navigation
+{
+	border-top: 0 transparent;
+	border-bottom: 0 transparent;
+}
+
+.forum-topic-navigation .topic-previous
+{
+	text-align: left;
+	float: left;
+}
+
+.forum-topic-navigation .topic-next
+{
+	text-align: right;
+	float: right;
+}
+
+.read_more
+{
+	margin: 5px 0;
+	text-align: left;
+}
+
+.sticky-table H2
+{
+	font-size: 10px;
+}
+
+#footer
+{
+	text-align: center;
+}
+
+.filefield-upload .Cancilleria_button-wrapper
+{
+	top: 10px;
+}
+
+.uc_out_of_stock_throbbing
+{
+	position: absolute;
+	z-index: 1;
+	top: 16%;
+	left: 3px;
+	margin: 0;
+	padding: 0;
+}
+
+.profile h3
+{
+	border-bottom: 0 none;
+	margin-bottom: 1em;
+}
+
+/* BEGIN Image Attach module fix */
+img.image
+{
+	margin: 0;
+}
+
+.image-attach-teaser
+{
+	width: auto;
+}
+/* END Image Attach module fix */
+
+/* BEGIN ImageField module fix */
+img.imagefield
+{
+	margin: 0;
+}
+/* END ImageField module fix */
+
+/* BEGIN Support User picture */
+.picture, .comment .submitted
+{
+	clear: right;
+	float: right;
+}
+/* END Support User picture */
+
+/* BEGIN Support Nodeblock module */
+.Cancilleria_block-body .Cancilleria_post
+{
+	margin: 0;
+}
+/* END Support Nodeblock module */
+
+/* BEGIN Support floating panels in IE8 */
+.panel-col-last
+{
+	clear: right;
+}
+/* END Support floating panels in IE8 */
+
+/* BEGIN Support FCKEditor text alignment */
+.rteleft
+{
+	text-align: left !important;
+}
+
+.rteright
+{
+	text-align: right !important;
+}
+
+.rtecenter
+{
+	text-align: center !important;
+}
+
+.rtejustify
+{
+	text-align: justify !important;
+}
+/* END Support FCKEditor text alignment */
+
+/* BEGIN Set background color for sticky table */
+table.sticky-header
+{
+	background-color: {bgColor} !important;
+}
+/* END Set background color for sticky table */
+
+/* BEGIN Set alignment for radio buttons */
+input.form-radio, input.form-checkbox
+{
+	margin: 0 0 2px;
+	vertical-align: baseline;
+}
+/* END Set alignment for radio buttons*/
+
+/* BEGIN Move bradcrumb from separate post */
+h2.with-tabs
+{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.breadcrumb
+{
+	margin: 1em 0 0 0.7em;
+}
+/* END Move bradcrumb from separate post */
+
+/* BEGIN Increasing distance between buttons */
+span.Cancilleria_button-wrapper
+{
+	margin: 0 5px 0 0;
+}
+/* END Increasing distance between buttons */
+
+/* BEGIN Page validation fix */
+.half-width
+{
+	width: 50%;
+}
+
+.third-width
+{
+	width: 33%;
+}
+
+.two-thirds-width
+{
+	width: 67%;
+}
+/* END Page validation fix */
+
+/* BEGIN FckEditor bug with link disappearing fixed */
+#switch_oFCK_1
+{
+	display: block !important;
+}
+/* END FckEditor bug with link disappearing fixed */
+
+.Cancilleria_postcontent .calendar-calendar ul li, .Cancilleria_postcontent .calendar-calendar ol ul li,
+.Cancilleria_postcontent div.view div.views-admin-links ul li, .Cancilleria_postcontent div.view div.views-admin-links ol ul li
+{
+  background-image: none;
+  padding: 2px;
+}
+
+.date-heading h3
+{
+  text-align: center;
+}
+
+tbody, tbody th, tr.even, tr.odd
+{
+	border: none;
+}
+
+form.comment-form input[type="submit"], form.confirmation input[type="submit"]
+{
+	margin-right: 10px !important;
+}
+
+/* BEGIN Taxonomy terms Artisteer styles in Drupal 7 */
+.Cancilleria_tags, .Cancilleria_tags .field, .Cancilleria_tags .field .field-label,
+.Cancilleria_tags .field .field-items, .Cancilleria_tags .field .field-items .field-item
+{
+	display: inline;
+}
+
+.Cancilleria_tags .field-item a:after
+{
+	content: ', ';
+}
+
+.Cancilleria_tags .field-item:last-child a:after
+{
+	content: '';
+}
+/* END Taxonomy terms Artisteer styles in Drupal 7 */
+
+/* BEGIN Action links support in Drupal7 */
+.Cancilleria_post ul.action-links li
+{
+	background-image: none;
+	list-style-type: none;
+}
+
+.Cancilleria_post ul.action-links a
+{
+    background: url("images/addicon.png") no-repeat scroll 0 transparent;
+    background-position: center left;
+    line-height: 30px;
+    padding-left: 15px;
+}
+/* END Action links support in Drupal7 */
+
+/* BEGIN Overlay module support */
+#overlay #overlay-content #Cancilleria_page-background-middle-texture
+{
+    background-image: none;
+}
+
+#overlay-tabs li a, #overlay-tabs li a:active, #overlay-tabs li a:visited, #overlay-tabs li a:hover
+{
+    background-color: transparent;
+    font-weight: normal;
+}
+/* END Overlay module support */
+
+/* BEGIN Front page list view support */
+#first-time ol
+{
+    list-style-position: outside;
+}
+/* END Front page list view support */
+
+/* BEGIN Rtl support in Admin menu */
+#toolbar, #toolbar *
+{
+    text-align: left;
+}
+
+#toolbar ul li, #toolbar ul li a {
+    float: left;
+}
+/* END Rtl support in Admin menu */
+
+/* BEGIN Contextual links styles support */
+ul.contextual-links li
+{
+   background-image: none !important;
+   padding-left: 4px !important;
+}
+
+ul.contextual-links li a
+{
+   font-family: Arial !important;
+   font-style: normal !important;
+   font-weight: normal !important;
+   font-size: 12px !important;
+   text-align: left !important;
+   text-decoration: none !important;
+}
+/* END Contextual links styles support */
+
+/* BEGIN Rtl support for Contextual links */
+a.contextual-links-trigger
+{
+    text-indent: 90px !important;
+}
+/* END Rtl support for Contextual links */
+
+/* BEGIN Superfish support */
+.Cancilleria_blockcontent .sf-menu.sf-style-default li
+{
+    margin: 0;
+    padding: 0;
+}
+/* END Superfish support */
+
+.status, .status ul li
+{
+    color: #234600;
+}
+
+.error, .error ul li
+{
+	color: #660000;
+}
+
+/* Begin Drupal Search style */
+.Cancilleria_header .Cancilleria_search label
+{
+    display: none;
+}
+
+.Cancilleria_search div.form-item
+{
+    margin: 0;
+}
+
+#block-system-main form.Cancilleria_search {
+  line-height: normal !important;
+}
+.Cancilleria_search .fieldset-wrapper .action input[type="submit"] {
+  background-image: none;
+}
+
+#block-system-main form.Cancilleria_search {
+  line-height: normal !important;
+}
+.Cancilleria_search .fieldset-wrapper .action input[type="submit"] {
+  background-image: none;
+}
+
+.Cancilleria_blockcontent .Cancilleria_search .container-inline label,
+.Cancilleria_postcontent .Cancilleria_search .container-inline label {
+  display: none;
+}
+
+/* End Drupal Search style */

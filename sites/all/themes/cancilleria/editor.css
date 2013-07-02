@@ -1,0 +1,1302 @@
+body
+{
+    background: #FFFFFF;
+    margin: 0 auto;
+    font-size: 12px;
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: none;
+    font-variant: normal;
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    left: 0;
+    top: 0;
+    cursor: default;
+    overflow: hidden;
+}
+
+table
+{
+    font-size: 12px;
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: none;
+    font-variant: normal;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, ul, ol, li
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    text-align: left;
+}
+
+body, li, table, a, a:link, a:visited, a.visited, a:hover, a.hovered
+{
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    text-decoration: none;
+    text-transform: none;
+    font-variant: normal;
+    line-height: 125%;
+}
+
+p
+{
+    margin: 10px 0 0;
+}
+
+h1, h1 a, h1 a:link, h1 a:visited, h1 a:hover, h2, h2 a, h2 a:link, h2 a:visited, h2 a:hover, h3, h3 a, h3 a:link, h3 a:visited, h3 a:hover, h4, h4 a, h4 a:link, h4 a:visited, h4 a:hover, h5, h5 a, h5 a:link, h5 a:visited, h5 a:hover, h6, h6 a, h6 a:link, h6 a:visited, h6 a:hover
+{
+    font-size: 18px;
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+    font-variant: normal;
+}
+
+a, a:link
+{
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    text-decoration: none;
+    text-transform: none;
+    font-variant: normal;
+    color: #000000;
+}
+
+a:visited, a.visited
+{
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    text-decoration: none;
+    text-transform: none;
+    font-variant: normal;
+    color: #000000;
+}
+
+a:hover, a.hover
+{
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    text-decoration: underline;
+    text-transform: none;
+    font-variant: normal;
+    color: #2C139A;
+}
+
+h1
+{
+    color: #000000;
+    margin: 0;
+    font-size: 18px;
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+    font-variant: normal;
+}
+
+h1 a, h1 a:link, h1 a:hover, h1 a:visited
+{
+    font-size: 18px;
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+    font-variant: normal;
+}
+
+h2
+{
+    color: #000000;
+    margin: 0;
+    font-size: 16px;
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+    font-variant: normal;
+}
+
+h2 a, h2 a:link, h2 a:hover, h2 a:visited
+{
+    font-size: 16px;
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+    font-variant: normal;
+}
+
+h3
+{
+    color: #000000;
+    margin: 0;
+    font-size: 14px;
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+    font-variant: normal;
+}
+
+h3 a, h3 a:link, h3 a:hover, h3 a:visited
+{
+    font-size: 14px;
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+    font-variant: normal;
+}
+
+h4
+{
+    color: #000000;
+    margin: 0;
+    font-size: 12px;
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+    font-variant: normal;
+}
+
+h4 a, h4 a:link, h4 a:hover, h4 a:visited
+{
+    font-size: 12px;
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+    font-variant: normal;
+}
+
+h5
+{
+    color: #000000;
+    margin: 0;
+    font-size: 11px;
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+    font-variant: normal;
+}
+
+h5 a, h5 a:link, h5 a:hover, h5 a:visited
+{
+    font-size: 11px;
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+    font-variant: normal;
+}
+
+h6
+{
+    color: #000000;
+    margin: 0;
+    font-size: 10px;
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+    font-variant: normal;
+}
+
+h6 a, h6 a:link, h6 a:hover, h6 a:visited
+{
+    font-size: 10px;
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+    font-variant: normal;
+}
+
+header, footer, nav
+{
+    -webkit-background-origin: border !important;
+    -moz-background-origin: border !important;
+    background-origin: border-box !important;
+}
+
+header, footer, nav
+{
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+ol
+{
+    list-style-position: inside;
+}
+
+html, body
+{
+    height: 100%;
+}
+
+body
+{
+    padding: 0;
+    margin: 0;
+    min-width: 960px;
+    color: #000000;
+}
+
+.clearfix:before, .clearfix:after
+{
+    content: "";
+    display: table;
+}
+
+.clearfix:after
+{
+    clear: both;
+}
+
+form
+{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+table.position
+{
+    position: relative;
+    width: 100%;
+    table-layout: fixed;
+}
+
+li h1, li h1
+{
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    margin: 1px;
+}
+
+li h2, li h2
+{
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    margin: 1px;
+}
+
+li h3, li h3
+{
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    margin: 1px;
+}
+
+li h4, li h4
+{
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    margin: 1px;
+}
+
+li h5, li h5
+{
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    margin: 1px;
+}
+
+li h6, li h6
+{
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    margin: 1px;
+}
+
+li p, li p
+{
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    margin: 1px;
+}
+
+.ie7 .post .layout-cell
+{
+    border: none !important;
+    padding: 0 !important;
+}
+
+.ie6 .post .layout-cell
+{
+    border: none !important;
+    padding: 0 !important;
+}
+
+input, select, textarea
+{
+    vertical-align: middle;
+    font-size: 12px;
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+    font-variant: normal;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="url"], textarea
+{
+    background: #FBFCFE;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #B2B2B3;
+    margin: 0 auto;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="url"], textarea
+{
+    width: 100%;
+    padding: 5px 0;
+    color: #141415 !important;
+    font-size: 12px;
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+    font-variant: normal;
+}
+
+a img
+{
+    border: 0;
+}
+
+body img
+{
+    margin: 0 0 0 0;
+}
+
+body table
+{
+    border-collapse: collapse;
+    margin: 1px;
+}
+
+body th
+{
+    text-align: center;
+    vertical-align: middle;
+    padding: 7px;
+}
+
+pre
+{
+    overflow: auto;
+    padding: 0.1em;
+}
+
+.image-caption-wrapper
+{
+    padding: 0 0 0 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.image-caption-wrapper img
+{
+    margin: 0 !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.image-caption-wrapper p
+{
+    font-size: 80%;
+    text-align: right;
+    margin: 0;
+}
+
+ul>li:before
+{
+    content: url('images/postbullets.png');
+    margin-right: 5px;
+    bottom: 2px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0;
+    line-height: 0;
+}
+
+.opera  ul>li:before
+{
+    bottom: 0;
+}
+
+li
+{
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    text-decoration: none;
+    text-transform: none;
+    font-variant: normal;
+    color: #070D1D;
+    margin: 0 0 0 10px;
+}
+
+ul>li, ol
+{
+    padding: 0;
+}
+
+ul>li
+{
+    padding-left: 9px;
+}
+
+ul>li:before
+{
+    margin-left: -9px;
+}
+
+ol, ul
+{
+    margin: 1em 0 1em 10px;
+}
+
+li ol, li ul
+{
+    margin: 0.5em 0 0.5em 10px;
+}
+
+li
+{
+    margin: 0 0 0 0;
+}
+
+ol>li
+{
+    overflow: visible;
+}
+
+ul>li
+{
+    overflow-x: visible;
+    overflow-y: hidden;
+}
+
+blockquote
+{
+    background: #D6D6D7 url('images/postquote.png') no-repeat scroll;
+    border: 1px dashed #B2B2B3;
+    padding: 0 0 0 24px;
+    color: #000000;
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    text-decoration: none;
+    text-transform: none;
+    font-variant: normal;
+    overflow: auto;
+    clear: both;
+}
+
+blockquote a, blockquote a, blockquote a:link, blockquote a:link, blockquote a:visited, blockquote a:visited, blockquote a:hover, blockquote a:hover
+{
+    color: #000000;
+    font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    text-decoration: none;
+    text-transform: none;
+    font-variant: normal;
+}
+
+blockquote p, blockquote p
+{
+    margin: 0;
+}
+
+#Corazon_Gobierno .Cancilleria_postcontent ul > li:before, #Corazon_Gobierno .Cancilleria_post ul > li:before, #Corazon_Gobierno .Cancilleria_textblock ul > li:before
+{
+    content: none!important;
+}
+
+#Enlaces_Footer
+{
+    border-top: 1px solid #999;
+    clear: both;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    height: 20px;
+    margin: 10px 20px 0;
+    outline: 0 none;
+    padding: 10px 20px;
+    text-align: center;
+    vertical-align: baseline;
+}
+
+#Enlaces_Footer li
+{
+    border-right: 1px solid #888;
+    color: #333;
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+#Enlaces_Footer li a
+{
+    font-size: 11px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+#Enlaces_Footer li a:hover
+{
+    color: #2B1399!important;
+    text-decoration: underline;
+}
+
+#Enlaces_Footer li a:link, #Enlaces_Footer li a:visited, #Enlaces_Footer li a:active
+{
+    color: #333;
+}
+
+#Enlaces_Footer li.last
+{
+    border-right: 0 solid #CCC;
+    font-size: 11px;
+    padding: 5px;
+}
+
+#Enlaces_Footer ul
+{
+    font-size: 11px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#Enlaces_Footer ul, #Enlaces_Footer li, #Enlaces_Footer li a, #Enlaces_Footer li a:active, #Enlaces_Footer li a:link, #Enlaces_Footer li a:hover, #Enlaces_Footer li:visited
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+#layout-1-links-above
+{
+    border: 0 none;
+    color: #FFF;
+    float: right;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    margin-top: 45px;
+    outline: 0 none;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+#layout-1-links-above li
+{
+    display: inline;
+}
+
+#layout-1-links-above li.last a
+{
+    margin-right: 0;
+}
+
+#layout-1-links-above ul
+{
+    color: #FFF;
+    float: right;
+    font-size: .8em;
+    list-style-type: none;
+    overflow: auto;
+}
+
+#layout-1-links-above-map > a
+{
+    vertical-align: 5px;
+}
+
+#layout-1-links-above-map a:link, #layout-1-links-above-map a:visited, #layout-1-links-above-map a:active
+{
+    color: #000;
+    font-size: 1em;
+    font-weight: 400;
+}
+
+#layout-4a-fastlinks-content
+{
+    background: #FFF;
+    clear: both;
+    float: left;
+    margin: 5px 10px 5px 20px;
+    padding: 0;
+    width: 920px;
+}
+
+#layout-4a-fastlinks-content .list-fastlinks select
+{
+    background: #CF0;
+}
+
+#layout-4a-fastlinks-content .list-fastlinks, #layout-4a-fastlinks-content .list-fastlinks-button
+{
+    background: #EEE;
+    color: #333;
+    font-size: .6em;
+    font-style: normal;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+#layout-4a-fastlinks-content .list-fastlinks-button
+{
+    background: #F5F5F5;
+    border: 1px solid #666;
+    cursor: pointer;
+    padding: 1px 3px;
+}
+
+#layout-4a-fastlinks-content .list-fastlinks-button:hover
+{
+    background: #C61720;
+    border: 1px solid #FFF;
+    color: #FFF;
+}
+
+#layout-4a-fastlinks-content h3
+{
+    color: #333;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    margin-left: 10px;
+    margin-top: 15px;
+    padding: 0;
+}
+
+#layout-4a-fastlinks-content li a:active, #layout-4a-fastlinks-content li a:link
+{
+    color: #444;
+}
+
+#layout-4a-fastlinks-content li a:hover
+{
+    text-decoration: underline;
+}
+
+#layout-4a-fastlinks-content li a:visited
+{
+    color: #777;
+}
+
+#layout-4a-fastlinks-content select.list-fastlinks option:active
+{
+    background: #990 !important;
+}
+
+#layout-4a-fastlinks-content ul
+{
+    color: #444;
+    font-size: .6em;
+    margin-left: 15px;
+    padding-left: 2px;
+}
+
+#layout-4a-fastlinks-content ul, #layout-4a-fastlinks-content li, #layout-4a-fastlinks-content li a, #layout-4a-fastlinks-content li a:active, #layout-4a-fastlinks-content li a:link, #layout-4a-fastlinks-content li a:hover, #layout-4a-fastlinks-content li a:visited
+{
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+}
+
+#layout-4a-fastlinks-content-ciudadano
+{
+    padding-right: 15px;
+    width: 165px;
+}
+
+#layout-4a-fastlinks-content-gobierno
+{
+    background: url(images/logo-gobierno-01.png) no-repeat left center #FFF;
+    overflow: auto;
+    padding: 22px 0 18px 180px;
+    width: 300px;
+}
+
+#layout-4a-fastlinks-content-gobierno div
+{
+    float: left;
+    padding-right: 5px;
+    width: 95px;
+}
+
+#layout-4a-fastlinks-content-gobierno div li
+{
+    margin-bottom: 5px;
+    position: relative;
+}
+
+#layout-4a-fastlinks-content-gobierno div li div
+{
+    height: 6px;
+    margin-bottom: 0;
+    margin-right: 2px;
+    margin-top: 2px;
+    vertical-align: bottom;
+    width: 1px;
+}
+
+#layout-4a-fastlinks-content-gobierno div ul
+{
+    font-size: .55em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#layout-4a-fastlinks-content-gobierno div ul li p
+{
+    font-size: 9px;
+    margin: 0;
+    padding: 0;
+}
+
+#layout-4a-fastlinks-content-gobierno, #layout-4a-fastlinks-content-ciudadano, #layout-4a-fastlinks-content-listas
+{
+    float: left;
+}
+
+#layout-4a-fastlinks-content-listas
+{
+    width: 250px;
+}
+
+#layout-4a-fastlinks-content-listas .form-fastlinks
+{
+    background: #EEE;
+    border: 1px solid #CCC;
+    margin: 5px 0 15px;
+    padding: 3px 3px 5px 5px;
+}
+
+#layout-4a-fastlinks-promo
+{
+    clear: both;
+    float: left;
+    margin-bottom: 10px;
+}
+
+#layout-4a-fastlinks-wrapper
+{
+    clear: both;
+    margin: 0;
+    padding: 0 20px;
+}
+
+#layout-4a-flinkscg-colciencias div
+{
+    background: #622073;
+}
+
+#layout-4a-flinkscg-coldeportes div
+{
+    background: #00995B;
+}
+
+#layout-4a-flinkscg-dafp div
+{
+    background: #632B00;
+}
+
+#layout-4a-flinkscg-dane div
+{
+    background: #9F002D;
+}
+
+#layout-4a-flinkscg-dni div
+{
+    background: #734C1D;
+}
+
+#layout-4a-flinkscg-dnp div
+{
+    background: #634800;
+}
+
+#layout-4a-flinkscg-dps div
+{
+    background: #0A5E99;
+}
+
+#layout-4a-flinkscg-gobierno div
+{
+    background: #3D404C;
+}
+
+#layout-4a-flinkscg-minagricultura div
+{
+    background: #5B8300;
+}
+
+#layout-4a-flinkscg-minambiente div
+{
+    background: #3C9900;
+}
+
+#layout-4a-flinkscg-mincomercio div
+{
+    background: #3D6300;
+}
+
+#layout-4a-flinkscg-mincultura div
+{
+    background: #63004B;
+}
+
+#layout-4a-flinkscg-mindefensa div
+{
+    background: #0F3E99;
+}
+
+#layout-4a-flinkscg-mineducacion div
+{
+    background: #38170D;
+}
+
+#layout-4a-flinkscg-minhacienda div
+{
+    background: #531400;
+}
+
+#layout-4a-flinkscg-mininterior div
+{
+    background: #00630C;
+}
+
+#layout-4a-flinkscg-minjusticia div
+{
+    background: #151F99;
+}
+
+#layout-4a-flinkscg-minminas div
+{
+    background: #73611D;
+}
+
+#layout-4a-flinkscg-minrelaciones div
+{
+    background: #410E99;
+}
+
+#layout-4a-flinkscg-minsalud div
+{
+    background: #1D7373;
+}
+
+#layout-4a-flinkscg-mintic div
+{
+    background: #590A99;
+}
+
+#layout-4a-flinkscg-mintrabajo div
+{
+    background: #2B1399;
+}
+
+#layout-4a-flinkscg-mintransporte div
+{
+    background: #992900;
+}
+
+#layout-4a-flinkscg-minvivienda div
+{
+    background: #996200;
+}
+
+#layout-4a-flinkscg-presidencia div, #layout-4a-flinkscg-vicepresidencia div
+{
+    background: #C61720;
+}
+
+#Pagina_Inicial .Noticias_Diapositivas
+{
+    margin: 10px 20px;
+    position: relative;
+}
+
+#Pagina_Inicial .Noticias_Diapositivas .views-field-title
+{
+    background: url(/sites/all/themes/Cancilleria/images/BgBlack60.png) center top;
+    bottom: 4px;
+    color: #FFF;
+    height: 80px;
+    left: 0;
+    overflow: hidden;
+    padding: 0 10px;
+    position: absolute;
+    width: 900px;
+    z-index: 9;
+}
+
+#Pagina_Inicial .Noticias_Diapositivas h3
+{
+    color: #FFF;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 5px 0 0;
+}
+
+#Pagina_Inicial .Noticias_Diapositivas h6
+{
+    color: #FFF;
+    font-size: 10px;
+    font-weight: 700;
+    margin: 5px 0 0;
+}
+
+#Pagina_Inicial .Noticias_Principales .Noticias-Principales-Linea
+{
+    border-bottom: 1px dotted;
+    padding-bottom: 10px;
+}
+
+#Pagina_Inicial .Noticias_Principales .Noticias-Principales-Linea h2
+{
+    margin: 10px 0;
+}
+
+#Pagina_Inicial .Noticias_Principales .Noticias-Principales-Linea h2 a:hover
+{
+    text-decoration: underline;
+}
+
+#Pagina_Inicial .Agenda_Ministerial .pane-title
+{
+    margin-top: 20px;
+}
+
+#Pagina_Inicial .Home_Noticias_Multimedia .Cancilleria_postcontent ul > li:before, .Cancilleria_post ul > li:before, .Cancilleria_textblock ul > li:before
+{
+    bottom: 2px;
+    content: none;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+    margin-right: 6px;
+    position: relative;
+    vertical-align: middle;
+}
+
+#Pagina_Inicial .inside.panels-flexible-row-inside.panels-flexible-row-714-1-inside.panels-flexible-row-inside-last.clearfix
+{
+    margin: 0 20px;
+    padding: 0;
+}
+
+#Pagina_Inicio .panels-flexible-row
+{
+    height: 0!important;
+    padding: 0 0 .5em 16px;
+}
+
+#Tab_Multimedia
+{
+    left: 0;
+}
+
+#block-block-2
+{
+    padding: 15px 15px 9px;
+}
+
+/*
+#block-block-2 a div.Logo, #block-block-25 a div
+{
+    background: url(images/logo-cancilleria.png) no-repeat scroll 0 0 transparent;
+    height: 82px;
+    outline: 0 none!important;
+    width: 550px;
+}
+
+*/
+#block-block-2 a div
+{
+    background: url(images/logo-cancilleria.png) no-repeat scroll 0 0 transparent;
+    height: 82px;
+    outline: 0 none!important;
+    width: 550px;
+}
+
+#block-block-25
+{
+    left: 530px;
+    position: absolute;
+    top: 40px;
+}
+
+#block-block-26
+{
+    height: 65px;
+    left: 772px;
+    position: absolute;
+    top: 15px;
+    width: 170px;
+}
+
+#block-lang-dropdown-language
+{
+    left: 860px;
+    position: absolute;
+    top: 72px;
+}
+
+#the_minister .views-slideshow-cycle-main-frame.views_slideshow_cycle_teaser_section, #politica_exterior .views-slideshow-cycle-main-frame.views_slideshow_cycle_teaser_section
+{
+    left: 0px;
+}
+
+.Cancilleria_block
+{
+    margin: 15px 15px 0 0 !important;
+}
+
+.Cancilleria_footer
+{
+    height: 60px !import;
+}
+
+.Cancilleria_header > .region, .Cancilleria_header > .block
+{
+    height: 110px;
+    left: 0;
+    top: 0;
+    width: 960px;
+}
+
+.Cancilleria_postcontent a:hover
+{
+    color: #2B1399;
+}
+
+.Cancilleria_postcontent ul > li
+{
+    content: no-close-quote!important;
+}
+
+.Cancilleria_postcontent ul > li, .Cancilleria_post ul > li, .Cancilleria_textblock ul > li
+{
+    margin: 0!important;
+    overflow-x: visible;
+    overflow-y: visible;
+    padding: 5px 0 5px 5px;
+}
+
+.Cancilleria_postcontent ul > li:before, .Cancilleria_post ul > li:before, .Cancilleria_textblock ul > li:before
+{
+    margin-left: 0;
+}
+
+.breadcrumb a, .breadcrumb a.visited
+{
+    color: #555;
+    font-size: 11px!important;
+    font-weight: 400!important;
+}
+
+.ddTitle
+{
+    border: 0 solid #C3C3C3!important;
+}
+
+.field-item.even
+{
+    padding: 5px;
+}
+
+.pane-title
+{
+    background: #2B1399;
+    border: 1px solid #19306B;
+    color: #FFF!important;
+    font-size: 14px!important;
+    padding: 2px!important;
+}
+
+#Pagina_Inicial .panels-flexible-column-714-2
+{
+    background-color: transparent;
+    float: left;
+    margin-left: 0;
+    position: relative;
+    width: 335px;
+}
+
+#Pagina_Inicial .panels-flexible-column-714-4
+{
+    background-color: transparent;
+    float: left;
+    margin-left: 10px;
+    position: relative;
+    width: 300px;
+}
+
+#Pagina_Inicial .panels-flexible-column-714-7
+{
+    background-color: transparent;
+    float: left;
+    margin-left: 10px;
+    position: relative;
+    width: 260px;
+}
+
+.panel-2col .panel-col-first, .panel-2col .panel-col-last
+{
+    width: auto!important;
+}
+
+.panels-flexible-region-714-noticias_videos-inside .pane-home-news-video .view-id-home_news_video
+{
+    margin-top: 16px;
+}
+
+.panels-flexible-row-714-12-inside .pane-views pane-calendar-upcoming .view-id-calendar_upcoming
+{
+    margin-top: 10px;
+}
+
+.twtr-doc
+{
+    margin-left: 12px;
+}
+
+.view-id-calendar_upcoming .view-content a
+{
+    display: block;
+    font-size: 14px!important;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    margin-top: 11px;
+}
+
+.view-id-home_news_last h5 a, .view-id-home_news_last h5 a:visited
+{
+    color: #000!important;
+    display: block;
+    font-size: 1.2em!important;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 115%;
+}
+
+.view-id-home_news_last h5 a:hover
+{
+    color: #2B1399!important;
+}
+
+.view-id-video_gallery .view-content a, .view-id-audio_gallery .view-content a, .view-id-images_gallery .view-content a
+{
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+
+.views-slideshow-controls-bottom
+{
+    margin-top: 0;
+    position: relative;
+}
+
+.views-slideshow-controls-bottom .views-slideshow-controls-text
+{
+    margin-left: 0px;
+    width: 920px;
+}
+
+.views-slideshow-controls-bottom .views-slideshow-controls-text-next
+{
+    float: right;
+}
+
+.views-slideshow-controls-bottom .views-slideshow-slide-counter
+{
+    left: 476px;
+    position: absolute;
+}
+
+.views_slideshow_controls_text_pause
+{
+    display: none;
+}
+
+.node .news .field-item.even
+{
+    text-align: center;
+}
+
+.Listado-Noticias .field-item.even
+{
+    padding: 0px 10px;
+}
+
+.field.field-name-field-imagen-news-thumb.field-type-image.field-label-hidden
+{
+    text-align: center;
+}
+
+.field.field-name-field-images-thumb.field-type-image.field-label-hidden
+{
+    text-align: center;
+}
+
+.field.field-name-field-video-youtube.field-type-file.field-label-hidden
+{
+    text-align: center;
+}
+
+.field.field-name-field-image-audio-thumb.field-type-image.field-label-hidden
+{
+    text-align: center;
+}
+
+body
+{
+    overflow: auto !important;
+}
+
+li.cke_panel_listItem
+{
+	padding-left: 0;
+}
+
+li.cke_panel_listItem:before
+{
+	content: none;
+}
