@@ -3142,23 +3142,25 @@ padding:0 0 .5em 16px;
 left:0;
 }
 
-#block-block-2 {
-padding:15px 15px 9px;
+#block-block-17 {
+height: 100px;
+padding: 20px 5px 0 0;
+position: absolute;
+width: 670px;
 }
 
 /*
-#block-block-2 a div.Logo, #block-block-25 a div {
+#block-block-17 a div.Logo, #block-block-25 a div {
 background:url(images/logo_cancilleria_3.png) no-repeat scroll 0 0 transparent;
 height:85px;
 outline:0 none!important;
 width:550px;
 }
 */
-#block-block-2 a div {
-background:url(images/logo_cancilleria_3.png) no-repeat scroll 0 0 transparent;
-height:82px;
-outline:0 none!important;
-width:550px;
+#block-block-17 a div {
+height: 100px;
+outline: 0 none !important;
+width: 670px;
 }
 #block-block-25 {
 left:550px;
@@ -3540,13 +3542,13 @@ Plantilla de Consulados
 }
 .region-art-header .views-field.views-field-sitename {
 float: left;
-font-size: 25px;
+font-size: 20px;
 font-weight: bold;
 height: 75px;
-margin-left: 335px;
+margin-left: 345px;
 margin-top: 35px;
 padding-left: 0;
-width: 330px;
+width: 310px;
 
 }
 .region-art-header .views-field.views-field-sitename a {
@@ -3560,8 +3562,8 @@ width: 330px;
 .region-art-header .views-field.views-field-field-domain-site-flag {
 display: block;
 float: left;
-margin-left: 10px;
-margin-top: 45px;
+margin-left: 15px;
+margin-top: 100px;
 }
 
 .views-field.views-field-field-domain-telephone-support {
@@ -3570,7 +3572,7 @@ font-size: 10px;
 
 }
 
-#block-block-15 {
+#block-block-12 {
   height: 65px;
   left: 772px;
   position: absolute;
@@ -3588,6 +3590,24 @@ font-size: 10px;
   height: 200px;
 }
 #Pagina_Inicial .panel_consulado ul.menu li.leaf {
+  list-style: disc;
+  list-style-position: inside;
+}
+#Pagina_Inicial .pane-acerca-de-la-embajada-consulados {
+  background-color: white;
+  height: 200px;
+}
+#Pagina_Inicial .pane-acerca-de-la-embajada-consulados .field-content {
+  padding-left: 0;
+  padding-right: 0;
+}
+#Pagina_Inicial .pane-acerca-de-la-embajada-consulados .field-content li {
+  list-style: inside;
+  padding: 0 !important;
+}
+
+
+#Pagina_Inicial .pane-acerca-de-la-embajada-consulados ul.menu li.leaf {
   list-style: disc;
   list-style-position: inside;
 }
@@ -3684,6 +3704,11 @@ ul.menu li a.other-consulates {
 }
 ul.menu li a.cancilleria_ninos {
    background:url("images/iconos/cancilleria_ninos.png") no-repeat;
+   background-size: contain;
+      padding-left: 20px;
+}
+ul.menu li a.biblioteca_tratados {
+   background:url("images/iconos/biblioteca_tratados.png") no-repeat;
    background-size: contain;
       padding-left: 20px;
 }
