@@ -4,12 +4,13 @@
 	text-align:left;
 	background-color:#fff;
 	font-family:Arial, Helvetica, sans-serif;
-	font-size:12px;
+	font-size:11px;
 	position:relative;
+        font-weight: bold;
 }
 .dd .ddTitle {
-	background:#f2f2f2;
-	border:1px solid #c3c3c3;
+        background:#2D139A;
+/*	border:1px solid #c3c3c3;*/
 	padding:3px;
 	text-indent:0;
 	cursor:default;
