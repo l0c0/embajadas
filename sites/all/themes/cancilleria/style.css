@@ -3149,6 +3149,12 @@ padding: 20px 5px 0 0;
 position: absolute;
 width: 670px;
 }
+#block-block-18 {
+  height: 25px;
+  position: absolute;
+  right: 25px;
+  width: 330px;
+}
 
 /*
 #block-block-17 a div.Logo, #block-block-25 a div {
@@ -3181,9 +3187,9 @@ top:40px;
 #block-lang-dropdown-language {
 color: #FFFFFF;
 font-size: 12px;
-left: 860px;
 position: absolute;
-top: 120px;
+right: 15px;
+top: 105px;
 }
 
 #the_minister .views-slideshow-cycle-main-frame.views_slideshow_cycle_teaser_section,#politica_exterior .views-slideshow-cycle-main-frame.views_slideshow_cycle_teaser_section {
@@ -3547,13 +3553,13 @@ Plantilla de Consulados
 }
 .region-art-header .views-field.views-field-sitename {
 float: left;
-font-size: 18px;
+font-size: 16px;
 font-weight: bold;
-height: 60px;
-margin-left: 250px;
-margin-top: 40px;
+height: 45px;
+margin-left: 260px;
+margin-top: 70px;
 padding-left: 0;
-width: 220px;
+width: 240px;
 }
 .region-art-header .views-field.views-field-sitename a {
   color: #2B1399;
@@ -3566,8 +3572,8 @@ width: 220px;
 .region-art-header .views-field.views-field-field-domain-site-flag {
 display: block;
 float: left;
-margin-left: 20px;
-margin-top: 100px;
+margin-left: 50px;
+margin-top: 120px;
 }
 
 .views-field.views-field-field-domain-telephone-support {
@@ -3578,10 +3584,10 @@ font-size: 10px;
 
 #block-block-12 {
 height: 65px;
-left: 772px;
 position: absolute;
-top: 55px;
-width: 170px;
+right: 45px;
+top: 40px;
+width: 105px;
 }
 .panel-pane.pane-block.pane-block-9 {
   margin-left: 15px;
@@ -3591,7 +3597,7 @@ width: 170px;
 }
 #Pagina_Inicial .panel_consulado {
   background-color: white;
-  height: 200px;
+  height: 210px;
 }
 #Pagina_Inicial .panel_consulado ul.menu li.leaf {
   list-style: disc;
@@ -3599,15 +3605,16 @@ width: 170px;
 }
 #Pagina_Inicial .pane-acerca-de-la-embajada-consulados {
   background-color: white;
-  height: 200px;
+  height: 210px;
+  overflow-x: auto;
 }
 #Pagina_Inicial .pane-acerca-de-la-embajada-consulados .field-content {
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 5px;
+  padding-right: 5px; 
 }
 #Pagina_Inicial .pane-acerca-de-la-embajada-consulados .field-content li {
   list-style: inside;
-  padding: 2px 0 0 !important;
+  padding: 2px 0 0 !important; 
 }
 
 
@@ -3625,7 +3632,7 @@ width: 170px;
 }
 #Pagina_Inicial .panel_otros_servicios {
   background-color: white;
-  height: 200px;
+  height: 210px;
 }
 #Pagina_Inicial .panel_otros_servicios ul.menu li.leaf {
   list-style: disc;
@@ -3723,7 +3730,7 @@ ul.menu li a.certification-of-judicial-record {
 }
 
 .Cancilleria_shapes {
-  background-image: url("images/cabezote07.jpg") !important;
+  background-image: url("images/cabezote09.png") !important;
   bottom: 0;
   left: 0;
   overflow: hidden;
@@ -3752,6 +3759,21 @@ ul.menu li a.certification-of-judicial-record {
   background-color: #070038;
   height: 35px;
 }
+
+.overlay-inner h4 {
+  color: white;
+}
+.overlay-inner h3 {
+  color: white;
+}
+.panel-overlay {
+  margin-left: 5px !important;
+  width: 500px !important;
+}
+.prev-slide.slide-button {
+  margin-left: 5px;
+}
+
 /* End Additional CSS Styles */
 
 /* BEGIN FCKEditor, CKEditor, TinyMCE modules support*/
