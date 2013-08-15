@@ -3774,6 +3774,13 @@ ul.menu li a.certification-of-judicial-record {
 .prev-slide.slide-button {
   margin-left: 5px;
 }
+.field-content.centrado {
+  text-align: center;
+}
+.centrado .imgtitlecaption-alt {
+  font-size: smaller;
+}
+
 
 /* End Additional CSS Styles */
 
