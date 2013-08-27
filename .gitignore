@@ -4,6 +4,7 @@
 *.gzip
 *.bzip2
 *.zip
+.ftpquota
 error_log
 sites/*/settings.php
 
