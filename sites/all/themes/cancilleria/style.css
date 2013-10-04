@@ -3156,15 +3156,7 @@ width: 670px;
   width: 330px;
 }
 
-/*
-#block-block-17 a div.Logo, #block-block-25 a div {
-background:url(images/logo_cancilleria_3.png) no-repeat scroll 0 0 transparent;
-height:85px;
-outline:0 none!important;
-width:550px;
-}
-*/
-#block-block-17 a div {
+#block-block-17 div.Logo {
 height: 100px;
 outline: 0 none !important;
 width: 670px;
@@ -3577,10 +3569,11 @@ margin-top: 120px;
 }
 
 .views-field.views-field-field-domain-telephone-support {
-  color: white;
-  font-size: 10px;
-  height: 35px;
-  padding-top: 4px;
+color: #FFFFFF;
+font-size: 10px;
+height: 35px;
+padding-top: 4px;
+text-align: center;
 }
 
 #block-block-12 {

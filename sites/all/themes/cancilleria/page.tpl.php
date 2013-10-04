@@ -15,7 +15,9 @@ $tabs2 = (isset($tabs2) && !(empty($tabs2))) ?'<ul class="arttabs_secondary">'.r
 
 <div id="Cancilleria_main">
     <div class="Cancilleria_sheet clearfix">
-<header class="Cancilleria_header clearfix"><?php if (!empty($art_header)) { echo render($art_header); } ?>
+
+
+<div class="Cancilleria_header clearfix"><?php if (!empty($art_header)) { echo render($art_header); } ?>
 
 
     <div class="Cancilleria_shapes">
@@ -24,7 +26,7 @@ $tabs2 = (isset($tabs2) && !(empty($tabs2))) ?'<ul class="arttabs_secondary">'.r
             </div>
 
 <?php if (!empty($navigation) || !empty($extra1) || !empty($extra2)): ?>
-<nav class="Cancilleria_nav clearfix">
+<div class="Cancilleria_nav clearfix">
      
     <?php if (!empty($extra1)) : ?>
 <div class="Cancilleria_hmenu-extra1"><?php echo render($extra1); ?></div>
@@ -35,11 +37,15 @@ $tabs2 = (isset($tabs2) && !(empty($tabs2))) ?'<ul class="arttabs_secondary">'.r
 <?php if (!empty($navigation)) : ?>
 <?php echo art_hmenu_output(render($navigation)); ?>
 <?php endif; ?>
-</nav><?php endif; ?>
+</div><?php endif; ?>
 
 
                     
-</header>
+</div>
+
+
+
+
 <?php if (!empty($banner1)) { echo '<div id="banner1">'.render($banner1).'</div>'; } ?>
 
 <?php if (!empty($breadcrumb)): ?>

@@ -31,11 +31,12 @@ regions[bottom1] = Bottom 1
 regions[bottom2] = Bottom 2
 regions[bottom3] = Bottom 3
 regions[footer_message] = Footer
+
 stylesheets[screen][]= style.css
 
-stylesheets[all][]= style.responsive.css
+# stylesheets[all][]= style.responsive.css
 
 scripts[]= script.js
 
-scripts[]= script.responsive.js
+# scripts[]= script.responsive.js
 

@@ -216,7 +216,7 @@ jQuery(window).bind("resize", function () {
 
 jQuery(function($) {
     'use strict';
-    $('nav.Cancilleria_nav').addClass("desktop-nav");
+    $('div.Cancilleria_nav').addClass("desktop-nav");
 });
 
 
