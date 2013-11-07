@@ -1,0 +1,3 @@
+name = ZCancille
+description = "Custom module to add features"
+core = 7.x

@@ -1,0 +1,182 @@
+<?php
+function zcancille_block_info() {
+  $blocks = array();
+ 
+  $blocks['zcancille_newsroom_calendar'] = array(
+    'info' => t('Newsroom calendar'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+
+  return $blocks;
+}
+ 
+
+function zcancille_block_view($delta='')
+{
+  switch($delta) {
+    case 'zcancille_apostilla_legalizacion':
+      $block['subject'] = null; // Most forms don't have a subject 
+      $block['content'] = drupal_get_form('zcancille_apostilla_legalizacion_form');
+      break;
+    case 'zcancille_newsroom_calendar':
+      $content = '';
+      if(arg(2)) {
+        $date = explode('-', arg(2));
+        $year = $date[0];
+      }
+      elseif(arg(1)) {
+        $date = explode('-', arg(1));
+        $year = $date[0];
+      }
+      else {
+        $year = date('Y');
+      }
+      
+      if(is_numeric($year) && !arg(2)) {
+        $content .= '
+<h2 class="pane-title">' . $year . '</h2>
+<ul>
+  <li><a href="/' . arg(0) . '/' . $year . '-01">Enero</a></li>
+  <li><a href="/' . arg(0) . '/' . $year . '-02">Febrero</a></li>
+  <li><a href="/' . arg(0) . '/' . $year . '-03">Marzo</a></li>
+  <li><a href="/' . arg(0) . '/' . $year . '-04">Abril</a></li>
+  <li><a href="/' . arg(0) . '/' . $year . '-05">Mayo</a></li>
+  <li><a href="/' . arg(0) . '/' . $year . '-06">Junio</a></li>
+  <li><a href="/' . arg(0) . '/' . $year . '-07">Julio</a></li>
+  <li><a href="/' . arg(0) . '/' . $year . '-08">Agosto</a></li>
+  <li><a href="/' . arg(0) . '/' . $year . '-09">Septiembre</a></li>
+  <li><a href="/' . arg(0) . '/' . $year . '-10">Octubre</a></li>
+  <li><a href="/' . arg(0) . '/' . $year . '-11">Noviembre</a></li>
+  <li><a href="/' . arg(0) . '/' . $year . '-12">Diciembre</a></li>
+</ul>
+<h2 class="pane-title">A&ntilde;os anteriores</h2>
+<ul>
+      ';
+        for($x = date('Y'); $x >= date('Y')-3; $x--){
+          $content .= '<li><a href="/' . arg(0) . '/' . $x . '">' . $x . '</a></li>';
+        }
+      }
+      else {
+        $year = date('Y');
+        $content .= '
+<h2 class="pane-title">' . $year . '</h2>
+<ul>
+  <li><a href="/' . arg(0) . '/' . arg(1) . '/' . $year . '-01">Enero</a></li>
+  <li><a href="/' . arg(0) . '/' . arg(1) . '/' . $year . '-02">Febrero</a></li>
+  <li><a href="/' . arg(0) . '/' . arg(1) . '/' . $year . '-03">Marzo</a></li>
+  <li><a href="/' . arg(0) . '/' . arg(1) . '/' . $year . '-04">Abril</a></li>
+  <li><a href="/' . arg(0) . '/' . arg(1) . '/' . $year . '-05">Mayo</a></li>
+  <li><a href="/' . arg(0) . '/' . arg(1) . '/' . $year . '-06">Junio</a></li>
+  <li><a href="/' . arg(0) . '/' . arg(1) . '/' . $year . '-07">Julio</a></li>
+  <li><a href="/' . arg(0) . '/' . arg(1) . '/' . $year . '-08">Agosto</a></li>
+  <li><a href="/' . arg(0) . '/' . arg(1) . '/' . $year . '-09">Septiembre</a></li>
+  <li><a href="/' . arg(0) . '/' . arg(1) . '/' . $year . '-10">Octubre</a></li>
+  <li><a href="/' . arg(0) . '/' . arg(1) . '/' . $year . '-11">Noviembre</a></li>
+  <li><a href="/' . arg(0) . '/' . arg(1) . '/' . $year . '-12">Diciembre</a></li>
+</ul>
+<h2 class="pane-title">A&ntilde;os anteriores</h2>
+<ul>
+      ';
+        for($x = date('Y'); $x >= date('Y')-3; $x--){
+          $content .= '<li><a href="/' . arg(0) . '/' . arg(1) . '/' . $x . '">' . $x . '</a></li>';
+        }
+      }
+      
+      $content .= '</ul>';
+      $block['subject'] = t('Newsroom Calendar');
+      $block['content'] = '<div>' . $content . '</div>' . drupal_render(drupal_get_form('zcancille_newsroom_calendar_form'));
+      break;
+  }
+
+  return $block;
+}
+
+function zcancille_newsroom_calendar_form() {
+  $form = array();
+  $form['finder'] = array(
+    '#type' => 'datepicker',
+    '#date_format' => 'Y-m-d',
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Search'),
+  );
+
+  $path = drupal_get_path('module','zcancille');
+
+  $form['#attached']['js'] = array(
+    $path .'/js/zcancille.js',
+  );
+    
+  return $form;
+}
+
+function zcancille_newsroom_calendar_form_submit(&$form, &$form_state) {
+  $values =& $form_state['values'];
+  $format = 'Y-m-d';
+  
+  if(arg(1)) {
+    $date = explode('-', arg(1));
+    $year = $date[0];
+  }
+  else {
+    $year = date('Y');
+  }
+  
+  if(is_numeric($year)) {
+    $path = arg(0) . '/' . date($format, strtotime($values['finder']));
+  }
+  else {
+    $path = arg(0) . '/' . arg(1) . '/' . date($format, strtotime($values['finder']));
+  }
+  
+  $form_state['redirect'] = array($path);
+  $values =& $form_state['values'];
+}
+
+function zcancille_form_alter(&$form, &$form_state, $form_id) {
+//  $forms = module_invoke_all('domain_ignore');
+//  if (in_array($form_id, $forms)) {
+//    return;
+//  }
+  
+  // Apply to all node editing forms only.
+//  if (empty($form['#node_edit_form'])) {
+//    return;
+//  }
+  
+  if (!empty($form['domain']['domains']['#options'])) {
+    asort($form['domain']['domains']['#options']);
+  }
+  
+  if (!empty($form['visibility']['domain_vis_settings']['domain_blocks']['#options'])) {
+    asort($form['visibility']['domain_vis_settings']['domain_blocks']['#options']);
+  }
+  
+  if (!empty($form['settings']['domains']['#options'])) {
+    asort($form['settings']['domains']['#options']);
+  }
+  
+  if (!empty($form['domain_settings']['domain_id']['#options'])) {
+    asort($form['domain_settings']['domain_id']['#options']);
+  }
+  
+  if (!empty($form['domain_user']['domain_user']['#options'])) {
+    asort($form['domain_user']['domain_user']['#options']);
+  }
+  
+//  dpm($form);
+//  dpm($form_state);
+}
+
+//Implements hook_node_view_alter()
+function zcancille_node_view_alter(&$build) {
+  if(isset($build['#node'])) {
+    $node = $build['#node'];
+    if(!empty($node->nid)) {
+      $build['#contextual_links']['node'] = array('node', array($node->nid));
+    }
+  }
+}
+
+?>

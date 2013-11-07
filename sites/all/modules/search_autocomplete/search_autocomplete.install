@@ -331,8 +331,12 @@ function search_autocomplete_update_7320(&$sandbox) {
 
   return (t('Update has:') . '<br/>' . t('- changed column type "data_static" from TEXT to LONGTEXT.')
                            . '<br/>' . t('- Add filter to VIEWS callback for performance improvement.'));
-  
-  // In case of an error, simply throw an exception with an error message.
-  throw new DrupalUpdateException('Something went wrong. Please uninstall and install the module again.');
-  return $ret;
+}
+
+/**
+  * Get ready for Search Autocomplete 7.x-3.3
+  */
+function search_autocomplete_update_7330(&$sandbox) {
+  views_invalidate_cache();
+  return t("Cleared views cache");
 }

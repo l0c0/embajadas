@@ -389,7 +389,7 @@ function search_autocomplete_view_autocomplete() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Reset';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '15';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -436,7 +436,7 @@ function search_autocomplete_view_autocomplete() {
     t('Node title suggestions for autocompletion'),
     t('more'),
     t('Apply'),
-    t('Réinitialiser'),
+    t('Reset'),
     t('Sort by'),
     t('Asc'),
     t('Desc'),
@@ -466,7 +466,7 @@ function search_autocomplete_view_autocomplete() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Reset';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '15';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -512,7 +512,7 @@ function search_autocomplete_view_autocomplete() {
     t('autocomplete_users'),
     t('more'),
     t('Apply'),
-    t('Réinitialiser'),
+    t('Reset'),
     t('Sort by'),
     t('Asc'),
     t('Desc'),
