@@ -3429,7 +3429,7 @@ input[type="text"], input[type="password"], input[type="email"], input[type="url
   font-size: 11px;
   font-style: italic;
   font-variant: normal;
-  margin-left: 180px;
+  margin-left: 5px;
   margin-top: -8px;
   overflow: hidden;
   padding: 0 10px;
@@ -3665,62 +3665,62 @@ width: 105px;
 ul.menu li a.ministerio_relaciones_exteriores {
    background:url("images/iconos/cancilleria-logo1.png") no-repeat;
    background-size: contain;
-   padding-left: 20px;
+   padding-left: 27px;
 }
 ul.menu li a.presidencia_consulado {
    background:url("images/iconos/presidencia-logo1.png") no-repeat;
    background-size: contain;
-      padding-left: 20px;
+      padding-left: 27px;
 }
 ul.menu li a.proexport {
    background:url("images/iconos/proexport-logo1.png") no-repeat;
    background-size: contain;
-      padding-left: 20px;
+      padding-left: 27px;
 }
 ul.menu li a.redes_colombia {
    background:url("images/iconos/redescolombia1.png") no-repeat;
    background-size: contain;
-      padding-left: 20px;
+      padding-left: 27px;
 }
 ul.menu li a.urna_cristal {
    background:url("images/iconos/logo_urna1.png") no-repeat;
    background-size: contain;
-      padding-left: 20px;
+      padding-left: 27px;
 }
 ul.menu li a.registraduria_estado_civil {
    background:url("images/iconos/registraduria-logo1.jpg") no-repeat;
    background-size: contain;
-      padding-left: 20px;
+      padding-left: 27px;
 }
 ul.menu li a.documentos_estrategicos {
    background:url("images/iconos/docs-estrategicos.png") no-repeat;
    background-size: contain;
-      padding-left: 20px;
+      padding-left: 27px;
 }
 ul.menu li a.temas_especificos {
    background:url("images/iconos/temas-espec.png") no-repeat;
    background-size: contain;
-      padding-left: 20px;
+      padding-left: 27px;
 }
 ul.menu li a.other-consulates {
    background:url("images/iconos/otros-consulados.png") no-repeat;
    background-size: contain;
-      padding-left: 20px;
+      padding-left: 27px;
 }
 ul.menu li a.cancilleria_ninos {
    background:url("images/iconos/cancilleria_ninos.png") no-repeat;
    background-size: contain;
-      padding-left: 20px;
+      padding-left: 27px;
 }
 ul.menu li a.biblioteca_tratados {
    background:url("images/iconos/biblioteca_tratados.png") no-repeat;
    background-size: contain;
-      padding-left: 20px;
+      padding-left: 27px;
 }
 ul.menu li a.certification-of-judicial-record {
    background:url("images/iconos/certificado.png") no-repeat;
    background-size: contain;
-      padding-left: 20px;
+      padding-left: 27px;
 }
 
 .Cancilleria_shapes {
