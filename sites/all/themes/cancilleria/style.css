@@ -3073,7 +3073,7 @@ position:relative
 
 #Pagina_Inicial .Noticias_Diapositivas .views-field-title {
 background:url(/sites/all/themes/cancilleria/images/BgBlack60.png) center top;
-bottom:4px;
+bottom:3px;
 color:#FFF;
 height:55px;
 left:0;
@@ -3082,14 +3082,14 @@ padding:0 10px;
 position:absolute;
 width:900px;
 z-index:9;
-display: block;
+/*display: block;*/
 }
 
 #Pagina_Inicial .Noticias_Diapositivas h3 {
   color: #FFFFFF;
   font-size: 15px;
   font-weight: 700;
-  margin-top: 0px;
+  margin-top: 10px;
   line-height: 100%;
 }
 
@@ -3773,8 +3773,15 @@ ul.menu li a.certification-of-judicial-record {
 .centrado .imgtitlecaption-alt {
   font-size: smaller;
 }
-
-
+/*
+#views_slideshow_cycle_div_slideshow-default_0 .views-field-title {
+  display: none;
+}
+#views_slideshow_cycle_div_slideshow-default_0 .field-content {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+*/
 /* End Additional CSS Styles */
 
 /* BEGIN FCKEditor, CKEditor, TinyMCE modules support*/
